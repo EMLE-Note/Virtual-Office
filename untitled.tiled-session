@@ -1,5 +1,5 @@
 {
-    "activeFile": "office2.tmj",
+    "activeFile": "C:/Users/user/Downloads/office2 (2).tmj",
     "expandedProjectPaths": [
     ],
     "fileStates": {
@@ -42,12 +42,118 @@
         "C:/Users/user/Documents/tiled/map360/tmx/Office Map.tmj#walls": {
             "scaleInDock": 1
         },
+        "C:/Users/user/Downloads/office2 (2).tmj": {
+            "scale": 0.4402439024390244,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 831.3573407202217,
+                "y": 656.4542936288088
+            }
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#floor wood": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#floor-test": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#floor3": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#furniture1": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2 (2).tmj#walls": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj": {
+            "scale": 0.4402439024390244,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 831.3573407202216,
+                "y": 332.77008310249306
+            }
+        },
+        "C:/Users/user/Downloads/office2.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj#floor wood": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj#floor-test": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj#floor3": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj#furniture1": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/office2.tmj#walls": {
+            "scaleInDock": 1
+        },
         "office.tmj": {
             "scale": 0.75,
             "selectedLayer": 15,
             "viewCenter": {
                 "x": 517.3333333333333,
-                "y": 478.6666666666666
+                "y": 479.33333333333326
             }
         },
         "office.tmj#WA_Decoration": {
@@ -85,19 +191,19 @@
         },
         "office2.tmj": {
             "expandedGroupLayers": [
-                54,
-                52,
+                55,
                 51,
-                55
+                52,
+                54
             ],
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 1,
+            "scale": 0.75,
             "selectedLayer": 8,
             "viewCenter": {
-                "x": 331,
-                "y": 753
+                "x": 832,
+                "y": 656.6666666666666
             }
         },
         "office2.tmj#WA_Decoration": {
@@ -150,13 +256,16 @@
     "openFiles": [
         "office.tmj",
         "office2.tmj",
-        "C:/Users/user/Documents/tiled/map360/tmx/Office Map.tmj"
+        "C:/Users/user/Downloads/office2.tmj",
+        "C:/Users/user/Downloads/office2 (2).tmj"
     ],
     "project": "untitled.tiled-project",
     "recentFiles": [
-        "C:/Users/user/Documents/tiled/map360/tmx/Office Map.tmj",
         "office.tmj",
-        "office2.tmj"
+        "office2.tmj",
+        "C:/Users/user/Downloads/office2.tmj",
+        "C:/Users/user/Downloads/office2 (2).tmj",
+        "C:/Users/user/Documents/tiled/map360/tmx/Office Map.tmj"
     ],
     "tileset.embedInMap": true
 }
