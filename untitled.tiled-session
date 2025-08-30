@@ -8,7 +8,7 @@
             "selectedLayer": 4,
             "viewCenter": {
                 "x": 2304,
-                "y": -768.6666666666665
+                "y": -768
             }
         },
         "C:/Users/user/Documents/tiled/map360/tmx/Office Map.tmj#MASTER": {
@@ -47,7 +47,7 @@
             "selectedLayer": 15,
             "viewCenter": {
                 "x": 517.3333333333333,
-                "y": 479.33333333333326
+                "y": 478.6666666666666
             }
         },
         "office.tmj#WA_Decoration": {
@@ -96,8 +96,8 @@
             "scale": 1,
             "selectedLayer": 8,
             "viewCenter": {
-                "x": 1024,
-                "y": 768.5
+                "x": 331,
+                "y": 753
             }
         },
         "office2.tmj#WA_Decoration": {
@@ -154,8 +154,8 @@
     ],
     "project": "untitled.tiled-project",
     "recentFiles": [
-        "office.tmj",
         "C:/Users/user/Documents/tiled/map360/tmx/Office Map.tmj",
+        "office.tmj",
         "office2.tmj"
     ],
     "tileset.embedInMap": true
