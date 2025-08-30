@@ -7,8 +7,8 @@
             "scale": 0.75,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 2304.6666666666665,
-                "y": -768
+                "x": 2304,
+                "y": -768.6666666666665
             }
         },
         "C:/Users/user/Documents/tiled/map360/tmx/Office Map.tmj#MASTER": {
@@ -46,8 +46,8 @@
             "scale": 0.75,
             "selectedLayer": 15,
             "viewCenter": {
-                "x": 533.3333333333333,
-                "y": 655.3333333333333
+                "x": 517.3333333333333,
+                "y": 479.33333333333326
             }
         },
         "office.tmj#WA_Decoration": {
@@ -85,19 +85,19 @@
         },
         "office2.tmj": {
             "expandedGroupLayers": [
-                55,
                 54,
+                52,
                 51,
-                52
+                55
             ],
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 0.5,
-            "selectedLayer": 3,
+            "scale": 1,
+            "selectedLayer": 8,
             "viewCenter": {
-                "x": 149,
-                "y": 692
+                "x": 1024,
+                "y": 768.5
             }
         },
         "office2.tmj#WA_Decoration": {
@@ -137,13 +137,13 @@
             "scaleInDock": 1
         },
         "office2.tmj#floor3": {
-            "scaleInDock": 0.33
+            "scaleInDock": 0.5
         },
         "office2.tmj#furniture1": {
-            "scaleInDock": 0.75
+            "scaleInDock": 1.5
         },
         "office2.tmj#walls": {
-            "scaleInDock": 1
+            "scaleInDock": 2
         }
     },
     "last.imagePath": "C:/Users/user/Documents/GitHub/map_v0.1/tilesets",
