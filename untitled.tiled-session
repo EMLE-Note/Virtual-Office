@@ -1,5 +1,5 @@
 {
-    "activeFile": "C:/Users/user/Downloads/office2 (2).tmj",
+    "activeFile": "office2.tmj",
     "expandedProjectPaths": [
     ],
     "fileStates": {
@@ -191,8 +191,8 @@
         },
         "office2.tmj": {
             "expandedGroupLayers": [
-                55,
                 51,
+                55,
                 52,
                 54
             ],
@@ -202,8 +202,8 @@
             "scale": 0.75,
             "selectedLayer": 8,
             "viewCenter": {
-                "x": 832,
-                "y": 656.6666666666666
+                "x": 831.9999999999999,
+                "y": 141.33333333333337
             }
         },
         "office2.tmj#WA_Decoration": {
@@ -255,9 +255,7 @@
     "last.imagePath": "C:/Users/user/Documents/GitHub/map_v0.1/tilesets",
     "openFiles": [
         "office.tmj",
-        "office2.tmj",
-        "C:/Users/user/Downloads/office2.tmj",
-        "C:/Users/user/Downloads/office2 (2).tmj"
+        "office2.tmj"
     ],
     "project": "untitled.tiled-project",
     "recentFiles": [
