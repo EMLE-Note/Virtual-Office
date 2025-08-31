@@ -528,17 +528,17 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"area",
-                         "type":"string",
-                         "value":"MeetingRoom"
-                        }, 
-                        {
                          "name":"focusable",
                          "type":"bool",
                          "value":true
                         }, 
                         {
-                         "name":"trigger",
+                         "name":"jitsiRoom",
+                         "type":"string",
+                         "value":"MeetingRoom"
+                        }, 
+                        {
+                         "name":"jitsiTrigger",
                          "type":"string",
                          "value":"onaction"
                         }, 
