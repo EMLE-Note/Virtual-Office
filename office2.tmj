@@ -553,22 +553,11 @@
                  "width":546,
                  "x":1091,
                  "y":64
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":64,
-         "name":"floorLayer2",
-         "objects":[
+                }, 
                 {
                  "height":194,
-                 "id":36,
-                 "name":"jitsiMeeting",
+                 "id":37,
+                 "name":"jitsiMeetingRoom",
                  "properties":[
                         {
                          "name":"focusable",
@@ -578,7 +567,7 @@
                         {
                          "name":"jitsiRoom",
                          "type":"string",
-                         "value":"Meeting"
+                         "value":"MeetingRoom2"
                         }, 
                         {
                          "name":"jitsiTrigger",
@@ -594,8 +583,8 @@
                  "type":"area",
                  "visible":true,
                  "width":546,
-                 "x":373,
-                 "y":916
+                 "x":432,
+                 "y":924
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -718,7 +707,7 @@
          "y":0
         }],
  "nextlayerid":65,
- "nextobjectid":37,
+ "nextobjectid":38,
  "orientation":"orthogonal",
  "properties":[
         {
