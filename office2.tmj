@@ -553,10 +553,21 @@
                  "width":546,
                  "x":1091,
                  "y":64
-                }, 
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":64,
+         "name":"floorLayer2",
+         "objects":[
                 {
                  "height":194,
-                 "id":35,
+                 "id":36,
                  "name":"jitsiMeeting",
                  "properties":[
                         {
@@ -583,8 +594,8 @@
                  "type":"area",
                  "visible":true,
                  "width":546,
-                 "x":393,
-                 "y":875
+                 "x":373,
+                 "y":916
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -706,8 +717,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":64,
- "nextobjectid":36,
+ "nextlayerid":65,
+ "nextobjectid":37,
  "orientation":"orthogonal",
  "properties":[
         {
