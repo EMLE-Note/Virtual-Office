@@ -548,7 +548,7 @@
                          "value":1
                         }],
                  "rotation":0,
-                 "type":"",
+                 "type":"area",
                  "visible":true,
                  "width":541,
                  "x":1089,
@@ -675,7 +675,7 @@
          "y":0
         }],
  "nextlayerid":64,
- "nextobjectid":23,
+ "nextobjectid":25,
  "orientation":"orthogonal",
  "properties":[
         {
