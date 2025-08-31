@@ -160,8 +160,8 @@
             "scale": 1.5,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 746.3333333333333,
-                "y": 400.66666666666663
+                "x": 455,
+                "y": 319.33333333333326
             }
         },
         "office.tmj#WA_Decoration": {
@@ -239,7 +239,7 @@
             "scaleInDock": 1
         },
         "office2.tmj#WA_Special_Zones": {
-            "scaleInDock": 1
+            "scaleInDock": 2
         },
         "office2.tmj#WA_Tables": {
             "scaleInDock": 1
