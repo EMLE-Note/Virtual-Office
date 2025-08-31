@@ -210,8 +210,8 @@
             "scale": 1,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 1298.5,
-                "y": 317
+                "x": 712.5,
+                "y": 1067
             }
         },
         "office2.tmj#GRASS": {
@@ -267,12 +267,13 @@
         }
     },
     "last.imagePath": "C:/Users/user/Documents/GitHub/map_v0.1/tilesets",
+    "last.objectTemplatePath": "C:/Users/user/Documents/GitHub/map_v0.1/template",
     "openFiles": [
         "office.tmj",
         "office2.tmj"
     ],
     "project": "untitled.tiled-project",
-    "property.type": "float",
+    "property.type": "bool",
     "recentFiles": [
         "office.tmj",
         "office2.tmj",
