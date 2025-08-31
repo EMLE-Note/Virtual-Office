@@ -555,7 +555,7 @@
                  "y":64
                 }, 
                 {
-                 "height":563.69696969697,
+                 "height":578.363636363636,
                  "id":37,
                  "name":"jitsiMeetingRoom",
                  "properties":[
@@ -583,8 +583,8 @@
                  "type":"area",
                  "visible":true,
                  "width":291.454545454545,
-                 "x":14.5151515151515,
-                 "y":196.69696969697
+                 "x":9.1818181818182,
+                 "y":204.69696969697
                 }, 
                 {
                  "height":264,
@@ -771,7 +771,7 @@
          "y":0
         }],
  "nextlayerid":65,
- "nextobjectid":40,
+ "nextobjectid":44,
  "orientation":"orthogonal",
  "properties":[
         {
