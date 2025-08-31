@@ -157,11 +157,11 @@
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 1.5,
+            "scale": 0.75,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 455,
-                "y": 319.33333333333326
+                "x": 672.6666666666666,
+                "y": 276
             }
         },
         "office.tmj#WA_Decoration": {
@@ -207,11 +207,11 @@
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 1,
+            "scale": 0.33,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 712.5,
-                "y": 1067
+                "x": 710.6060606060607,
+                "y": 612.1212121212121
             }
         },
         "office2.tmj#GRASS": {
