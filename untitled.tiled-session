@@ -207,11 +207,11 @@
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 0.25,
+            "scale": 0.33,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 690,
-                "y": 856
+                "x": 671.2121212121212,
+                "y": 815.1515151515151
             }
         },
         "office2.tmj#GRASS": {
