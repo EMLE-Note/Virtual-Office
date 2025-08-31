@@ -567,7 +567,7 @@
                         {
                          "name":"jitsiRoom",
                          "type":"string",
-                         "value":"MeetingRoom2"
+                         "value":"MeetingRoom4"
                         }, 
                         {
                          "name":"jitsiTrigger",
@@ -583,8 +583,8 @@
                  "type":"area",
                  "visible":true,
                  "width":291.454545454545,
-                 "x":9.1818181818182,
-                 "y":204.69696969697
+                 "x":6.51515151515144,
+                 "y":199.363636363637
                 }, 
                 {
                  "height":264,
@@ -631,7 +631,7 @@
                         {
                          "name":"jitsiRoom",
                          "type":"string",
-                         "value":"MeetingRoom3"
+                         "value":"MeetingRoom2"
                         }, 
                         {
                          "name":"jitsiTrigger",
