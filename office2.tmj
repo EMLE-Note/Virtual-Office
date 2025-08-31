@@ -530,7 +530,22 @@
                         {
                          "name":"area",
                          "type":"string",
-                         "value":"meeting"
+                         "value":"MeetingRoom"
+                        }, 
+                        {
+                         "name":"focusable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"trigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"zoom_margin",
+                         "type":"float",
+                         "value":1
                         }],
                  "rotation":0,
                  "type":"",
