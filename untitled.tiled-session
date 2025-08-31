@@ -160,8 +160,8 @@
             "scale": 1.5,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 431.66666666666663,
-                "y": 318
+                "x": 746.3333333333333,
+                "y": 400.66666666666663
             }
         },
         "office.tmj#WA_Decoration": {
@@ -207,12 +207,15 @@
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 0.75,
-            "selectedLayer": 9,
+            "scale": 1,
+            "selectedLayer": 12,
             "viewCenter": {
-                "x": 468.6666666666666,
-                "y": 214.66666666666669
+                "x": 1341.5,
+                "y": 257
             }
+        },
+        "office2.tmj#GRASS": {
+            "scaleInDock": 0.33
         },
         "office2.tmj#WA_Decoration": {
             "scaleInDock": 1
@@ -251,13 +254,13 @@
             "scaleInDock": 0.25
         },
         "office2.tmj#floor-test": {
-            "scaleInDock": 1
+            "scaleInDock": 0.25
         },
         "office2.tmj#floor3": {
-            "scaleInDock": 1
+            "scaleInDock": 0.0625
         },
         "office2.tmj#furniture1": {
-            "scaleInDock": 1.5
+            "scaleInDock": 0.015625
         },
         "office2.tmj#walls": {
             "scaleInDock": 1
