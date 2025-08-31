@@ -583,8 +583,8 @@
                  "type":"area",
                  "visible":true,
                  "width":283,
-                 "x":1346,
-                 "y":312
+                 "x":1336,
+                 "y":253
                 }, 
                 {
                  "height":231,
@@ -685,7 +685,7 @@
                 {
                  "height":543,
                  "id":33,
-                 "name":"Room",
+                 "name":"Meeting",
                  "properties":[
                         {
                          "name":"focusable",
