@@ -160,7 +160,7 @@
             "scale": 1.5,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 576.3333333333334,
+                "x": 431.66666666666663,
                 "y": 318
             }
         },
@@ -210,8 +210,8 @@
             "scale": 0.75,
             "selectedLayer": 9,
             "viewCenter": {
-                "x": 374.66666666666663,
-                "y": 350.6666666666667
+                "x": 468.6666666666666,
+                "y": 214.66666666666669
             }
         },
         "office2.tmj#WA_Decoration": {
@@ -244,6 +244,9 @@
         "office2.tmj#WA_User_Interface": {
             "scaleInDock": 1
         },
+        "office2.tmj#decor": {
+            "scaleInDock": 2
+        },
         "office2.tmj#floor wood": {
             "scaleInDock": 0.25
         },
@@ -254,10 +257,10 @@
             "scaleInDock": 1
         },
         "office2.tmj#furniture1": {
-            "scaleInDock": 1
+            "scaleInDock": 1.5
         },
         "office2.tmj#walls": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         }
     },
     "last.imagePath": "C:/Users/user/Documents/GitHub/map_v0.1/tilesets",
