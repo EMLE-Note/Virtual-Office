@@ -273,7 +273,7 @@
         "office2.tmj"
     ],
     "project": "untitled.tiled-project",
-    "property.type": "bool",
+    "property.type": "string",
     "recentFiles": [
         "office.tmj",
         "office2.tmj",
