@@ -695,7 +695,7 @@
                         {
                          "name":"jitsiRoom",
                          "type":"string",
-                         "value":"MeetingRoom"
+                         "value":"Meeting"
                         }, 
                         {
                          "name":"jitsiTrigger",
