@@ -540,7 +540,7 @@
                         {
                          "name":"jitsiTrigger",
                          "type":"string",
-                         "value":"onaction"
+                         "value":"onenter"
                         }, 
                         {
                          "name":"zoom_margin",
@@ -572,7 +572,7 @@
                         {
                          "name":"jitsiTrigger",
                          "type":"string",
-                         "value":"onaction"
+                         "value":"onenter"
                         }, 
                         {
                          "name":"zoom_margin",
