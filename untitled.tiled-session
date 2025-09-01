@@ -150,9 +150,9 @@
         },
         "office.tmj": {
             "expandedGroupLayers": [
-                54,
                 51,
-                55
+                55,
+                54
             ],
             "expandedObjectLayers": [
                 2
@@ -160,8 +160,8 @@
             "scale": 0.75,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 431.33333333333337,
-                "y": 397.33333333333337
+                "x": 517.3333333333333,
+                "y": 479.33333333333326
             }
         },
         "office.tmj#WA_Decoration": {
@@ -199,19 +199,19 @@
         },
         "office2.tmj": {
             "expandedGroupLayers": [
-                54,
                 51,
-                52,
-                55
+                55,
+                54,
+                52
             ],
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 0.33,
-            "selectedLayer": 12,
+            "scale": 1,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 671.2121212121212,
-                "y": 815.1515151515151
+                "x": 322.5,
+                "y": 781
             }
         },
         "office2.tmj#GRASS": {
@@ -230,10 +230,10 @@
             "scaleInDock": 1
         },
         "office2.tmj#WA_Other_Furniture": {
-            "scaleInDock": 1
+            "scaleInDock": 0.25
         },
         "office2.tmj#WA_Room_Builder": {
-            "scaleInDock": 1
+            "scaleInDock": 0.25
         },
         "office2.tmj#WA_Seats": {
             "scaleInDock": 1
@@ -242,13 +242,13 @@
             "scaleInDock": 2
         },
         "office2.tmj#WA_Tables": {
-            "scaleInDock": 1
+            "scaleInDock": 0.25
         },
         "office2.tmj#WA_User_Interface": {
-            "scaleInDock": 1
+            "scaleInDock": 2
         },
         "office2.tmj#decor": {
-            "scaleInDock": 2
+            "scaleInDock": 0.5
         },
         "office2.tmj#floor wood": {
             "scaleInDock": 0.25
@@ -260,7 +260,7 @@
             "scaleInDock": 0.0625
         },
         "office2.tmj#furniture1": {
-            "scaleInDock": 0.015625
+            "scaleInDock": 0.75
         },
         "office2.tmj#walls": {
             "scaleInDock": 1
