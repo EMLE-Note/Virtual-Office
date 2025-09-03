@@ -150,8 +150,8 @@
         },
         "office.tmj": {
             "expandedGroupLayers": [
-                51,
                 55,
+                51,
                 54
             ],
             "expandedObjectLayers": [
@@ -160,8 +160,8 @@
             "scale": 0.75,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 431.33333333333326,
-                "y": 569.3333333333334
+                "x": 517.3333333333333,
+                "y": 479.33333333333326
             }
         },
         "office.tmj#WA_Decoration": {
