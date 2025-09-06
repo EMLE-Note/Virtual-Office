@@ -1,21 +1,54 @@
-// ======================= Wave Feature (No Backend) =======================
-// يعمل بالكامل عبر WorkAdventure Scripting API + WA.state
-// الميزات: 👋 Wave / رد 👋 / "جاي لك" / وقت نسبي / فيد عام يراه الجميع
+// Wave feature (TypeScript, no backend) — compatible with isolatedModules
+export {}; // <-- مهم علشان TS يعتبر الملف Module
 
-// ===== إعدادات عامة =====
+// ------------------- Types -------------------
+interface Position {
+  x: number;
+  y: number;
+}
+
+interface WavePayloadBase {
+  fromId: string | number | undefined;
+  fromName: string;
+  toId: string | number | undefined;
+  toName: string;
+  fromPos?: Position | null;
+  at: string; // ISO
+  type: "wave";
+}
+
+interface WaveAckPayload extends WavePayloadBase {
+  type: "wave-ack";
+  ackById: string | number | undefined;
+  ackByName: string;
+  ackAt: string; // ISO
+}
+
+interface WaveGoPayload extends WavePayloadBase {
+  type: "wave-go";
+  goById: string | number | undefined;
+  goByName: string;
+  goAt: string; // ISO
+}
+
+type FeedEntry = WavePayloadBase | WaveAckPayload | WaveGoPayload;
+
 const WAVE_EVENT = "wave:event";
 const WAVE_ACK_EVENT = "wave:ack";
 const WAVE_GO_EVENT = "wave:go";
-const FEED_KEY = "wave:publicFeed";       // مصفوفة من الأحداث المشتركة بين اللاعبين
-const FEED_MAX = 30;                       // احتفظ بآخر 30 حدث
+const FEED_KEY = "wave:publicFeed";
+const FEED_MAX = 30;
 const FEED_POPUP_ID = "wave-feed";
 const INCOMING_POPUP_ID = "wave-incoming";
-const HELP_ZONE_NAME = "wave-hud";         // اختياري: اعمل Zone بهذا الاسم لو عايز Hint
+const HELP_ZONE_NAME = "wave-hud";
 
-// ===== أدوات وقت نسبي =====
-function nowIso() { return new Date().toISOString(); }
-function timeAgo(tsIso) {
-  const diff = Date.now() - Date.parse(tsIso || Date.now());
+// ------------------- Utils -------------------
+function nowIso(): string {
+  return new Date().toISOString();
+}
+
+function timeAgo(tsIso: string): string {
+  const diff = Date.now() - Date.parse(tsIso || new Date().toISOString());
   const s = Math.max(1, Math.floor(diff / 1000));
   if (s < 60) return `${s} ثانية`;
   const m = Math.floor(s / 60);
@@ -26,15 +59,16 @@ function timeAgo(tsIso) {
   return `${d} يوم`;
 }
 
-// ===== حفظ/قراءة الفيد =====
-async function loadFeed() {
+async function loadFeed(): Promise<FeedEntry[]> {
   try {
-    return (await WA.state.loadVariable(FEED_KEY)) || [];
+    const v = (await WA.state.loadVariable(FEED_KEY)) as FeedEntry[] | null | undefined;
+    return v ?? [];
   } catch {
-    return JSON.parse(localStorage.getItem(FEED_KEY) || "[]");
+    return JSON.parse(localStorage.getItem(FEED_KEY) || "[]") as FeedEntry[];
   }
 }
-async function saveFeed(arr) {
+
+async function saveFeed(arr: FeedEntry[]): Promise<void> {
   const trimmed = arr.slice(-FEED_MAX);
   try {
     await WA.state.saveVariable(FEED_KEY, trimmed);
@@ -42,110 +76,132 @@ async function saveFeed(arr) {
     localStorage.setItem(FEED_KEY, JSON.stringify(trimmed));
   }
 }
-async function pushToFeed(entry) {
+
+async function pushToFeed(entry: FeedEntry): Promise<void> {
   const feed = await loadFeed();
   feed.push(entry);
   await saveFeed(feed);
 }
 
-// ===== مساعدات لاعبين =====
 async function getSelf() {
-  return { id: WA.player?.id, name: WA.player?.name || "مجهول" };
+  const id = (WA.player as any)?.id as string | number | undefined;
+  const name = (WA.player as any)?.name || "مجهول";
+  return { id, name };
 }
-async function getPositionSafe() {
+
+async function getPositionSafe(): Promise<Position | null> {
   try {
-    if (WA.player?.getPosition) return await WA.player.getPosition();
+    if ((WA.player as any)?.getPosition) {
+      return await (WA.player as any).getPosition();
+    }
   } catch {}
   return null;
 }
-async function listPlayersSafe() {
+
+async function listPlayersSafe(): Promise<any[]> {
   try {
-    if (WA.players?.list) return await WA.players.list();
+    if ((WA.players as any)?.list) {
+      const it = await (WA.players as any).list();
+      return Array.from(it as IterableIterator<any>); // مهم: حوّل من Iterator إلى Array
+    }
   } catch {}
   return [];
 }
-async function nearestPlayer() {
+
+async function nearestPlayer(): Promise<any | null> {
   const me = await getSelf();
   const myPos = await getPositionSafe();
-  const players = (await listPlayersSafe()).filter(p => p.id !== me.id);
+  const players = (await listPlayersSafe()).filter((p: any) => p.id !== me.id);
   if (!players.length) return null;
-  if (!myPos || !players[0]?.position) return players[0]; // أبسط اختيار
-  // اختَر الأقرب:
-  let best = players[0], bestD = Infinity;
+  if (!myPos || !players[0]?.position) return players[0];
+  let best = players[0];
+  let bestD = Infinity;
   for (const p of players) {
-    const dx = (p.position?.x ?? 0) - myPos.x;
-    const dy = (p.position?.y ?? 0) - myPos.y;
-    const d = dx*dx + dy*dy;
-    if (d < bestD) { bestD = d; best = p; }
+    const dx = ((p.position?.x ?? 0) as number) - myPos.x;
+    const dy = ((p.position?.y ?? 0) as number) - myPos.y;
+    const d = dx * dx + dy * dy;
+    if (d < bestD) {
+      bestD = d;
+      best = p;
+    }
   }
   return best;
 }
 
-// ===== واجهة الفيد العام =====
+// ------------------- Feed popup -------------------
 let feedPopupOpen = false;
-async function renderFeedPopup() {
+let feedPopupHandle: any | null = null;
+
+async function renderFeedPopup(): Promise<void> {
   const feed = await loadFeed();
-  const lines = feed.map(e => {
-    if (e.type === "wave")
-      return `🕒 ${timeAgo(e.at)}: ${e.fromName} 👋 → ${e.toName}`;
-    if (e.type === "wave-ack")
-      return `🕒 ${timeAgo(e.ackAt)}: ${e.ackByName} رد 👋 لـ ${e.fromName}`;
-    if (e.type === "wave-go")
-      return `🕒 ${timeAgo(e.goAt)}: ${e.goByName} رايح لـ ${e.fromName} 🚶`;
-    return `🕒 ${timeAgo(e.at || e.ackAt || e.goAt)}: حدث Wave`;
-  }).join("\n");
+  const lines = feed
+    .map((e: FeedEntry) => {
+      if (e.type === "wave")
+        return `🕒 ${timeAgo(e.at)}: ${e.fromName} 👋 → ${e.toName}`;
+      if (e.type === "wave-ack")
+        return `🕒 ${timeAgo((e as WaveAckPayload).ackAt)}: ${(e as WaveAckPayload).ackByName} رد 👋 لـ ${e.fromName}`;
+      if (e.type === "wave-go")
+        return `🕒 ${timeAgo((e as WaveGoPayload).goAt)}: ${(e as WaveGoPayload).goByName} رايح لـ ${e.fromName} 🚶`;
+      return `🕒 حدث Wave`;
+    })
+    .join("\n");
 
   if (!feedPopupOpen) return;
-  WA.ui.openPopup(
+
+  feedPopupHandle = WA.ui.openPopup(
     FEED_POPUP_ID,
     `Wave Feed (يظهر للجميع)\n\n${lines || "لا أحداث بعد"}`,
     [
-      { label: "إغلاق", callback: () => { feedPopupOpen = false; WA.ui.closePopup(); } },
-      { label: "تحديث", callback: () => renderFeedPopup() },
+      { label: "إغلاق", callback: () => { feedPopupOpen = false; try { feedPopupHandle?.close(); } catch {} } },
+      { label: "تحديث", callback: () => { renderFeedPopup(); } },
     ]
   );
 }
-function openFeed() {
+
+function openFeed(): void {
   feedPopupOpen = true;
   renderFeedPopup();
 }
 
-// حدّث الفيد تلقائيًا كل دقيقة لو مفتوح
+// يحدث تلقائيًا كل دقيقة لو مفتوح
 setInterval(() => { if (feedPopupOpen) renderFeedPopup(); }, 60_000);
 
-// استمع لتغيرات المتغير المشترك (لو مدعوم) وأعد الرسم
-WA?.state?.onVariableChange?.(FEED_KEY)?.subscribe(() => { if (feedPopupOpen) renderFeedPopup(); });
+// لو الـAPI بيدعم مراقبة المتغيّر المشترك
+(WA.state as any)?.onVariableChange?.(FEED_KEY)?.subscribe?.(() => { if (feedPopupOpen) renderFeedPopup(); });
 
-// ===== واجهة مساعدة سريعة =====
-function showHelpToast() {
-  WA.ui.displayActionMessage?.({
-    message: "اضغط W لإرسال 👋 لأقرب لاعب — اضغط F لفتح Wave Feed",
+// ------------------- UI helpers -------------------
+function showHelpToast(): void {
+  WA.ui.displayActionMessage({
+    message: "من قائمة WorkAdventure: Wave → Send Wave / Open Feed",
+    callback: () => {}
   });
 }
 
-// ===== إرسال Wave =====
-async function sendWaveTo(target) {
+// ------------------- Core actions -------------------
+async function sendWaveTo(target: any): Promise<void> {
   const me = await getSelf();
   const myPos = await getPositionSafe();
-  const payload = {
+  const payload: WavePayloadBase = {
     type: "wave",
-    fromId: me.id, fromName: me.name,
-    toId: target.id, toName: target.name || "مجهول",
-    fromPos: myPos, at: nowIso()
+    fromId: me.id,
+    fromName: me.name,
+    toId: target.id,
+    toName: target.name || "مجهول",
+    fromPos: myPos || undefined,
+    at: nowIso(),
   };
-  // أذاعه للجميع
   WA.event.broadcast(WAVE_EVENT, payload);
-  // أضِف للفيد
   await pushToFeed(payload);
-  // إعلان خفيف في الشات العام (اختياري)
-  try { WA.chat?.sendChatMessage?.(`👋 ${me.name} نادى على ${payload.toName}`, "WaveBot"); } catch {}
+  try {
+    (WA.chat as any)?.sendChatMessage?.(`👋 ${me.name} نادى على ${payload.toName}`, "WaveBot");
+  } catch {}
 }
 
-// ===== توست الويف الوارد للمستلم =====
-function showIncomingWaveToast(data) {
-  // لو فيه Popup مفتوح بنفس الـID اقفله عشان نعيد فتحه
-  try { WA.ui.closePopup(); } catch {}
-  WA.ui.openPopup(
+let incomingPopupHandle: any | null = null;
+
+function showIncomingWaveToast(data: WavePayloadBase): void {
+  try { incomingPopupHandle?.close?.(); } catch {}
+  incomingPopupHandle = WA.ui.openPopup(
     INCOMING_POPUP_ID,
     `👋 ${data.fromName} نادى عليك — (${timeAgo(data.at)})`,
     [
@@ -153,7 +209,7 @@ function showIncomingWaveToast(data) {
         label: "رد 👋",
         callback: async () => {
           const me = await getSelf();
-          const ack = {
+          const ack: WaveAckPayload = {
             ...data,
             type: "wave-ack",
             ackById: me.id,
@@ -162,14 +218,14 @@ function showIncomingWaveToast(data) {
           };
           WA.event.broadcast(WAVE_ACK_EVENT, ack);
           await pushToFeed(ack);
-          WA.ui.closePopup();
+          try { incomingPopupHandle?.close?.(); } catch {}
         }
       },
       {
         label: "جاي لك 🚶",
         callback: async () => {
           const me = await getSelf();
-          const go = {
+          const go: WaveGoPayload = {
             ...data,
             type: "wave-go",
             goById: me.id,
@@ -179,77 +235,85 @@ function showIncomingWaveToast(data) {
           WA.event.broadcast(WAVE_GO_EVENT, go);
           await pushToFeed(go);
 
-          // محاولة نقل/تحريك/إشارة للمكان
           const targetPos = data.fromPos;
           try {
             if (targetPos) {
-              if (WA.player?.teleport) {
-                WA.player.teleport(targetPos.x, targetPos.y);
-              } else if (WA.player?.moveTo) {
-                WA.player.moveTo(targetPos.x, targetPos.y);
-              } else if (WA.camera?.set) {
-                WA.camera.set(targetPos.x, targetPos.y);
-                WA.ui.displayActionMessage?.({ message: "تم تحديد مكانه على الخريطة 🔖" });
+              if ((WA.player as any)?.teleport) {
+                (WA.player as any).teleport(targetPos.x, targetPos.y);
+              } else if ((WA.player as any)?.moveTo) {
+                (WA.player as any).moveTo(targetPos.x, targetPos.y);
+              } else if ((WA.camera as any)?.set) {
+                (WA.camera as any).set(targetPos.x, targetPos.y);
+                WA.ui.displayActionMessage({ message: "تم تحديد مكانه على الخريطة 🔖", callback: () => {} });
               } else {
-                WA.ui.displayActionMessage?.({ message: "تعذّر التحريك—اتّبع الخريطة يدويًا" });
+                WA.ui.displayActionMessage({ message: "تعذّر التحريك—اتّبع الخريطة يدويًا", callback: () => {} });
               }
             }
-          } catch (e) { console.warn("Go failed", e); }
-          WA.ui.closePopup();
+          } catch (e) {
+            console.warn("Go failed", e);
+          }
+          try { incomingPopupHandle?.close?.(); } catch {}
         }
       },
-      { label: "إغلاق", callback: () => WA.ui.closePopup() }
+      { label: "إغلاق", callback: () => { try { incomingPopupHandle?.close?.(); } catch {} } }
     ]
   );
 }
 
-// ===== مستمعو الأحداث للجميع =====
-WA.event.on(WAVE_EVENT).subscribe(async (data) => {
-  // سجّل الحدث في الفيد العام (حتى لو مش أنا الهدف)
-  await pushToFeed(data);
-
-  // لو أنا الهدف—اظهر التوست التفاعلي
-  if (data.toId === WA.player?.id) showIncomingWaveToast(data);
+// ------------------- Events -------------------
+WA.event.on(WAVE_EVENT).subscribe((raw: any) => {
+  const data = raw as WavePayloadBase;
+  // سجل للجميع
+  pushToFeed(data);
+  // لو أنا الهدف → أظهر التوست
+  const myId = (WA.player as any)?.id;
+  if (data.toId === myId) showIncomingWaveToast(data);
 });
 
-WA.event.on(WAVE_ACK_EVENT).subscribe(async (data) => {
-  await pushToFeed(data);
-  // إشعار سريع للجميع
-  WA.ui.displayActionMessage?.({
-    message: `👋 ${data.ackByName} رد على Wave من ${data.fromName} — (${timeAgo(data.ackAt)})`
+WA.event.on(WAVE_ACK_EVENT).subscribe((raw: any) => {
+  const data = raw as WaveAckPayload;
+  pushToFeed(data);
+  WA.ui.displayActionMessage({
+    message: `👋 ${data.ackByName} رد على Wave من ${data.fromName} — (${timeAgo(data.ackAt)})`,
+    callback: () => {}
   });
 });
 
-WA.event.on(WAVE_GO_EVENT).subscribe(async (data) => {
-  await pushToFeed(data);
-  WA.ui.displayActionMessage?.({
-    message: `🚶 ${data.goByName} رايح لـ ${data.fromName} — (${timeAgo(data.goAt)})`
+WA.event.on(WAVE_GO_EVENT).subscribe((raw: any) => {
+  const data = raw as WaveGoPayload;
+  pushToFeed(data);
+  WA.ui.displayActionMessage({
+    message: `🚶 ${data.goByName} رايح لـ ${data.fromName} — (${timeAgo(data.goAt)})`,
+    callback: () => {}
   });
 });
 
-// ===== اختصارات لوحة المفاتيح =====
-// W: أرسل Wave لأقرب لاعب
-WA.controls?.onKeyDown?.('KeyW')?.subscribe(async () => {
+// ------------------- Triggers (no keydown; use menu commands) -------------------
+// زرار في قائمة WA (عادة بتظهر في الجنب/القائمة)
+WA.ui.registerMenuCommand?.("👋 Wave: Send", async () => {
   const target = await nearestPlayer();
   if (!target) {
-    WA.ui.openPopup("wave-none", "لا يوجد لاعبون بالقرب لإرسال Wave.", [{ label: "حسنا", callback: () => WA.ui.closePopup() }]);
+    WA.ui.openPopup("wave-none", "لا يوجد لاعبون بالقرب لإرسال Wave.", [
+      { label: "حسنا", callback: () => {} }
+    ]);
     return;
   }
   await sendWaveTo(target);
 });
 
-// F: افتح الفيد العام
-WA.controls?.onKeyDown?.('KeyF')?.subscribe(() => openFeed());
+WA.ui.registerMenuCommand?.("📜 Wave: Open Feed", () => {
+  openFeed();
+});
 
-// ===== هِنت عند دخول منطقة (اختياري) =====
-WA?.ui?.onEnterZone?.(HELP_ZONE_NAME, () => showHelpToast());
+// Hint عند دخول زون مساعدة (اختياري): استخدم WA.room.onEnterZone
+(WA.room as any)?.onEnterZone?.(HELP_ZONE_NAME, () => showHelpToast());
 
-// ===== تلميح مبدئي بعد init =====
+// رسالة ترحيب بسيطة بعد init
 WA.onInit().then(() => {
-  // رسالة بداية لطيفة (مرة واحدة)
   setTimeout(() => {
-    WA.ui.displayActionMessage?.({
-      message: "👋 Wave جاهز: W للإرسال — F لعرض الـFeed"
+    WA.ui.displayActionMessage({
+      message: "Wave جاهز: من القائمة اختر 👋 Wave: Send / 📜 Wave: Open Feed",
+      callback: () => {}
     });
   }, 800);
 });
