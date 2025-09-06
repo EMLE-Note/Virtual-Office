@@ -1936,8 +1936,8 @@
                  "properties":[
                         {
                          "name":"default",
-                         "type":"bool",
-                         "value":false
+                         "type":"int",
+                         "value":0
                         }, 
                         {
                          "name":"persist",
@@ -1960,11 +1960,11 @@
                          "value":"boolean"
                         }],
                  "rotation":0,
-                 "type":"",
+                 "type":"variable",
                  "visible":true,
                  "width":200,
-                 "x":2394.33333333333,
-                 "y":2397
+                 "x":3258.33333333333,
+                 "y":2511
                 }],
          "opacity":1,
          "type":"objectgroup",
