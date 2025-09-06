@@ -2,7 +2,6 @@
 
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 import './features/roomLight';
-import './features/wave';
 
 console.log('Script started successfully');
 
