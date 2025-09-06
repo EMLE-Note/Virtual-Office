@@ -45,13 +45,27 @@ async function initSyncedLights() {
   });
 }
 
-WA.onInit().then(() => {
-  // وضع متزامن للجميع
-  initSyncedLights().catch(console.error);
+WA.onInit().then(async () => {
+  await bootstrapExtra();
 
-  // لو عايز وضع محلي فقط (شيل المتزامن فوق واستخدم السطور دي بدلًا منه):
-  // WA.room.area.onEnter(AREA).subscribe(() => setLights(true));
-  // WA.room.area.onLeave(AREA).subscribe(() => setLights(false));
+  // -------- كود التشخيص هنا --------
+  console.log("[DBG] URL", window.location.href);
+
+  const KEY = "occ:jitsiMeetingRoom";
+  console.log("[DBG] count@start =", WA.state.loadVariable(KEY));
+  WA.state.onVariableChange(KEY).subscribe((v) => {
+    console.log("[DBG] count@change =", v, "at", new Date().toISOString());
+  });
+
+  const PULSE = "pulse:jitsiMeetingRoom";
+  WA.state.onVariableChange(PULSE).subscribe((ts) => {
+    console.log("[DBG] pulse@", ts);
+  });
+  // ---------------------------------
+
+  // الكود الأساسي بتاع الإضاءة (bindSynced أو initSyncedLights)
+  initSyncedLights().catch(console.error);
 });
+
 
 export {};
