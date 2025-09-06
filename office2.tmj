@@ -1940,9 +1940,57 @@
          "visible":true,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":65,
+         "name":"variables",
+         "objects":[
+                {
+                 "height":162,
+                 "id":61,
+                 "name":"occ:jitsiMeetingRoom",
+                 "properties":[
+                        {
+                         "name":"default",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"persist",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"public",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"scope",
+                         "type":"string",
+                         "value":"room"
+                        }, 
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"boolean"
+                        }],
+                 "rotation":0,
+                 "type":"variable",
+                 "visible":true,
+                 "width":200,
+                 "x":3257,
+                 "y":2509
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":65,
- "nextobjectid":61,
+ "nextlayerid":66,
+ "nextobjectid":67,
  "orientation":"orthogonal",
  "properties":[
         {
