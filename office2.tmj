@@ -1945,7 +1945,44 @@
          "draworder":"topdown",
          "id":65,
          "name":"variables",
-         "objects":[],
+         "objects":[
+                {
+                 "height":162,
+                 "id":61,
+                 "name":"occ:jitsiMeetingRoom",
+                 "properties":[
+                        {
+                         "name":"default",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"persist",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"public",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"scope",
+                         "type":"string",
+                         "value":"room"
+                        }, 
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"boolean"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":200,
+                 "x":2234.33333333333,
+                 "y":2283.66666666667
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
