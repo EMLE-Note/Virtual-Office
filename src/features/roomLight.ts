@@ -1,12 +1,11 @@
 /// <reference types="@workadventure/iframe-api-typings" />
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
-// غيّر الأسماء لو طبقة/المنطقة عندك مختلفة
 const AREA = "jitsiMeetingRoom";
 const DARK_LAYER = "lights/jitsiMeetingRoom-dark";
+const COUNTER_KEY = `occ:${AREA}`;
 
-// نسخة "محليّة" (النور ينور عندك انت بس):
-function applyLocal(on: boolean) {
+function setLights(on: boolean) {
   if (on) {
     WA.room.hideLayer(DARK_LAYER);
   } else {
@@ -14,38 +13,45 @@ function applyLocal(on: boolean) {
   }
 }
 
-// (اختياري) نسخة "متزامنة للجميع": نور = فيه حد جوه
-const COUNTER_KEY = `occ:${AREA}`;
-function bindSynced() {
-  // طبّق الحالة الحالية
-  const c = (WA.state.loadVariable(COUNTER_KEY) as number) || 0;
-  applyLocal(c > 0);
+async function initSyncedLights() {
+  // مهم: فعّل الـ Extra قبل أي تعامل مع WA.state
+  await bootstrapExtra();
 
-  // اسمع أي تغيير في العدّاد
+  // اقرا الحالة الحالية وابدأ بيها
+  let current = (WA.state.loadVariable(COUNTER_KEY) as number) ?? 0;
+  setLights(current > 0);
+
+  // لو أول مرة يتستخدم المفتاح، ثبّت 0 (مرة واحدة)
+  if (current === null || current === undefined) {
+    WA.state.saveVariable(COUNTER_KEY, 0);
+    current = 0;
+  }
+
+  // اسمع أي تغيّر من السيرفر (يوصل لكل اللاعبين)
   WA.state.onVariableChange(COUNTER_KEY).subscribe((val: unknown) => {
     const n = typeof val === "number" ? val : 0;
-    applyLocal(n > 0);
+    setLights(n > 0);
   });
 
-  // زوّد/قلّل العدّاد عند الدخول/الخروج
+  // زوّد/قلّل العداد عند الدخول/الخروج
   WA.room.area.onEnter(AREA).subscribe(() => {
-    const n = (WA.state.loadVariable(COUNTER_KEY) as number) || 0;
+    const n = (WA.state.loadVariable(COUNTER_KEY) as number) ?? 0;
     WA.state.saveVariable(COUNTER_KEY, n + 1);
   });
+
   WA.room.area.onLeave(AREA).subscribe(() => {
-    const n = (WA.state.loadVariable(COUNTER_KEY) as number) || 0;
+    const n = (WA.state.loadVariable(COUNTER_KEY) as number) ?? 0;
     WA.state.saveVariable(COUNTER_KEY, Math.max(0, n - 1));
   });
 }
 
-WA.onInit().then(async () => {
-  // لو عايز تأثير محلي فقط (لك انت):
-  // WA.room.area.onEnter(AREA).subscribe(() => applyLocal(true));
-  // WA.room.area.onLeave(AREA).subscribe(() => applyLocal(false));
+WA.onInit().then(() => {
+  // وضع متزامن للجميع
+  initSyncedLights().catch(console.error);
 
-  // لو عايز التأثير يبقى متزامن لكل اللاعبين (أنصح بيه):
-  bindSynced();
-
-  await bootstrapExtra().catch(console.error);
+  // لو عايز وضع محلي فقط (شيل المتزامن فوق واستخدم السطور دي بدلًا منه):
+  // WA.room.area.onEnter(AREA).subscribe(() => setLights(true));
+  // WA.room.area.onLeave(AREA).subscribe(() => setLights(false));
 });
+
 export {};
