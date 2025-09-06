@@ -1,5 +1,6 @@
-// Wave feature (TypeScript, no backend) — compatible with isolatedModules
-export {}; // <-- مهم علشان TS يعتبر الملف Module
+// src/features/wave.ts
+// Wave feature (TypeScript, no backend) — compatible with isolatedModules & starter kit
+export {}; // مهم لـ --isolatedModules
 
 // ------------------- Types -------------------
 interface Position {
@@ -7,31 +8,36 @@ interface Position {
   y: number;
 }
 
-interface WavePayloadBase {
+// أساس مشترك من غير حقل type
+interface WaveCommon {
   fromId: string | number | undefined;
   fromName: string;
   toId: string | number | undefined;
   toName: string;
   fromPos?: Position | null;
   at: string; // ISO
+}
+
+// كل حدث له نوعه
+interface WavePayload extends WaveCommon {
   type: "wave";
 }
 
-interface WaveAckPayload extends WavePayloadBase {
+interface WaveAckPayload extends WaveCommon {
   type: "wave-ack";
   ackById: string | number | undefined;
   ackByName: string;
   ackAt: string; // ISO
 }
 
-interface WaveGoPayload extends WavePayloadBase {
+interface WaveGoPayload extends WaveCommon {
   type: "wave-go";
   goById: string | number | undefined;
   goByName: string;
   goAt: string; // ISO
 }
 
-type FeedEntry = WavePayloadBase | WaveAckPayload | WaveGoPayload;
+type FeedEntry = WavePayload | WaveAckPayload | WaveGoPayload;
 
 const WAVE_EVENT = "wave:event";
 const WAVE_ACK_EVENT = "wave:ack";
@@ -61,7 +67,7 @@ function timeAgo(tsIso: string): string {
 
 async function loadFeed(): Promise<FeedEntry[]> {
   try {
-    const v = (await WA.state.loadVariable(FEED_KEY)) as FeedEntry[] | null | undefined;
+    const v = (await (WA.state as any).loadVariable(FEED_KEY)) as FeedEntry[] | null | undefined;
     return v ?? [];
   } catch {
     return JSON.parse(localStorage.getItem(FEED_KEY) || "[]") as FeedEntry[];
@@ -71,7 +77,7 @@ async function loadFeed(): Promise<FeedEntry[]> {
 async function saveFeed(arr: FeedEntry[]): Promise<void> {
   const trimmed = arr.slice(-FEED_MAX);
   try {
-    await WA.state.saveVariable(FEED_KEY, trimmed);
+    await (WA.state as any).saveVariable(FEED_KEY, trimmed);
   } catch {
     localStorage.setItem(FEED_KEY, JSON.stringify(trimmed));
   }
@@ -102,7 +108,7 @@ async function listPlayersSafe(): Promise<any[]> {
   try {
     if ((WA.players as any)?.list) {
       const it = await (WA.players as any).list();
-      return Array.from(it as IterableIterator<any>); // مهم: حوّل من Iterator إلى Array
+      return Array.from(it as IterableIterator<any>); // Iterator → Array
     }
   } catch {}
   return [];
@@ -148,7 +154,7 @@ async function renderFeedPopup(): Promise<void> {
 
   if (!feedPopupOpen) return;
 
-  feedPopupHandle = WA.ui.openPopup(
+  feedPopupHandle = (WA.ui as any).openPopup(
     FEED_POPUP_ID,
     `Wave Feed (يظهر للجميع)\n\n${lines || "لا أحداث بعد"}`,
     [
@@ -166,13 +172,13 @@ function openFeed(): void {
 // يحدث تلقائيًا كل دقيقة لو مفتوح
 setInterval(() => { if (feedPopupOpen) renderFeedPopup(); }, 60_000);
 
-// لو الـAPI بيدعم مراقبة المتغيّر المشترك
+// راقب تغيّر متغير الحالة المشترك (لو متاح)
 (WA.state as any)?.onVariableChange?.(FEED_KEY)?.subscribe?.(() => { if (feedPopupOpen) renderFeedPopup(); });
 
 // ------------------- UI helpers -------------------
 function showHelpToast(): void {
-  WA.ui.displayActionMessage({
-    message: "من قائمة WorkAdventure: Wave → Send Wave / Open Feed",
+  (WA.ui as any).displayActionMessage({
+    message: "من القائمة: 👋 Wave: Send — 📜 Wave: Open Feed",
     callback: () => {}
   });
 }
@@ -181,7 +187,7 @@ function showHelpToast(): void {
 async function sendWaveTo(target: any): Promise<void> {
   const me = await getSelf();
   const myPos = await getPositionSafe();
-  const payload: WavePayloadBase = {
+  const payload: WavePayload = {
     type: "wave",
     fromId: me.id,
     fromName: me.name,
@@ -190,7 +196,7 @@ async function sendWaveTo(target: any): Promise<void> {
     fromPos: myPos || undefined,
     at: nowIso(),
   };
-  WA.event.broadcast(WAVE_EVENT, payload);
+  (WA.event as any).broadcast(WAVE_EVENT, payload);
   await pushToFeed(payload);
   try {
     (WA.chat as any)?.sendChatMessage?.(`👋 ${me.name} نادى على ${payload.toName}`, "WaveBot");
@@ -199,9 +205,9 @@ async function sendWaveTo(target: any): Promise<void> {
 
 let incomingPopupHandle: any | null = null;
 
-function showIncomingWaveToast(data: WavePayloadBase): void {
+function showIncomingWaveToast(data: WavePayload): void {
   try { incomingPopupHandle?.close?.(); } catch {}
-  incomingPopupHandle = WA.ui.openPopup(
+  incomingPopupHandle = (WA.ui as any).openPopup(
     INCOMING_POPUP_ID,
     `👋 ${data.fromName} نادى عليك — (${timeAgo(data.at)})`,
     [
@@ -216,7 +222,7 @@ function showIncomingWaveToast(data: WavePayloadBase): void {
             ackByName: me.name,
             ackAt: nowIso()
           };
-          WA.event.broadcast(WAVE_ACK_EVENT, ack);
+          (WA.event as any).broadcast(WAVE_ACK_EVENT, ack);
           await pushToFeed(ack);
           try { incomingPopupHandle?.close?.(); } catch {}
         }
@@ -232,7 +238,7 @@ function showIncomingWaveToast(data: WavePayloadBase): void {
             goByName: me.name,
             goAt: nowIso()
           };
-          WA.event.broadcast(WAVE_GO_EVENT, go);
+          (WA.event as any).broadcast(WAVE_GO_EVENT, go);
           await pushToFeed(go);
 
           const targetPos = data.fromPos;
@@ -244,9 +250,9 @@ function showIncomingWaveToast(data: WavePayloadBase): void {
                 (WA.player as any).moveTo(targetPos.x, targetPos.y);
               } else if ((WA.camera as any)?.set) {
                 (WA.camera as any).set(targetPos.x, targetPos.y);
-                WA.ui.displayActionMessage({ message: "تم تحديد مكانه على الخريطة 🔖", callback: () => {} });
+                (WA.ui as any).displayActionMessage({ message: "تم تحديد مكانه على الخريطة 🔖", callback: () => {} });
               } else {
-                WA.ui.displayActionMessage({ message: "تعذّر التحريك—اتّبع الخريطة يدويًا", callback: () => {} });
+                (WA.ui as any).displayActionMessage({ message: "تعذّر التحريك—اتّبع الخريطة يدويًا", callback: () => {} });
               }
             }
           } catch (e) {
@@ -261,39 +267,36 @@ function showIncomingWaveToast(data: WavePayloadBase): void {
 }
 
 // ------------------- Events -------------------
-WA.event.on(WAVE_EVENT).subscribe((raw: any) => {
-  const data = raw as WavePayloadBase;
-  // سجل للجميع
+(WA.event as any).on(WAVE_EVENT).subscribe((raw: any) => {
+  const data = raw as WavePayload;
   pushToFeed(data);
-  // لو أنا الهدف → أظهر التوست
   const myId = (WA.player as any)?.id;
   if (data.toId === myId) showIncomingWaveToast(data);
 });
 
-WA.event.on(WAVE_ACK_EVENT).subscribe((raw: any) => {
+(WA.event as any).on(WAVE_ACK_EVENT).subscribe((raw: any) => {
   const data = raw as WaveAckPayload;
   pushToFeed(data);
-  WA.ui.displayActionMessage({
+  (WA.ui as any).displayActionMessage({
     message: `👋 ${data.ackByName} رد على Wave من ${data.fromName} — (${timeAgo(data.ackAt)})`,
     callback: () => {}
   });
 });
 
-WA.event.on(WAVE_GO_EVENT).subscribe((raw: any) => {
+(WA.event as any).on(WAVE_GO_EVENT).subscribe((raw: any) => {
   const data = raw as WaveGoPayload;
   pushToFeed(data);
-  WA.ui.displayActionMessage({
+  (WA.ui as any).displayActionMessage({
     message: `🚶 ${data.goByName} رايح لـ ${data.fromName} — (${timeAgo(data.goAt)})`,
     callback: () => {}
   });
 });
 
-// ------------------- Triggers (no keydown; use menu commands) -------------------
-// زرار في قائمة WA (عادة بتظهر في الجنب/القائمة)
-WA.ui.registerMenuCommand?.("👋 Wave: Send", async () => {
+// ------------------- Triggers (Menu commands) -------------------
+(WA.ui as any).registerMenuCommand?.("👋 Wave: Send", async () => {
   const target = await nearestPlayer();
   if (!target) {
-    WA.ui.openPopup("wave-none", "لا يوجد لاعبون بالقرب لإرسال Wave.", [
+    (WA.ui as any).openPopup("wave-none", "لا يوجد لاعبون بالقرب لإرسال Wave.", [
       { label: "حسنا", callback: () => {} }
     ]);
     return;
@@ -301,18 +304,18 @@ WA.ui.registerMenuCommand?.("👋 Wave: Send", async () => {
   await sendWaveTo(target);
 });
 
-WA.ui.registerMenuCommand?.("📜 Wave: Open Feed", () => {
+(WA.ui as any).registerMenuCommand?.("📜 Wave: Open Feed", () => {
   openFeed();
 });
 
-// Hint عند دخول زون مساعدة (اختياري): استخدم WA.room.onEnterZone
+// Hint عند دخول زون اسمها wave-hud (اختياري)
 (WA.room as any)?.onEnterZone?.(HELP_ZONE_NAME, () => showHelpToast());
 
-// رسالة ترحيب بسيطة بعد init
+// رسالة ترحيب بعد init
 WA.onInit().then(() => {
   setTimeout(() => {
-    WA.ui.displayActionMessage({
-      message: "Wave جاهز: من القائمة اختر 👋 Wave: Send / 📜 Wave: Open Feed",
+    (WA.ui as any).displayActionMessage({
+      message: "Wave جاهز: من القائمة اختر 👋 Wave: Send — 📜 Wave: Open Feed",
       callback: () => {}
     });
   }, 800);
