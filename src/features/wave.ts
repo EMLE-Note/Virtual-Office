@@ -1,8 +1,7 @@
-// src/features/wave.ts
-// Floating "👋 Wave" button -> choose player -> broadcast wave (no replies)
-export {}; // required for --isolatedModules
+// Wave-only via Zone + ActionMessage (SPACE to open list)
+export {}; // for --isolatedModules
 
-// ---------- Types ----------
+// ====== Types & consts ======
 interface Position { x: number; y: number; }
 interface WaveEvent {
   type: "wave";
@@ -13,12 +12,10 @@ interface WaveEvent {
   at: string;              // ISO
   fromPos?: Position | null;
 }
-
-// ---------- Consts ----------
 const WAVE_EVENT = "wave:event";
-const FLOAT_ID = "wa-float-wave-btn";
+const HUD_ZONE   = "wave-hud"; // لازم تعمل Zone بالاسم ده على الخريطة
 
-// ---------- Utils ----------
+// ====== Utils ======
 const nowIso = () => new Date().toISOString();
 
 async function me() {
@@ -47,10 +44,10 @@ async function listPlayers(): Promise<any[]> {
   return [];
 }
 
-// ---------- Core ----------
+// ====== Core ======
 async function sendWave(target: any) {
   const self = await me();
-  const pos = await myPos();
+  const pos  = await myPos();
   const evt: WaveEvent = {
     type: "wave",
     fromId: self.id,
@@ -68,82 +65,69 @@ async function sendWave(target: any) {
   const w = raw as WaveEvent;
   (WA.ui as any).displayActionMessage({
     message: `👋 ${w.fromName} نادى على ${w.toName}`,
-    callback: async () => {},
+    callback: async () => {}, // Promise<void>
   });
 });
 
-// ---------- UI: popup لاختيار شخص ----------
-function openChoosePlayerPopup() {
-  (async () => {
-    const self = await me();
-    const players = (await listPlayers()).filter((p: any) => p.id !== self.id);
+// Popup لاختيار شخص
+async function openChoosePlayerPopup() {
+  const self = await me();
+  const players = (await listPlayers()).filter((p: any) => p.id !== self.id);
 
-    if (!players.length) {
-      (WA.ui as any).openPopup("wave-none", "لا يوجد لاعبين آخرين الآن.", [
-        { label: "حسنًا", callback: async () => {} },
-      ]);
-      return;
-    }
+  if (!players.length) {
+    (WA.ui as any).openPopup("wave-none", "لا يوجد لاعبين آخرين الآن.", [
+      { label: "حسنًا", callback: async () => {} },
+    ]);
+    return;
+  }
 
-    const MAX = 12;
-    const buttons = players.slice(0, MAX).map((p: any) => ({
-      label: `👋 ${p.name || "بدون اسم"}`,
-      callback: async () => { await sendWave(p); },
-    }));
+  const MAX = 12;
+  const buttons = players.slice(0, MAX).map((p: any) => ({
+    label: `👋 ${p.name || "بدون اسم"}`,
+    callback: async () => { await sendWave(p); },
+  }));
 
-    if (players.length > MAX) {
-      buttons.push({
-        label: `+${players.length - MAX} آخرين…`,
-        callback: async () => {
-          (WA.ui as any).displayActionMessage({
-            message: "القائمة طويلة—اختر الأقرب لك.",
-            callback: async () => {},
-          });
-        },
-      } as any);
-    }
+  if (players.length > MAX) {
+    buttons.push({
+      label: `+${players.length - MAX} آخرين…`,
+      callback: async () => {
+        (WA.ui as any).displayActionMessage({
+          message: "القائمة طويلة—اختر الأقرب لك.",
+          callback: async () => {},
+        });
+      },
+    } as any);
+  }
 
-    (WA.ui as any).openPopup(
-      "wave-choose-player",
-      "اختَر الشخص اللي عايز تنادي عليه:",
-      buttons as any
-    );
-  })();
+  (WA.ui as any).openPopup(
+    "wave-choose-player",
+    "اختَر الشخص اللي عايز تنادي عليه:",
+    buttons as any
+  );
 }
 
-// ---------- Floating button ----------
-function createFloatingWaveButton() {
-  // لو موجود بالفعل بلاش نكرره
-  if (document.getElementById(FLOAT_ID)) return;
-
-  const style = document.createElement('style');
-  style.textContent = `
-    #${FLOAT_ID} {
-      position: fixed; right: 20px; bottom: 20px; z-index: 99999;
-      padding: 10px 14px; border: none; border-radius: 10px;
-      background: #3b82f6; color: #fff; font-weight: 600; cursor: pointer;
-      box-shadow: 0 6px 18px rgba(0,0,0,.18);
-    }
-    #${FLOAT_ID}:hover { filter: brightness(1.06); }
-  `;
-  document.head.appendChild(style);
-
-  const btn = document.createElement('button');
-  btn.id = FLOAT_ID;
-  btn.textContent = '👋 Wave';
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    openChoosePlayerPopup();
-  });
-  document.body.appendChild(btn);
-}
-
-// ---------- Init ----------
+// ====== Hook على الزون: Enter → action message (SPACE) ======
 WA.onInit().then(() => {
-  createFloatingWaveButton();
+  // لما تدخل زون wave-hud يظهر تنبيه مع "زر فعل" (SPACE/Enter)
+  (WA.room as any)?.onEnterZone?.(HUD_ZONE, () => {
+    (WA.ui as any).displayActionMessage({
+      message: "اضغط مسافة لفتح قائمة 👋 Wave",
+      callback: async () => { await openChoosePlayerPopup(); }, // يُستدعى عند الضغط على Space
+    });
+  });
+
+  // (اختياري) عند الخروج من الزون نعرض رسالة خفيفة
+  (WA.room as any)?.onLeaveZone?.(HUD_ZONE, () => {
+    (WA.ui as any).displayActionMessage({
+      message: "خرجت من منطقة Wave.",
+      callback: async () => {},
+    });
+  });
+
+  // تلميح مرة واحدة بعد التحميل
   setTimeout(() => {
     (WA.ui as any).displayActionMessage({
-      message: "اضغط زر 👋 Wave (أسفل يمين) ثم اختر الموظف.",
+      message: "ادخل منطقة Wave ثم اضغط مسافة لعمل 👋",
       callback: async () => {},
     });
   }, 700);
