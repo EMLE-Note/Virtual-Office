@@ -1953,11 +1953,6 @@
                          "name":"scope",
                          "type":"string",
                          "value":"room"
-                        }, 
-                        {
-                         "name":"type",
-                         "type":"string",
-                         "value":"boolean"
                         }],
                  "rotation":0,
                  "type":"variable",
