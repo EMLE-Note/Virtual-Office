@@ -67,7 +67,7 @@ async function sendWave(target: any) {
   const w = raw as WaveEvent;
   (WA.ui as any).displayActionMessage({
     message: `👋 ${w.fromName} نادى على ${w.toName}`,
-    callback: () => {},
+    callback: async () => {}, // make it Promise<void>
   });
 });
 
@@ -79,7 +79,7 @@ function openChoosePlayerPopup() {
 
     if (!players.length) {
       (WA.ui as any).openPopup("wave-none", "لا يوجد لاعبين آخرين الآن.", [
-        { label: "حسنًا", callback: () => {} },
+        { label: "حسنًا", callback: async () => {} }, // Promise<void>
       ]);
       return;
     }
@@ -96,19 +96,19 @@ function openChoosePlayerPopup() {
     if (players.length > MAX) {
       buttons.push({
         label: `+${players.length - MAX} آخرين…`,
-        callback: () => {
+        callback: async () => {
           (WA.ui as any).displayActionMessage({
             message: "القائمة طويلة—اختر الأقرب لك.",
-            callback: () => {},
+            callback: async () => {},
           });
         },
-      });
+      } as any);
     }
 
     (WA.ui as any).openPopup(
       "wave-choose-player",
       "اختَر الشخص اللي عايز تنادي عليه:",
-      buttons
+      buttons as any
     );
   })();
 }
@@ -121,7 +121,7 @@ WA.onInit().then(() => {
   setTimeout(() => {
     (WA.ui as any).displayActionMessage({
       message: "من القائمة الجانبية اختر: 👋 Wave someone — ثم اختر الموظف.",
-      callback: () => {},
+      callback: async () => {},
     });
   }, 800);
 });
