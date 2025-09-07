@@ -2571,7 +2571,7 @@
                 {
                  "height":64,
                  "id":71,
-                 "name":"jitsiMeetingRoom-3",
+                 "name":"occ:jitsiMeetingRoom-3",
                  "rotation":0,
                  "type":"variable",
                  "visible":true,
