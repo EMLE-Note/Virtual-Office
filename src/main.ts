@@ -2,6 +2,7 @@
 
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 import './features/roomLight';
+import './features/heartbeat';
 
 console.log('Script started successfully');
 
