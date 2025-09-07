@@ -1,8 +1,8 @@
 // src/features/heartbeat.ts
 import type { WorkAdventureApi } from "@workadventure/iframe-api-typings";
 
-// حط الـ Production URL + (اختياري) مفتاح في الـ query
-const WEBHOOK = 'https://n8n.emlenotes.com/webhook/heartbeat';
+// Production URL (يفضّل تضيف مفتاح بسيط في الـ query)
+const WEBHOOK = 'https://n8n.emlenotes.com/webhook-test/heartbeat';
 
 const HEARTBEAT_MS = 10 * 1000;       // نص دقيقة
 const GAP_MS = 10 * 60 * 1000;        // 10 دقايق
@@ -19,24 +19,27 @@ function ensureAnonId(): string {
   return v;
 }
 
-async function postJSON(bodyText: string, beacon = false) {
+// ❗️رجّع Promise<void> وتأكد كل المسارات بتنتهي بـ return
+async function postJSON(bodyText: string, beacon = false): Promise<void> {
   if (beacon && 'sendBeacon' in navigator) {
     const ok = navigator.sendBeacon(WEBHOOK, new Blob([bodyText], { type: 'text/plain;charset=UTF-8' }));
     console.log('🔔 beacon sent?', ok);
-    return ok;
+    return;
   }
+
   try {
     const res = await fetch(WEBHOOK, {
       method: 'POST',
-      // 👇 ده يمنع الـ preflight
+      // نستخدم text/plain لتفادي preflight CORS
       headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
       body: bodyText,
       keepalive: true,
     });
     console.log('➡️ heartbeat POST →', res.status, res.statusText);
-    return res;
+    return;
   } catch (err) {
     console.error('🚫 fetch error:', err);
+    return;
   }
 }
 
@@ -95,6 +98,7 @@ export async function startHeartbeat(WA: WorkAdventureApi) {
   // قبل الإغلاق
   window.addEventListener('beforeunload', () => {
     const payload = makePayload(WA);
+    // sendBeacon لا يعمل مع await، فمش محتاجين ننتظر
     postJSON(JSON.stringify(payload), true);
   });
 }
