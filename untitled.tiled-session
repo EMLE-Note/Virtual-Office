@@ -1,5 +1,5 @@
 {
-    "activeFile": "office2.tmj",
+    "activeFile": "office.tmj",
     "expandedProjectPaths": [
     ],
     "fileStates": {
@@ -148,6 +148,168 @@
         "C:/Users/user/Downloads/office2.tmj#walls": {
             "scaleInDock": 1
         },
+        "conference.tmj": {
+            "scale": 1.3619140625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 384.3854868779579,
+                "y": 223.94951957550552
+            }
+        },
+        "conference.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "conference.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj": {
+            "expandedObjectLayers": [
+                65
+            ],
+            "scale": 0.75,
+            "selectedLayer": 16,
+            "viewCenter": {
+                "x": 3471.333333333333,
+                "y": 2350.6666666666665
+            }
+        },
+        "emle-office.tmj#GRASS": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#decor": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#floor wood": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#floor-test": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#floor3": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#furniture1": {
+            "scaleInDock": 1
+        },
+        "emle-office.tmj#walls": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj": {
+            "scale": 0.18785021551724138,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2781.4713896457765,
+                "y": 2193.236770400115
+            }
+        },
+        "emle-world.tmj#GRASS": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#Island": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#decor": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#floor wood": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#floor-test": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#floor3": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#furniture1": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#walls": {
+            "scaleInDock": 1
+        },
         "office.tmj": {
             "expandedGroupLayers": [
                 55,
@@ -160,8 +322,8 @@
             "scale": 1,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 512,
-                "y": 443.5
+                "x": 1011.5,
+                "y": 454
             }
         },
         "office.tmj#WA_Decoration": {
@@ -199,19 +361,19 @@
         },
         "office2.tmj": {
             "expandedGroupLayers": [
+                54,
                 52,
-                55,
                 51,
-                54
+                55
             ],
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 0.33,
-            "selectedLayer": 9,
+            "scale": 0.5,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 477.27272727272725,
-                "y": 300
+                "x": 1129,
+                "y": 864
             }
         },
         "office2.tmj#GRASS": {
@@ -270,11 +432,14 @@
     "last.objectTemplatePath": "C:/Users/user/Documents/GitHub/map_v0.1/template",
     "openFiles": [
         "office.tmj",
-        "office2.tmj"
+        "emle-office.tmj",
+        "conference.tmj"
     ],
     "project": "untitled.tiled-project",
     "property.type": "string",
     "recentFiles": [
+        "emle-office.tmj",
+        "conference.tmj",
         "office.tmj",
         "office2.tmj",
         "C:/Users/user/Downloads/office2.tmj",
