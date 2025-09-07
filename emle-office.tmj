@@ -2582,7 +2582,7 @@
                 {
                  "height":64,
                  "id":72,
-                 "name":"occ:jitsiMeetingRoom-2",
+                 "name":"occ:jitsiMeetingRoom-4",
                  "rotation":0,
                  "type":"variable",
                  "visible":true,
@@ -2593,7 +2593,7 @@
                 {
                  "height":64,
                  "id":73,
-                 "name":"occ:jitsiMeetingRoom-2",
+                 "name":"occ:jitsiMeetingRoom-5",
                  "rotation":0,
                  "type":"variable",
                  "visible":true,
