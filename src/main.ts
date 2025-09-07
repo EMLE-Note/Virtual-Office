@@ -10,6 +10,9 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
         const rooms = [
             { area: "jitsiMeetingRoom", layer: "lights/jitsiMeetingRoom-dark" },
             { area: "jitsiMeetingRoom-2", layer: "lights/dark1" },
+            { area: "jitsiMeetingRoom-3", layer: "lights/dark2" },
+            { area: "jitsiMeetingRoom-4", layer: "lights/dark3" },
+            { area: "jitsiMeetingRoom-5", layer: "lights/dark4" },
             // تقدر تضيف أي عدد غرف هنا
         ];
 
