@@ -1,26 +1,42 @@
-// src/heartbeat.ts
+// src/features/heartbeat.ts
 import type { WorkAdventureApi } from "@workadventure/iframe-api-typings";
 
-const WEBHOOK = 'https://n8n.emlenotes.com/webhook/7eab5dcd-b0bb-46ff-bf0d-8a712b5dbda5'; // ✏️ عدّل
-const API_KEY = '';                  // ✏️ لو محتاج
+const WEBHOOK = 'https://your-n8n-domain/webhook/XXXX'; // ✏️ عدّل
+const API_KEY: string | null = 'YOUR_SECRET_OPTIONAL';  // ✏️ أو خليه null لو مش عايزه
 
-const HEARTBEAT_MS = 0.5 * 60 * 1000;   // 5 دقايق
-const GAP_MS = 10 * 60 * 1000;        // 10 دقايق
+const HEARTBEAT_MS = 0.5 * 60 * 1000; // 5 دقايق
+const GAP_MS = 10 * 60 * 1000;      // 10 دقايق
 
 const nowIso = () => new Date().toISOString();
 
+function ensureAnonId(): string {
+  const k = 'anon_id';
+  let v = localStorage.getItem(k);
+  if (!v) {
+    // randomUUID متاحة بمعظم المتصفحات الحديثة
+    v = (crypto && 'randomUUID' in crypto) ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`;
+    localStorage.setItem(k, v);
+  }
+  return v;
+}
+
 function postJSON(data: unknown, beacon = false) {
   const body = JSON.stringify(data);
+
   if (beacon && 'sendBeacon' in navigator) {
     const blob = new Blob([body], { type: 'application/json' });
     return navigator.sendBeacon(WEBHOOK, blob);
   }
+
+  // 👇 بناء الهيدرز كـ Record<string,string> لتفادي TS2322
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+  };
+  if (API_KEY) headers['X-Api-Key'] = API_KEY;
+
   return fetch(WEBHOOK, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      ...(API_KEY ? { 'X-Api-Key': API_KEY } : {})
-    },
+    headers,            // خلاص بقى نوعها متوافق مع HeadersInit
     body,
     keepalive: true,
   }).catch(console.error);
@@ -39,7 +55,7 @@ function makePayload(WA: WorkAdventureApi, action: 'ping') {
       gapMs: GAP_MS,
     },
     player: {
-      id: player.id ?? localStorage.getItem('anon_id') ?? crypto.randomUUID(),
+      id: player.id ?? ensureAnonId(),
       name: player.name,
       language: player.language,
       tags: player.tags,
@@ -47,8 +63,9 @@ function makePayload(WA: WorkAdventureApi, action: 'ping') {
     room: {
       id: room.id,
       mapUrl: room.mapURL,
-      worldUrl: room.worldURL,
-    }
+      // ❌ worldURL غير متوفرة في الـ typings — تم حذفها لتفادي TS2339
+      // worldUrl: (room as any).worldURL ?? null,
+    },
   };
 }
 
@@ -68,7 +85,7 @@ export async function startHeartbeat(WA: WorkAdventureApi) {
   postJSON(first);
   localStorage.setItem(`lastSent:${roomId}`, first.sentAt);
 
-  // Loop
+  // Loop كل 5 دقايق
   setInterval(() => {
     const last = localStorage.getItem(`lastSent:${roomId}`);
     if (!last || Date.now() - Date.parse(last) > GAP_MS) {
@@ -79,7 +96,7 @@ export async function startHeartbeat(WA: WorkAdventureApi) {
     localStorage.setItem(`lastSent:${roomId}`, payload.sentAt);
   }, HEARTBEAT_MS);
 
-  // قبل الإغلاق
+  // قبل الإغلاق — beacon
   window.addEventListener('beforeunload', () => {
     const payload = makePayload(WA, 'ping');
     postJSON(payload, true);
