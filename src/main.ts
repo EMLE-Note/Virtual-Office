@@ -1,7 +1,23 @@
 /// <reference types="@workadventure/iframe-api-typings" />
 
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
-import './features/roomLight';
+
+        /// <reference types="@workadventure/iframe-api-typings" />
+        import { initAllRoomLights } from "./lights";
+
+        WA.onInit().then(async () => {
+        // هنا بتحط كل الغرف في Array
+        const rooms = [
+            { area: "jitsiMeetingRoom", layer: "lights/jitsiMeetingRoom-dark" },
+            { area: "jitsiMeetingRoom-2", layer: "lights/dark1" },
+            // تقدر تضيف أي عدد غرف هنا
+        ];
+
+        await initAllRoomLights(rooms);
+        });
+
+//import './features/roomLight';
+
 import './features/heartbeat';
 
 console.log('Script started successfully');
