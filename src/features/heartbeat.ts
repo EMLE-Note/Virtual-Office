@@ -1,8 +1,8 @@
 // src/features/heartbeat.ts
 import type { WorkAdventureApi } from "@workadventure/iframe-api-typings";
 
-const WEBHOOK = 'https://your-n8n-domain/webhook/XXXX'; // ✏️ عدّل
-const API_KEY: string | null = 'YOUR_SECRET_OPTIONAL';  // ✏️ أو خليه null لو مش عايزه
+const WEBHOOK = 'https://n8n.emlenotes.com/webhook-test/heartbeat'; // ✏️ عدّل
+const API_KEY: string | null = '';  // ✏️ أو خليه null لو مش عايزه
 
 const HEARTBEAT_MS = 0.5 * 60 * 1000; // 5 دقايق
 const GAP_MS = 10 * 60 * 1000;      // 10 دقايق
