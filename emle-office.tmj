@@ -2556,6 +2556,38 @@
                  "width":221,
                  "x":3258.33333333333,
                  "y":2511
+                }, 
+                {
+                 "height":64,
+                 "id":70,
+                 "name":"occ:jitsiMeetingRoom-2",
+                 "properties":[
+                        {
+                         "name":"default",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"persist",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"public",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"scope",
+                         "type":"string",
+                         "value":"room"
+                        }],
+                 "rotation":0,
+                 "type":"variable",
+                 "visible":true,
+                 "width":99,
+                 "x":4458.5,
+                 "y":2702
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -2595,7 +2627,7 @@
          "y":0
         }],
  "nextlayerid":71,
- "nextobjectid":70,
+ "nextobjectid":71,
  "orientation":"orthogonal",
  "properties":[
         {
