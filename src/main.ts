@@ -3,7 +3,7 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
         /// <reference types="@workadventure/iframe-api-typings" />
-        import { initAllRoomLights } from "./lights";
+        import { initAllRoomLights } from "./features/roomLight";
 
         WA.onInit().then(async () => {
         // هنا بتحط كل الغرف في Array
