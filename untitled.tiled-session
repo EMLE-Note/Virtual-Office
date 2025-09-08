@@ -191,9 +191,9 @@
         },
         "emle-office.tmj": {
             "expandedGroupLayers": [
-                55,
                 52,
-                51
+                51,
+                55
             ],
             "expandedObjectLayers": [
                 65
@@ -320,8 +320,8 @@
         },
         "office.tmj": {
             "expandedGroupLayers": [
-                55,
                 51,
+                55,
                 54
             ],
             "expandedObjectLayers": [
