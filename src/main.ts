@@ -22,6 +22,12 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 //import './features/roomLight';
 
 import './features/heartbeat';
+import { initMapPlayerCounter } from "./features/mapCounter";
+
+WA.onInit().then(() => {
+  initMapPlayerCounter("txt:mapCount");
+});
+
 
 console.log('Script started successfully');
 

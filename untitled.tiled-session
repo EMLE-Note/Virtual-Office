@@ -1,8 +1,11 @@
 {
-    "activeFile": "office.tmj",
+    "activeFile": "emle-office.tmj",
     "expandedProjectPaths": [
     ],
     "fileStates": {
+        "": {
+            "scaleInDock": 1.5
+        },
         "C:/Users/user/Documents/tiled/map360/tmx/Office Map.tmj": {
             "scale": 0.75,
             "selectedLayer": 4,
@@ -187,14 +190,18 @@
             "scaleInDock": 1
         },
         "emle-office.tmj": {
+            "expandedGroupLayers": [
+                52,
+                51
+            ],
             "expandedObjectLayers": [
                 65
             ],
-            "scale": 0.75,
-            "selectedLayer": 16,
+            "scale": 4,
+            "selectedLayer": 21,
             "viewCenter": {
-                "x": 3471.333333333333,
-                "y": 2350.6666666666665
+                "x": 3301.5,
+                "y": 2043.25
             }
         },
         "emle-office.tmj#GRASS": {
@@ -228,10 +235,10 @@
             "scaleInDock": 1
         },
         "emle-office.tmj#WA_User_Interface": {
-            "scaleInDock": 1
+            "scaleInDock": 0.5
         },
         "emle-office.tmj#decor": {
-            "scaleInDock": 1
+            "scaleInDock": 0.33
         },
         "emle-office.tmj#floor wood": {
             "scaleInDock": 1
@@ -243,7 +250,7 @@
             "scaleInDock": 1
         },
         "emle-office.tmj#furniture1": {
-            "scaleInDock": 1
+            "scaleInDock": 1.5
         },
         "emle-office.tmj#walls": {
             "scaleInDock": 1
@@ -252,8 +259,8 @@
             "scale": 0.18785021551724138,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 2781.4713896457765,
-                "y": 2193.236770400115
+                "x": 2784.1330847554855,
+                "y": 2190.5750752904055
             }
         },
         "emle-world.tmj#GRASS": {
@@ -322,8 +329,8 @@
             "scale": 1,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 1011.5,
-                "y": 454
+                "x": 512,
+                "y": 443.5
             }
         },
         "office.tmj#WA_Decoration": {
@@ -432,15 +439,16 @@
     "last.objectTemplatePath": "C:/Users/user/Documents/GitHub/map_v0.1/template",
     "openFiles": [
         "office.tmj",
-        "emle-office.tmj",
-        "conference.tmj"
+        "emle-world.tmj",
+        "emle-office.tmj"
     ],
     "project": "untitled.tiled-project",
     "property.type": "string",
     "recentFiles": [
+        "office.tmj",
+        "emle-world.tmj",
         "emle-office.tmj",
         "conference.tmj",
-        "office.tmj",
         "office2.tmj",
         "C:/Users/user/Downloads/office2.tmj",
         "C:/Users/user/Downloads/office2 (2).tmj",
