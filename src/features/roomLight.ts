@@ -5,6 +5,14 @@ export type RoomConfig = {
   area: string;
   layer: string;
 };
+// هنا نعرف الغرف كلها في Array واحدة
+const rooms: RoomConfig[] = [
+  { area: "jitsiMeetingRoom", layer: "lights/jitsiMeetingRoom-dark" },
+  { area: "jitsiMeetingRoom-2", layer: "lights/dark1" },
+  { area: "jitsiMeetingRoom-3", layer: "lights/dark2" },
+  { area: "jitsiMeetingRoom-4", layer: "lights/dark3" },
+  { area: "jitsiMeetingRoom-5", layer: "lights/dark4" },
+];
 
 function initRoomLight(config: RoomConfig) {
   const TAG = `[roomLight:${config.area}]`;
@@ -83,4 +91,5 @@ export async function initAllRoomLights(rooms: RoomConfig[]) {
   for (const room of rooms) {
     initRoomLight(room);
   }
+  
 }
