@@ -1,4 +1,3 @@
-// src/features/mapCounter.ts
 /// <reference types="@workadventure/iframe-api-typings" />
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
@@ -9,13 +8,16 @@ export async function initMapPlayerCounter(textObject: string) {
 
   function updateText(count: number) {
     WA.room.setProperty(textObject, "text", `Players on map: ${count}`);
+    console.log(`[DBG] Map count = ${count}`);
   }
 
+  // استمع لأي تغيّر
   WA.state.onVariableChange(COUNTER_KEY).subscribe((val: unknown) => {
     const n = typeof val === "number" ? val : 0;
     updateText(n);
   });
 
+  // قيمة البداية
   let current = (WA.state.loadVariable(COUNTER_KEY) as number) ?? null;
   if (current === null) {
     WA.state.saveVariable(COUNTER_KEY, 0);
@@ -23,7 +25,7 @@ export async function initMapPlayerCounter(textObject: string) {
   }
   updateText(current);
 
-  // تسجيل أول دخول (once)
+  // تسجيل أول دخول
   let joined = false;
   WA.player.onPlayerMove(() => {
     if (!joined) {
@@ -33,8 +35,8 @@ export async function initMapPlayerCounter(textObject: string) {
     }
   });
 
-  // تسجيل خروج
-  WA.onLeave().then(() => {
+  // تسجيل خروج (قبل إغلاق التبويب/الانتقال)
+  window.addEventListener("beforeunload", () => {
     const n = (WA.state.loadVariable(COUNTER_KEY) as number) ?? 0;
     WA.state.saveVariable(COUNTER_KEY, Math.max(0, n - 1));
   });
