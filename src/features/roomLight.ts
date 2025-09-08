@@ -16,6 +16,7 @@ const rooms: RoomConfig[] = [
   { area: "jitsiMeetingRoom-d", layer: "lights/darkd" },
   { area: "jitsiMeetingRoom-c", layer: "lights/darkc" },
   { area: "jitsiMeetingRoom-b", layer: "lights/darkb" },
+  { area: "jitsiMeetingRoom-a", layer: "lights/darka" },
 ];
 
 function initRoomLight(config: RoomConfig) {
