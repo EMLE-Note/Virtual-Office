@@ -2655,7 +2655,7 @@
                  "y":2874.20583216457
                 }, 
                 {
-                 "height":15.25,
+                 "height":22.8863636363637,
                  "id":74,
                  "name":"T1",
                  "rotation":0,
@@ -2663,17 +2663,18 @@
                     {
                      "bold":true,
                      "color":"#ffffff",
+                     "fontfamily":"Press Start 2P",
                      "halign":"center",
-                     "pixelsize":6,
-                     "text":"HanemOffice2",
+                     "pixelsize":8,
+                     "text":"HanemOffice",
                      "valign":"center",
                      "wrap":true
                     },
                  "type":"",
                  "visible":true,
-                 "width":23.75,
-                 "x":3300.25,
-                 "y":1989.25
+                 "width":48.840909090909,
+                 "x":3289.52272727273,
+                 "y":1984.88636363636
                 }, 
                 {
                  "height":19,
@@ -2710,8 +2711,8 @@
                  "type":"",
                  "visible":true,
                  "width":306.515151515151,
-                 "x":3385.16666666667,
-                 "y":2454.5
+                 "x":3505.83333333333,
+                 "y":2427.16666666667
                 }],
          "opacity":1,
          "type":"objectgroup",

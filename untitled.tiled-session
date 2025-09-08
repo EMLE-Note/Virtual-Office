@@ -191,17 +191,18 @@
         },
         "emle-office.tmj": {
             "expandedGroupLayers": [
+                55,
                 52,
                 51
             ],
             "expandedObjectLayers": [
                 65
             ],
-            "scale": 4,
+            "scale": 5.5,
             "selectedLayer": 21,
             "viewCenter": {
-                "x": 3301.5,
-                "y": 2043.25
+                "x": 3315.6363636363635,
+                "y": 2044.5454545454545
             }
         },
         "emle-office.tmj#GRASS": {
@@ -238,7 +239,7 @@
             "scaleInDock": 0.5
         },
         "emle-office.tmj#decor": {
-            "scaleInDock": 0.33
+            "scaleInDock": 0.75
         },
         "emle-office.tmj#floor wood": {
             "scaleInDock": 1
@@ -320,8 +321,8 @@
         "office.tmj": {
             "expandedGroupLayers": [
                 55,
-                54,
-                51
+                51,
+                54
             ],
             "expandedObjectLayers": [
                 2
