@@ -1660,6 +1660,23 @@
                  "width":32,
                  "x":4447.5,
                  "y":2915
+                }, 
+                {
+                 "height":32,
+                 "id":89,
+                 "name":"from-emle-world",
+                 "properties":[
+                        {
+                         "name":"start",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":32,
+                 "x":3163.33333333333,
+                 "y":2261
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -3315,7 +3332,7 @@
          "y":0
         }],
  "nextlayerid":75,
- "nextobjectid":89,
+ "nextobjectid":90,
  "orientation":"orthogonal",
  "properties":[
         {

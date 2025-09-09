@@ -202,11 +202,11 @@
                 65,
                 2
             ],
-            "scale": 2,
+            "scale": 0.5,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 4284.5,
-                "y": 2977.5
+                "x": 3842,
+                "y": 2728
             }
         },
         "emle-office.tmj#GRASS": {
@@ -267,8 +267,8 @@
             "scale": 1.5,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 3336.6666666666665,
-                "y": 2364
+                "x": 3942,
+                "y": 2394.6666666666665
             }
         },
         "emle-world.tmj#GRASS": {

@@ -1385,6 +1385,23 @@
                  "width":32,
                  "x":3364,
                  "y":2370
+                }, 
+                {
+                 "height":313.333333333333,
+                 "id":70,
+                 "name":"to-emle-world",
+                 "properties":[
+                        {
+                         "name":"exitUrl",
+                         "type":"string",
+                         "value":"emle-office.tmj#from-emle-world"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":32,
+                 "x":4095.33333333333,
+                 "y":2245.33333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1710,7 +1727,7 @@
          "y":0
         }],
  "nextlayerid":66,
- "nextobjectid":70,
+ "nextobjectid":71,
  "orientation":"orthogonal",
  "properties":[
         {
