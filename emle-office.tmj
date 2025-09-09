@@ -1603,7 +1603,7 @@
                         {
                          "name":"jitsiTrigger",
                          "type":"string",
-                         "value":"onenter"
+                         "value":"onaction"
                         }],
                  "rotation":0,
                  "type":"area",
@@ -1611,6 +1611,38 @@
                  "width":233,
                  "x":3130.16666666667,
                  "y":1775
+                }, 
+                {
+                 "height":194,
+                 "id":87,
+                 "name":"jitsiTrigger",
+                 "properties":[
+                        {
+                         "name":"focusable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"jitsiRoom",
+                         "type":"string",
+                         "value":"MeetingRoom11"
+                        }, 
+                        {
+                         "name":"jitsiTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"openUrl",
+                         "type":"string",
+                         "value":"https:\/\/meet.google.com\/landing"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":233,
+                 "x":3892.83333333333,
+                 "y":2781.66666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -3266,7 +3298,7 @@
          "y":0
         }],
  "nextlayerid":75,
- "nextobjectid":86,
+ "nextobjectid":88,
  "orientation":"orthogonal",
  "properties":[
         {
