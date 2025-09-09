@@ -1368,7 +1368,24 @@
          "draworder":"topdown",
          "id":2,
          "name":"floorLayer",
-         "objects":[],
+         "objects":[
+                {
+                 "height":32,
+                 "id":69,
+                 "name":"from-office",
+                 "properties":[
+                        {
+                         "name":"start",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":32,
+                 "x":3364,
+                 "y":2370
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -1693,7 +1710,7 @@
          "y":0
         }],
  "nextlayerid":66,
- "nextobjectid":69,
+ "nextobjectid":70,
  "orientation":"orthogonal",
  "properties":[
         {

@@ -1643,6 +1643,23 @@
                  "width":233,
                  "x":3892.83333333333,
                  "y":2781.66666666667
+                }, 
+                {
+                 "height":124,
+                 "id":88,
+                 "name":"to-conference",
+                 "properties":[
+                        {
+                         "name":"exitUrl",
+                         "type":"string",
+                         "value":"emle-worled.tmj#from-emle-office"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":32,
+                 "x":4447.5,
+                 "y":2915
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -3298,7 +3315,7 @@
          "y":0
         }],
  "nextlayerid":75,
- "nextobjectid":88,
+ "nextobjectid":89,
  "orientation":"orthogonal",
  "properties":[
         {

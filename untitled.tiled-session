@@ -152,10 +152,13 @@
             "scaleInDock": 1
         },
         "conference.tmj": {
+            "expandedObjectLayers": [
+                2
+            ],
             "scale": 1.3619140625,
-            "selectedLayer": 0,
+            "selectedLayer": 12,
             "viewCenter": {
-                "x": 384.3854868779579,
+                "x": 384.7526172379177,
                 "y": 223.94951957550552
             }
         },
@@ -196,13 +199,14 @@
                 51
             ],
             "expandedObjectLayers": [
-                65
+                65,
+                2
             ],
-            "scale": 0.75,
-            "selectedLayer": 16,
+            "scale": 1,
+            "selectedLayer": 12,
             "viewCenter": {
-                "x": 3490.6666666666665,
-                "y": 2050.6666666666665
+                "x": 4359,
+                "y": 2937
             }
         },
         "emle-office.tmj#GRASS": {
@@ -257,11 +261,11 @@
             "scaleInDock": 1
         },
         "emle-world.tmj": {
-            "scale": 0.18785021551724138,
-            "selectedLayer": 0,
+            "scale": 1.5,
+            "selectedLayer": 12,
             "viewCenter": {
-                "x": 2784.1330847554855,
-                "y": 2190.5750752904055
+                "x": 3312.6666666666665,
+                "y": 2368.6666666666665
             }
         },
         "emle-world.tmj#GRASS": {
@@ -331,7 +335,7 @@
             "selectedLayer": 12,
             "viewCenter": {
                 "x": 512,
-                "y": 443.5
+                "y": 444
             }
         },
         "office.tmj#WA_Decoration": {
