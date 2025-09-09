@@ -4,7 +4,7 @@
     ],
     "fileStates": {
         "": {
-            "scaleInDock": 1.5
+            "scaleInDock": 1
         },
         "C:/Users/user/Documents/tiled/map360/tmx/Office Map.tmj": {
             "scale": 0.75,
@@ -192,17 +192,17 @@
         "emle-office.tmj": {
             "expandedGroupLayers": [
                 52,
-                51,
-                55
+                55,
+                51
             ],
             "expandedObjectLayers": [
                 65
             ],
-            "scale": 5.5,
-            "selectedLayer": 21,
+            "scale": 0.75,
+            "selectedLayer": 16,
             "viewCenter": {
-                "x": 3315.6363636363635,
-                "y": 2044.5454545454545
+                "x": 3490.6666666666665,
+                "y": 2050.6666666666665
             }
         },
         "emle-office.tmj#GRASS": {
@@ -251,7 +251,7 @@
             "scaleInDock": 1
         },
         "emle-office.tmj#furniture1": {
-            "scaleInDock": 1.5
+            "scaleInDock": 3
         },
         "emle-office.tmj#walls": {
             "scaleInDock": 1
@@ -320,9 +320,9 @@
         },
         "office.tmj": {
             "expandedGroupLayers": [
-                51,
+                54,
                 55,
-                54
+                51
             ],
             "expandedObjectLayers": [
                 2
@@ -455,5 +455,9 @@
         "C:/Users/user/Downloads/office2 (2).tmj",
         "C:/Users/user/Documents/tiled/map360/tmx/Office Map.tmj"
     ],
-    "tileset.embedInMap": true
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 32,
+        "width": 16
+    }
 }
