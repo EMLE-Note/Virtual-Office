@@ -202,11 +202,11 @@
                 65,
                 2
             ],
-            "scale": 1,
+            "scale": 2,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 4359,
-                "y": 2937
+                "x": 4284.5,
+                "y": 2977.5
             }
         },
         "emle-office.tmj#GRASS": {
@@ -261,6 +261,9 @@
             "scaleInDock": 1
         },
         "emle-world.tmj": {
+            "expandedObjectLayers": [
+                2
+            ],
             "scale": 1.5,
             "selectedLayer": 12,
             "viewCenter": {

@@ -1652,7 +1652,7 @@
                         {
                          "name":"exitUrl",
                          "type":"string",
-                         "value":"emle-worled.tmj#from-emle-office"
+                         "value":"emle-world.tmj#from-emle-office"
                         }],
                  "rotation":0,
                  "type":"area",
