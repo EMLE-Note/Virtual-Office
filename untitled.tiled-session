@@ -194,9 +194,9 @@
         },
         "emle-office.tmj": {
             "expandedGroupLayers": [
+                51,
                 52,
-                55,
-                51
+                55
             ],
             "expandedObjectLayers": [
                 65,
@@ -261,14 +261,17 @@
             "scaleInDock": 1
         },
         "emle-world.tmj": {
+            "expandedGroupLayers": [
+                55
+            ],
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 1.5,
-            "selectedLayer": 12,
+            "scale": 0.33,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 3639.333333333333,
-                "y": 2379.333333333333
+                "x": 3493.939393939394,
+                "y": 821.2121212121212
             }
         },
         "emle-world.tmj#GRASS": {
@@ -327,9 +330,9 @@
         },
         "office.tmj": {
             "expandedGroupLayers": [
+                51,
                 54,
-                55,
-                51
+                55
             ],
             "expandedObjectLayers": [
                 2
@@ -338,7 +341,7 @@
             "selectedLayer": 12,
             "viewCenter": {
                 "x": 512,
-                "y": 444
+                "y": 443.5
             }
         },
         "office.tmj#WA_Decoration": {
