@@ -1654,21 +1654,22 @@
                         {
                          "name":"font-family",
                          "type":"string",
-                         "value":"\"Press Start 2P\""
+                         "value":" \"Press Start 2P\""
                         }],
-                 "rotation":269.58262599202,
+                 "rotation":270,
                  "text":
                     {
+                     "bold":true,
                      "fontfamily":"Cairo",
-                     "pixelsize":8,
+                     "pixelsize":11,
                      "text":"Dr Ahmed Elsissy",
                      "wrap":true
                     },
                  "type":"",
                  "visible":true,
-                 "width":83,
-                 "x":3139.5525582345,
-                 "y":2867.56810153195
+                 "width":87,
+                 "x":3139.00710368904,
+                 "y":2873.74991971377
                 }],
          "opacity":1,
          "type":"objectgroup",
