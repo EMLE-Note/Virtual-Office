@@ -1650,6 +1650,12 @@
                  "height":19,
                  "id":91,
                  "name":"CEO Office",
+                 "properties":[
+                        {
+                         "name":"font-family",
+                         "type":"string",
+                         "value":"\"Press Start 2P\""
+                        }],
                  "rotation":269.58262599202,
                  "text":
                     {
