@@ -1424,7 +1424,7 @@
                  "y":1927.36363636364
                 }, 
                 {
-                 "height":415.697,
+                 "height":348.697,
                  "id":39,
                  "name":"jitsiMeetingRoom",
                  "properties":[
@@ -1446,9 +1446,9 @@
                  "rotation":0,
                  "type":"area",
                  "visible":true,
-                 "width":291.455,
-                 "x":2824.2725,
-                 "y":2560.1515
+                 "width":189.455,
+                 "x":2880.2725,
+                 "y":2596.1515
                 }, 
                 {
                  "height":224.364,
@@ -1672,7 +1672,7 @@
                  "y":2877.24991971377
                 }, 
                 {
-                 "height":105.333333333333,
+                 "height":78.3333333333335,
                  "id":92,
                  "name":"Metabase",
                  "properties":[
@@ -1687,6 +1687,23 @@
                  "width":40.0000000000005,
                  "x":2844.66666666667,
                  "y":2509.33333333333
+                }, 
+                {
+                 "height":80,
+                 "id":95,
+                 "name":"google",
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/www.google.com\/"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":41,
+                 "x":2940,
+                 "y":2508
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -3376,7 +3393,7 @@
          "y":0
         }],
  "nextlayerid":75,
- "nextobjectid":95,
+ "nextobjectid":97,
  "orientation":"orthogonal",
  "properties":[
         {
