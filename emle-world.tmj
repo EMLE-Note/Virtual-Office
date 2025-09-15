@@ -1516,7 +1516,24 @@
          "draworder":"topdown",
          "id":2,
          "name":"floorLayer",
-         "objects":[],
+         "objects":[
+                {
+                 "height":56.6666666666667,
+                 "id":69,
+                 "name":"to-emle-office",
+                 "properties":[
+                        {
+                         "name":"exitUrl",
+                         "type":"string",
+                         "value":"emle-office.tmj#from-emle-world"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":78.666666666667,
+                 "x":3641.33333333334,
+                 "y":1684.66666666667
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -1841,7 +1858,7 @@
          "y":0
         }],
  "nextlayerid":67,
- "nextobjectid":69,
+ "nextobjectid":70,
  "orientation":"orthogonal",
  "properties":[
         {

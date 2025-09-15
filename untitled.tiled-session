@@ -1,9 +1,94 @@
 {
-    "activeFile": "emle-office.tmj",
+    "activeFile": "C:/Users/user/Documents/tiled/untitled.tmx",
     "expandedProjectPaths": [
     ],
     "fileStates": {
         "": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/decoration22.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/conference.tmj": {
+            "scale": 1.3013020833333333,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 384.2305383229938,
+                "y": 223.62217330398238
+            }
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/conference.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/conference.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/conference.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/conference.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/conference.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/conference.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/conference.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/conference.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/conference.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/conference.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj": {
+            "expandedGroupLayers": [
+                55,
+                54,
+                52,
+                51
+            ],
+            "scale": 1.007459677419355,
+            "selectedLayer": 12,
+            "viewCenter": {
+                "x": 496.2977786672003,
+                "y": 335.9935961576946
+            }
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj#WA_User_Interface": {
             "scaleInDock": 1
         },
         "C:/Users/user/Documents/tiled/map360/tmx/Office Map.tmj": {
@@ -43,6 +128,52 @@
             "scaleInDock": 1
         },
         "C:/Users/user/Documents/tiled/map360/tmx/Office Map.tmj#walls": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tiled/untitled.tmx": {
+            "scale": 0.1880208333333333,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 2302.936288088643,
+                "y": 414.84764542936296
+            }
+        },
+        "C:/Users/user/Documents/tsx/MASTER.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tsx/chairs.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tsx/collisions.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tsx/floor 2.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tsx/floor.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tsx/furniture mastersheet.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tsx/tables.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Documents/tsx/walls.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/emle-office.tmj": {
+            "scale": 0.13175182481751824,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2785.5401662049862,
+                "y": 2193.5180055401665
+            }
+        },
+        "C:/Users/user/Downloads/emle-office.tmj#Chunk 1": {
+            "scaleInDock": 1
+        },
+        "C:/Users/user/Downloads/emle-office.tmj#Chunk 2": {
             "scaleInDock": 1
         },
         "C:/Users/user/Downloads/office2 (2).tmj": {
@@ -194,19 +325,19 @@
         },
         "emle-office.tmj": {
             "expandedGroupLayers": [
-                51,
+                55,
                 52,
-                55
+                51
             ],
             "expandedObjectLayers": [
                 65,
                 2
             ],
-            "scale": 1.5,
+            "scale": 0.5,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 3338.6666666666665,
-                "y": 2266
+                "x": 2784,
+                "y": 2193
             }
         },
         "emle-office.tmj#GRASS": {
@@ -267,14 +398,17 @@
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 0.33,
-            "selectedLayer": 2,
+            "scale": 1.5,
+            "selectedLayer": 13,
             "viewCenter": {
-                "x": 3493.939393939394,
-                "y": 821.2121212121212
+                "x": 2784,
+                "y": 2192.333333333333
             }
         },
         "emle-world.tmj#GRASS": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#Hospital Wall": {
             "scaleInDock": 1
         },
         "emle-world.tmj#Island": {
@@ -330,9 +464,9 @@
         },
         "office.tmj": {
             "expandedGroupLayers": [
-                51,
+                55,
                 54,
-                55
+                51
             ],
             "expandedObjectLayers": [
                 2
@@ -451,7 +585,9 @@
     "openFiles": [
         "office.tmj",
         "emle-world.tmj",
-        "emle-office.tmj"
+        "emle-office.tmj",
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj",
+        "C:/Users/user/Documents/tiled/untitled.tmx"
     ],
     "project": "untitled.tiled-project",
     "property.type": "string",
@@ -459,6 +595,10 @@
         "office.tmj",
         "emle-world.tmj",
         "emle-office.tmj",
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj",
+        "C:/Users/user/Documents/tiled/untitled.tmx",
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/conference.tmj",
+        "C:/Users/user/Downloads/emle-office.tmj",
         "conference.tmj",
         "office2.tmj",
         "C:/Users/user/Downloads/office2.tmj",
