@@ -1,5 +1,5 @@
 {
-    "activeFile": "C:/Users/user/Documents/tiled/untitled.tmx",
+    "activeFile": "emle-office.tmj",
     "expandedProjectPaths": [
     ],
     "fileStates": {
@@ -49,8 +49,8 @@
         },
         "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj": {
             "expandedGroupLayers": [
-                55,
                 54,
+                55,
                 52,
                 51
             ],
@@ -58,7 +58,7 @@
             "selectedLayer": 12,
             "viewCenter": {
                 "x": 496.2977786672003,
-                "y": 335.9935961576946
+                "y": 335.49729837902737
             }
         },
         "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj#WA_Decoration": {
@@ -135,7 +135,7 @@
             "selectedLayer": 1,
             "viewCenter": {
                 "x": 2302.936288088643,
-                "y": 414.84764542936296
+                "y": -1271.1357340720224
             }
         },
         "C:/Users/user/Documents/tsx/MASTER.tsx": {
@@ -325,8 +325,8 @@
         },
         "emle-office.tmj": {
             "expandedGroupLayers": [
-                55,
                 52,
+                55,
                 51
             ],
             "expandedObjectLayers": [
@@ -336,8 +336,8 @@
             "scale": 0.5,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 2784,
-                "y": 2193
+                "x": 3360,
+                "y": 2304
             }
         },
         "emle-office.tmj#GRASS": {
@@ -464,8 +464,8 @@
         },
         "office.tmj": {
             "expandedGroupLayers": [
-                55,
                 54,
+                55,
                 51
             ],
             "expandedObjectLayers": [
@@ -475,7 +475,7 @@
             "selectedLayer": 12,
             "viewCenter": {
                 "x": 512,
-                "y": 443.5
+                "y": 444
             }
         },
         "office.tmj#WA_Decoration": {
@@ -583,23 +583,21 @@
     "last.imagePath": "C:/Users/user/Documents/GitHub/map_v0.1/tilesets",
     "last.objectTemplatePath": "C:/Users/user/Documents/GitHub/map_v0.1/template",
     "openFiles": [
-        "office.tmj",
-        "emle-world.tmj",
         "emle-office.tmj",
-        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj",
-        "C:/Users/user/Documents/tiled/untitled.tmx"
+        "conference.tmj",
+        "office.tmj"
     ],
     "project": "untitled.tiled-project",
     "property.type": "string",
     "recentFiles": [
         "office.tmj",
-        "emle-world.tmj",
+        "conference.tmj",
         "emle-office.tmj",
-        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj",
         "C:/Users/user/Documents/tiled/untitled.tmx",
+        "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/office.tmj",
+        "emle-world.tmj",
         "C:/Users/user/Documents/tiled/map-starter-kit-master/map-starter-kit-master/conference.tmj",
         "C:/Users/user/Downloads/emle-office.tmj",
-        "conference.tmj",
         "office2.tmj",
         "C:/Users/user/Downloads/office2.tmj",
         "C:/Users/user/Downloads/office2 (2).tmj",
