@@ -289,8 +289,8 @@
             "scale": 1.3619140625,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 384.7526172379177,
-                "y": 223.94951957550552
+                "x": 384.0183565179981,
+                "y": 224.31664993546536
             }
         },
         "conference.tmj#WA_Decoration": {
@@ -325,13 +325,13 @@
         },
         "emle-office.tmj": {
             "expandedGroupLayers": [
-                52,
                 55,
-                51
+                51,
+                52
             ],
             "expandedObjectLayers": [
-                65,
-                2
+                2,
+                65
             ],
             "scale": 0.5,
             "selectedLayer": 12,
@@ -474,8 +474,8 @@
             "scale": 1,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 512,
-                "y": 444
+                "x": 496,
+                "y": 336.5
             }
         },
         "office.tmj#WA_Decoration": {
