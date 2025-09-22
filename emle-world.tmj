@@ -1518,15 +1518,9 @@
          "name":"floorLayer",
          "objects":[
                 {
-<<<<<<< HEAD
-                 "height":56.6666666666667,
-                 "id":69,
-                 "name":"to-emle-office",
-=======
                  "height":64.6666666666665,
                  "id":69,
                  "name":"to-emle-world",
->>>>>>> 4290399210fe9b1f8cf344d4a4e5de83b874c7a7
                  "properties":[
                         {
                          "name":"exitUrl",
@@ -1536,11 +1530,6 @@
                  "rotation":0,
                  "type":"area",
                  "visible":true,
-<<<<<<< HEAD
-                 "width":78.666666666667,
-                 "x":3641.33333333334,
-                 "y":1684.66666666667
-=======
                  "width":19.3333333333335,
                  "x":3329.60606060606,
                  "y":2214.57575757576
@@ -1561,7 +1550,6 @@
                  "width":16,
                  "x":3351,
                  "y":2231.66666666667
->>>>>>> 4290399210fe9b1f8cf344d4a4e5de83b874c7a7
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1887,11 +1875,7 @@
          "y":0
         }],
  "nextlayerid":67,
-<<<<<<< HEAD
- "nextobjectid":70,
-=======
  "nextobjectid":71,
->>>>>>> 4290399210fe9b1f8cf344d4a4e5de83b874c7a7
  "orientation":"orthogonal",
  "properties":[
         {
