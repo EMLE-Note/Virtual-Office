@@ -1,5 +1,5 @@
 {
-    "activeFile": "emle-world (2).tmj",
+    "activeFile": "emle-world.tmj",
     "expandedProjectPaths": [
     ],
     "fileStates": {
@@ -861,8 +861,8 @@
             "scale": 0.25,
             "selectedLayer": 13,
             "viewCenter": {
-                "x": 3348,
-                "y": 1180
+                "x": 3350,
+                "y": 2728
             }
         },
         "emle-world.tmj#GRASS": {
@@ -1043,17 +1043,12 @@
     "last.imagePath": "C:/Users/user/Documents/GitHub/map_v0.1/tilesets",
     "last.objectTemplatePath": "C:/Users/user/Documents/GitHub/map_v0.1/template",
     "openFiles": [
-        "emle-office.tmj",
-        "conference.tmj",
-        "office.tmj",
-        "C:/Users/user/Downloads/emle-world (1).tmj",
-        "emle-world (1).tmj",
-        "C:/Users/user/Downloads/emle-world (2).tmj",
-        "emle-world (2).tmj"
+        "emle-world.tmj"
     ],
     "project": "untitled.tiled-project",
     "property.type": "string",
     "recentFiles": [
+        "emle-world.tmj",
         "office.tmj",
         "conference.tmj",
         "emle-office.tmj",
@@ -1064,8 +1059,7 @@
         "C:/Users/user/Documents/tiled/untitled.tmx",
         "G:/My Drive/Office Map.tmj",
         "C:/Users/user/Documents/tiled/map360/tmx/Office Map.tmj",
-        "C:/Users/user/Downloads/emle-world.tmj",
-        "emle-world.tmj"
+        "C:/Users/user/Downloads/emle-world.tmj"
     ],
     "tileset.embedInMap": true,
     "tileset.tileSize": {
