@@ -852,17 +852,17 @@
         },
         "emle-world.tmj": {
             "expandedGroupLayers": [
-                55,
-                51
+                51,
+                55
             ],
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 0.25,
+            "scale": 0.5,
             "selectedLayer": 13,
             "viewCenter": {
-                "x": 3350,
-                "y": 2728
+                "x": 3553,
+                "y": 2934
             }
         },
         "emle-world.tmj#GRASS": {
