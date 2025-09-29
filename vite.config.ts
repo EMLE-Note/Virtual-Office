@@ -5,7 +5,7 @@ import { getMaps, getMapsOptimizers, getMapsScripts, LogLevel, OptimizeOptions }
 const maps = getMaps();
 
 let optimizerOptions: OptimizeOptions = {
-    logs: process.env.LOG_LEVEL && process.env.LOG_LEVEL in LogLevel ? LogLevel[process.env.LOG_LEVEL] : LogLevel.NORMAL,
+    logs: process.env.LOG_LEVEL && Object.keys(LogLevel).includes(process.env.LOG_LEVEL) ? LogLevel[process.env.LOG_LEVEL as keyof typeof LogLevel] : LogLevel.NORMAL,
 };
 
 if (process.env.TILESET_OPTIMIZATION && process.env.TILESET_OPTIMIZATION === "true") {
