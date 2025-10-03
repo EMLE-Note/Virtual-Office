@@ -10,11 +10,11 @@ WA.onInit().then(async () => {
   await initAllRoomLights();
 });
 
-
-
-
 import './features/heartbeat';
 
+import { mountTopBar } from "./TopBar";
+// ... تهيئة WorkAdventure كالمعتاد
+mountTopBar();
 
 
 console.log('Script started successfully');
