@@ -12,7 +12,7 @@ WA.onInit().then(async () => {
 
 import './features/heartbeat';
 
-import { mountTopBar } from "./TopBar";
+import { mountTopBar } from "./features/TopBar";
 // ... تهيئة WorkAdventure كالمعتاد
 mountTopBar();
 
