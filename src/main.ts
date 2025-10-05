@@ -4,18 +4,13 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 
 
-      import { initAllRoomLights } from "./features/roomLight";
+import { initAllRoomLights } from "./features/roomLight";
 
-WA.onInit().then(async () => {
-  await initAllRoomLights();
-});
-
-
-
+        WA.onInit().then(async () => {
+        await initAllRoomLights();
+        });
 
 import './features/heartbeat';
-
-
 
 console.log('Script started successfully');
 

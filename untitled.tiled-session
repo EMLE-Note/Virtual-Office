@@ -1,5 +1,5 @@
 {
-    "activeFile": "emle-world.tmj",
+    "activeFile": "emle-office.tmj",
     "expandedProjectPaths": [
     ],
     "fileStates": {
@@ -593,15 +593,15 @@
         },
         "emle-office.tmj": {
             "expandedGroupLayers": [
-                55,
                 52,
+                55,
                 51
             ],
             "scale": 0.75,
             "selectedLayer": 13,
             "viewCenter": {
-                "x": 2806,
-                "y": 2334.6666666666665
+                "x": 3584.666666666666,
+                "y": 2648
             }
         },
         "emle-office.tmj#GRASS": {
@@ -852,8 +852,8 @@
         },
         "emle-world.tmj": {
             "expandedGroupLayers": [
-                51,
-                55
+                55,
+                51
             ],
             "expandedObjectLayers": [
                 2
@@ -861,8 +861,8 @@
             "scale": 0.5,
             "selectedLayer": 13,
             "viewCenter": {
-                "x": 3553,
-                "y": 2934
+                "x": 2816,
+                "y": 2407
             }
         },
         "emle-world.tmj#GRASS": {
@@ -1043,15 +1043,16 @@
     "last.imagePath": "C:/Users/user/Documents/GitHub/map_v0.1/tilesets",
     "last.objectTemplatePath": "C:/Users/user/Documents/GitHub/map_v0.1/template",
     "openFiles": [
-        "emle-world.tmj"
+        "emle-world.tmj",
+        "emle-office.tmj"
     ],
     "project": "untitled.tiled-project",
     "property.type": "string",
     "recentFiles": [
         "emle-world.tmj",
+        "emle-office.tmj",
         "office.tmj",
         "conference.tmj",
-        "emle-office.tmj",
         "C:/Users/user/Downloads/emle-world (1).tmj",
         "C:/Users/user/Downloads/emle-world (2).tmj",
         "emle-world (1).tmj",
