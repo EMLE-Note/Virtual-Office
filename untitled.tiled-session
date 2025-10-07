@@ -1,9 +1,136 @@
 {
-    "activeFile": "emle-office.tmj",
+    "activeFile": "",
     "expandedProjectPaths": [
     ],
     "fileStates": {
         "": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 0.75,
+            "selectedLayer": 12,
+            "viewCenter": {
+                "x": 3253.333333333333,
+                "y": 2568
+            }
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#GRASS": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#decor": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#floor wood": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#floor-test": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#floor3": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#furniture1": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-office2.tmj#walls": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj": {
+            "scale": 0.15492097701149424,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2782.063528866219,
+                "y": 2191.4398330628333
+            }
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#GRASS": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#Hospital Wall": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#Island": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#decor": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#floor wood": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#floor-test": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#floor3": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#furniture1": {
+            "scaleInDock": 1
+        },
+        "../map_v0.1 - Copy/emle-world.tmj#walls": {
             "scaleInDock": 1
         },
         "C:/Users/user/Documents/decoration22.tsx": {
@@ -557,8 +684,8 @@
             "scale": 1.3619140625,
             "selectedLayer": 12,
             "viewCenter": {
-                "x": 384.3854868779579,
-                "y": 223.94951957550552
+                "x": 384.0183565179981,
+                "y": 224.31664993546536
             }
         },
         "conference.tmj#WA_Decoration": {
@@ -594,14 +721,17 @@
         "emle-office.tmj": {
             "expandedGroupLayers": [
                 52,
-                55,
-                51
+                51,
+                55
+            ],
+            "expandedObjectLayers": [
+                2
             ],
             "scale": 0.75,
             "selectedLayer": 13,
             "viewCenter": {
-                "x": 3584.666666666666,
-                "y": 2648
+                "x": 4104,
+                "y": 2872
             }
         },
         "emle-office.tmj#GRASS": {
@@ -653,6 +783,65 @@
             "scaleInDock": 3
         },
         "emle-office.tmj#walls": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj": {
+            "scale": 2,
+            "selectedLayer": 12,
+            "viewCenter": {
+                "x": 3669.5,
+                "y": 2821
+            }
+        },
+        "emle-office2.tmj#GRASS": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#decor": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#floor wood": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#floor-test": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#floor3": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#furniture1": {
+            "scaleInDock": 1
+        },
+        "emle-office2.tmj#walls": {
             "scaleInDock": 1
         },
         "emle-world (1).tmj": {
@@ -852,8 +1041,8 @@
         },
         "emle-world.tmj": {
             "expandedGroupLayers": [
-                55,
-                51
+                51,
+                55
             ],
             "expandedObjectLayers": [
                 2
@@ -1043,24 +1232,22 @@
     "last.imagePath": "C:/Users/user/Documents/GitHub/map_v0.1/tilesets",
     "last.objectTemplatePath": "C:/Users/user/Documents/GitHub/map_v0.1/template",
     "openFiles": [
-        "emle-world.tmj",
-        "emle-office.tmj"
     ],
     "project": "untitled.tiled-project",
     "property.type": "string",
     "recentFiles": [
-        "emle-world.tmj",
+        "../map_v0.1 - Copy/emle-office2.tmj",
+        "emle-office2.tmj",
         "emle-office.tmj",
-        "office.tmj",
+        "../map_v0.1 - Copy/emle-world.tmj",
         "conference.tmj",
+        "emle-world.tmj",
+        "office.tmj",
         "C:/Users/user/Downloads/emle-world (1).tmj",
         "C:/Users/user/Downloads/emle-world (2).tmj",
         "emle-world (1).tmj",
         "emle-world (2).tmj",
-        "C:/Users/user/Documents/tiled/untitled.tmx",
-        "G:/My Drive/Office Map.tmj",
-        "C:/Users/user/Documents/tiled/map360/tmx/Office Map.tmj",
-        "C:/Users/user/Downloads/emle-world.tmj"
+        "C:/Users/user/Documents/tiled/untitled.tmx"
     ],
     "tileset.embedInMap": true,
     "tileset.tileSize": {
