@@ -9,14 +9,6 @@ export type RoomConfig = {
 // Array فيها كل الغرف
 const rooms: RoomConfig[] = [
   { area: "jitsiMeetingRoom", layer: "lights/jitsiMeetingRoom-dark" },
-  { area: "jitsiMeetingRoom-2", layer: "lights/dark1" },
-  { area: "jitsiMeetingRoom-3", layer: "lights/dark2" },
-  { area: "jitsiMeetingRoom-4", layer: "lights/dark3" },
-  { area: "jitsiMeetingRoom-5", layer: "lights/dark4" },
-  { area: "jitsiMeetingRoom-d", layer: "lights/darkd" },
-  { area: "jitsiMeetingRoom-c", layer: "lights/darkc" },
-  { area: "jitsiMeetingRoom-b", layer: "lights/darkb" },
-  { area: "jitsiMeetingRoom-a", layer: "lights/darka" },
 ];
 
 function initRoomLight(config: RoomConfig) {
