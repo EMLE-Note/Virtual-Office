@@ -14,6 +14,9 @@ import './features/heartbeat';
 
 console.log('Script started successfully');
 
+import { initAllJitsiIndicators } from "./features/jitsi-tracker.js";
+initAllJitsiIndicators().catch(console.error);
+
 let currentPopup: any = undefined;
 
 // Waiting for the API to be ready
