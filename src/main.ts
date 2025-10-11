@@ -6,10 +6,14 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 import { initAllRoomLights } from "./features/roomLight";
 import { initAllDeskLights } from "./features/deskLight";
+import { setupAllWelcomeAreas } from "./features/area-messages";
 
         WA.onInit().then(async () => {
         await initAllRoomLights();
         await initAllDeskLights();
+        
+        // Setup welcome message areas for all desks
+        setupAllWelcomeAreas();
         });
 
 import './features/heartbeat';

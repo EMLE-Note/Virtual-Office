@@ -931,6 +931,12 @@
                  "height":96.3333,
                  "id":119,
                  "name":"desk15",
+                 "properties":[
+                        {
+                         "name":"class",
+                         "type":"string",
+                         "value":"welcomeZone"
+                        }],
                  "rotation":0,
                  "type":"area",
                  "visible":true,
@@ -2226,6 +2232,12 @@
          "offsetx":84.848484848485,
          "offsety":-1357.57575757576,
          "opacity":1,
+         "properties":[
+                {
+                 "name":"class",
+                 "type":"string",
+                 "value":"welcomeZone"
+                }],
          "type":"objectgroup",
          "visible":true,
          "x":0,

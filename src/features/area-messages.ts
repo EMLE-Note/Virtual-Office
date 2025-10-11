@@ -2,6 +2,11 @@
 // import { ActionMessage } from "@workadventure/iframe-api-typings";
 // (اعتمادًا على إعدادات مشروعك، قد لا تحتاج إلى هذا السطر)
 
+// Array of desk configurations for easy expansion
+const deskConfigurations = [
+    { areaName: 'desk1', messageText: 'Welcome to mohmed desk' },
+];
+
 /**
  * يقوم بتهيئة المناطق التي تعرض رسائل ترحيب عند الدخول.
  * @param areaName - اسم الـ class للمنطقة في Tiled.
@@ -22,10 +27,7 @@ export function setupWelcomeArea(areaName: string, messageText: string): void {
             message: messageText,
             
             callback: () => {
-                WA.ui.displayChatMessage({
-                    message: `تم تفعيل رسالة الترحيب في منطقة "${areaName}".`,
-                    scope: "local"
-                });
+                console.log(`تم تفعيل رسالة الترحيب في منطقة "${areaName}".`);
             }
         });
     });
@@ -37,5 +39,14 @@ export function setupWelcomeArea(areaName: string, messageText: string): void {
             actionMessage.remove(); 
             actionMessage = undefined;
         }
+    });
+}
+
+/**
+ * Initializes all welcome areas based on the desk configurations array
+ */
+export function setupAllWelcomeAreas(): void {
+    deskConfigurations.forEach(config => {
+        setupWelcomeArea(config.areaName, config.messageText);
     });
 }
