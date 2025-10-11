@@ -5,9 +5,11 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 
 import { initAllRoomLights } from "./features/roomLight";
+import { initAllDeskLights } from "./features/deskLight";
 
         WA.onInit().then(async () => {
         await initAllRoomLights();
+        await initAllDeskLights();
         });
 
 import './features/heartbeat';
