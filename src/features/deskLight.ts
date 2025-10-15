@@ -12,7 +12,6 @@ const deskLights: DeskLightConfig[] = [
   { deskArea: "desk1", lightOffLayer: "lights/light-off", lightOnLayer: "lights/light-desk1-on" },
   { deskArea: "desk2", lightOffLayer: "lights/light-off", lightOnLayer: "lights/light-desk2-on" },
   { deskArea: "desk3", lightOffLayer: "lights/light-off", lightOnLayer: "lights/light-desk3-on" },
-  { deskArea: "desk4", lightOffLayer: "lights/light-off", lightOnLayer: "lights/light-desk4-on" },
   { deskArea: "desk5", lightOffLayer: "lights/light-off", lightOnLayer: "lights/light-desk5-on" },
   { deskArea: "desk6", lightOffLayer: "lights/light-off", lightOnLayer: "lights/light-desk6-on" },
   { deskArea: "desk7", lightOffLayer: "lights/light-off", lightOnLayer: "lights/light-desk7-on" },
@@ -22,8 +21,8 @@ const deskLights: DeskLightConfig[] = [
   { deskArea: "desk11", lightOffLayer: "lights/light-off", lightOnLayer: "lights/light-desk11-on" },
   { deskArea: "desk12", lightOffLayer: "lights/light-off", lightOnLayer: "lights/light-desk12-on" },
   { deskArea: "desk13", lightOffLayer: "lights/light-off", lightOnLayer: "lights/light-desk13-on" },
-  { deskArea: "desk14", lightOffLayer: "lights/light-off", lightOnLayer: "lights/light-desk14-on" },
-  { deskArea: "desk15", lightOffLayer: "lights/light-off", lightOnLayer: "lights/light-desk15-on" },
+  { deskArea: "jitsiMeetingRoom-b", lightOffLayer: "lights/light-off", lightOnLayer: "lights/meeting-b-on" },
+  { deskArea: "jitsiMeetingRoom-a", lightOffLayer: "lights/light-off", lightOnLayer: "lights/meeting-a-on" },
 ];
 
 function initDeskLight(config: DeskLightConfig) {
