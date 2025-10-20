@@ -2406,19 +2406,6 @@
          "tilecount":7840,
          "tileheight":32,
          "tilewidth":32
-        }, 
-        {
-         "columns":33,
-         "firstgid":96301,
-         "image":"tilesets\/TEXT.png",
-         "imageheight":40,
-         "imagewidth":1080,
-         "margin":0,
-         "name":"TEXT",
-         "spacing":0,
-         "tilecount":33,
-         "tileheight":32,
-         "tilewidth":32
         }],
  "tilewidth":32,
  "type":"map",
