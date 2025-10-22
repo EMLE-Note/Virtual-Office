@@ -627,7 +627,7 @@
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                  "height":50,
                  "id":78,
-                 "name":"enterndic",
+                 "name":"enterIndicator",
                  "opacity":1,
                  "type":"tilelayer",
                  "visible":true,
@@ -1632,18 +1632,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":160,
-                 "name":"occ:ndicator",
-                 "point":true,
-                 "rotation":0,
-                 "type":"variable",
-                 "visible":true,
-                 "width":0,
-                 "x":191.515151515153,
-                 "y":1615.84848484849
-                }, 
-                {
-                 "height":0,
                  "id":143,
                  "name":"occ:desk5",
                  "point":true,
@@ -1777,7 +1765,7 @@
                 {
                  "height":1078.90909090909,
                  "id":159,
-                 "name":"ndicator",
+                 "name":"indicator",
                  "rotation":0,
                  "type":"area",
                  "visible":true,
