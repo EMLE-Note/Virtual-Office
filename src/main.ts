@@ -16,8 +16,6 @@ WA.onInit().then(async () => {
     await initAllAreaAlerts();
 });
 
-import './features/heartbeat';
-
 console.log('Script started successfully');
 
 import { initAllJitsiIndicators } from "./features/jitsi-tracker.js";
