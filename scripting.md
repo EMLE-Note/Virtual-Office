@@ -314,3 +314,123 @@ WA.state.onVariableChange("variableName").subscribe((val) => {
 ## Conclusion
 
 This guide covers the core concepts and implementation details for WorkAdventure scripting. The Jitsi tracker example demonstrates many important patterns that can be applied to other interactive features. Remember to follow best practices for maintainable and efficient scripts.
+
+
+
+
+# **WorkAdventure Scripting API Guide: Concepts and Implementation**
+
+The WorkAdventure Scripting API provides a powerful JavaScript interface allowing developers to add interactive logic and custom features to their maps. This guide serves as a comprehensive reference for the core concepts, architectural limitations, and key programming tools available within the global WA object.
+
+## **Part One: Architectural Foundations and Environment**
+
+### **1.1. Script Execution Environment**
+
+Map scripts (specified via the script property in the map file) are always executed inside a sandboxed iframe created by WorkAdventure.1 This isolated environment is a fundamental security mechanism designed to prevent external scripts from directly manipulating the game engine (Phaser) or the main Document Object Model (DOM).2
+
+**Key Map Script Restrictions:**
+
+| Restriction | Description | Workaround |
+| :---- | :---- | :---- |
+| **Blocked External HTTP Requests (XHR/Fetch):** | The sandboxed iframe does not have an "Origin" (Origin: null). Consequently, the browser blocks all standard external network requests (fetch or XMLHttpRequest) due to the Same-Origin Policy.1 | 1\. Use **WebSockets** (which are not subject to CORS restrictions).1 2\. Use an embedded **Co-Website iFrame** as a mediator (which has a valid origin) and communicate with it using postMessage.1 |
+| **Direct WorkAdventure Access:** | The script cannot directly interact with the WorkAdventure DOM or internal game objects.2 | All interactions are securely handled via the global WA object, which internally uses the window.postMessage() API to communicate between the sandboxed iframe and the main game.2 |
+
+### **1.2. Script Lifecycle**
+
+All scripts must begin by using the initialization promise to ensure that core data (such as the player's ID and position) is ready and accessible.3
+
+* **WA.onInit(): Promise\<void\>:** All script logic must start inside this function. The promise resolves after the map is loaded and the current player is set up.3
+
+JavaScript
+
+WA.onInit().then(async () \=\> {  
+    // Script logic begins here; WA.player and WA.players are ready.  
+    console.log("WorkAdventure is ready\!");  
+    // Example: Display the player's name  
+    console.log(\`Welcome, ${WA.player.name}\`); \[4\]  
+});
+
+## **Part Two: Player Tracking (WA.players)**
+
+The WA.players namespace is used to interact with and monitor other users (Remote Players) in the map.
+
+### **2.1. Enabling Nearby Zone Tracking**
+
+For performance reasons, not all players in the room are tracked by default. You must explicitly enable this feature. Tracking is limited to players within the **"nearby zone"** (i.e., visible to the current player or close to the viewport).5
+
+* **WA.players.configureTracking(options?): Promise\<void\>:** Starts tracking nearby players.  
+  * **Recommended Option:** await WA.players.configureTracking({ players: true, movement: false }); This is often preferred to track presence without consuming resources to track every movement update.5
+
+### **2.2. Listening to Enter and Leave Events**
+
+These are the primary methods for implementing a real-time presence system or counter:
+
+| Function | Description | Typical Use Case |
+| :---- | :---- | :---- |
+| **WA.players.onPlayerEnters(): Observable\<RemotePlayerInterface\>** | Triggered when another player enters your nearby (visible) zone.5 | Used to increment a counter and send 'welcome' chat notifications.5 |
+| **WA.players.onPlayerLeaves(): Observable\<RemotePlayerInterface\>** | Triggered when another player leaves your nearby zone.5 | Used to decrement the counter and send 'goodbye' notifications.5 |
+
+JavaScript
+
+// Example: Tracking enter and leave events  
+WA.players.onPlayerEnters().subscribe((player) \=\> { \[5\]  
+    WA.chat.sendChatMessage(\`Hello\! ${player.name} just entered your area.\`, "Presence Tracker"); \[6\]  
+});
+
+### **2.3. Getting the Current Player List**
+
+* **WA.players.list(): IterableIterator\<RemotePlayerInterface\>:** Returns a list of players currently in the nearby zone at the time the function is called. This is essential for determining the initial player count when the script loads.5
+
+## **Part Three: User Interface Tools (WA.ui)**
+
+The WA.ui namespace is used to create custom UI elements that interact with the map logic.
+
+| Function | Description | Use Case |
+| :---- | :---- | :---- |
+| **WA.ui.registerMenuCommand(commandDescriptor, options): Menu** | Creates a custom menu command (usually appearing as a button in the toolbar). This is the ideal solution for a visible "counter" whose text can be dynamically updated.7 | Store the returned Menu reference to update its label property in real-time with the current player count. |
+| **WA.ui.openPopup(targetObject, message, buttons): Popup** | Opens a positioned popup window based on an object defined in Tiled.7 | Used to display detailed alerts or player lists when a user interacts with a custom element. |
+
+## **Part Four: Current Player Data (WA.player)**
+
+The WA.player object contains information specific to the player currently running the script.
+
+| Property/Function | Description |
+| :---- | :---- |
+| **WA.player.name: string** | The display name of the current player.4 |
+| **WA.player.id: string** | A unique identifier for the current character on the map.4 |
+| **WA.player.getPosition(): Promise\<Position\>** | An asynchronous function that returns the player's current x and y coordinates in pixels. Essential for location tracking (Heartbeat).3 |
+| **WA.player.userRoomToken: string** | An authentication token that can be used by external services to authenticate the player and verify their presence in the current room (crucial for secure external tracking).4 |
+
+## **Part Five: Internal Communication and Data Exchange**
+
+### **5.1. Chat**
+
+* **WA.chat.sendChatMessage(message: string, author: string): void:** Used to send a message to the main chat channel with a custom author name (e.g., "Presence Monitor").6
+
+### **5.2. Events**
+
+Events are used to send real-time, short-lived messages between players in the room.8
+
+* **WA.event.broadcast(key: string, data: unknown): Promise\<void\>:** Used to send a JSON payload to all players in the room.9  
+* **WA.event.on(key: string).subscribe((event) \=\> {}):** Used to listen for events broadcast by other players.10
+
+### **5.3. Shared Variables**
+
+Variables allow storing data either attached to a specific player or shared across the entire room.
+
+* **Player Variables:** Use WA.player.state to read or write public/private variables attached to the current player. Public variables are visible to nearby players via RemotePlayer.state.4  
+* **Room Variables:** Use WA.state.saveVariable(key, data) and WA.state.onVariableChange(key).subscribe() to store state shared among **all** players in the room (e.g., a shared game score or environmental variables).11
+
+#### **المصادر التي تم الاقتباس منها**
+
+1. Scripting Internals | WorkAdventure Documentation, تم الوصول بتاريخ ‎أكتوبر 20, 2025، [https://docs.workadventu.re/developer/map-scripting/scripting-internals/](https://docs.workadventu.re/developer/map-scripting/scripting-internals/)  
+2. docs/dev/contributing-to-scripting-api.md · test · Huste, Tobias / workadventure, تم الوصول بتاريخ ‎أكتوبر 20, 2025، [https://codebase.helmholtz.cloud/frust45/workadventure/-/blob/test/docs/dev/contributing-to-scripting-api.md](https://codebase.helmholtz.cloud/frust45/workadventure/-/blob/test/docs/dev/contributing-to-scripting-api.md)  
+3. Player \- WorkAdventure Documentation | PDF | Variable (Computer Science) \- Scribd, تم الوصول بتاريخ ‎أكتوبر 20, 2025، [https://www.scribd.com/document/836363754/Player-WorkAdventure-Documentation](https://www.scribd.com/document/836363754/Player-WorkAdventure-Documentation)  
+4. Player | WorkAdventure Documentation, تم الوصول بتاريخ ‎أكتوبر 20, 2025، [https://docs.workadventu.re/developer/map-scripting/references/api-player/](https://docs.workadventu.re/developer/map-scripting/references/api-player/)  
+5. Players | WorkAdventure Documentation, تم الوصول بتاريخ ‎أكتوبر 20, 2025، [https://docs.workadventu.re/developer/map-scripting/references/api-players/](https://docs.workadventu.re/developer/map-scripting/references/api-players/)  
+6. Map Scripting API \- WorkAdventure Documentation, تم الوصول بتاريخ ‎أكتوبر 20, 2025، [https://docs.workadventu.re/developer/map-scripting/](https://docs.workadventu.re/developer/map-scripting/)  
+7. UI | WorkAdventure Documentation, تم الوصول بتاريخ ‎أكتوبر 20, 2025، [https://docs.workadventu.re/developer/map-scripting/references/api-ui/](https://docs.workadventu.re/developer/map-scripting/references/api-ui/)  
+8. Writing WebSocket client applications \- Web APIs \- MDN, تم الوصول بتاريخ ‎أكتوبر 20, 2025، [https://developer.mozilla.org/en-US/docs/Web/API/WebSockets\_API/Writing\_WebSocket\_client\_applications](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications)  
+9. Event | WorkAdventure Documentation, تم الوصول بتاريخ ‎أكتوبر 20, 2025، [https://docs.workadventu.re/developer/map-scripting/references/api-event/](https://docs.workadventu.re/developer/map-scripting/references/api-event/)  
+10. Events | WorkAdventure Documentation, تم الوصول بتاريخ ‎أكتوبر 20, 2025، [https://docs.workadventu.re/developer/map-scripting/events/](https://docs.workadventu.re/developer/map-scripting/events/)  
+11. Integrated websites | WorkAdventure Documentation, تم الوصول بتاريخ ‎أكتوبر 20, 2025، [https://docs.workadventu.re/map-building/tiled-editor/website-in-map/](https://docs.workadventu.re/map-building/tiled-editor/website-in-map/)

@@ -2,17 +2,19 @@
 
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
-
-
 import { initAllDeskLights } from "./features/deskLight";
 import { setupAllWelcomeAreas } from "./features/area-messages";
+import { initAllAreaAlerts } from "./features/area-alert";
 
-        WA.onInit().then(async () => {
-        await initAllDeskLights();
-        
-        // Setup welcome message areas for all desks
-        setupAllWelcomeAreas();
-        });
+WA.onInit().then(async () => {
+    await initAllDeskLights();
+    
+    // Setup welcome message areas for all desks
+    setupAllWelcomeAreas();
+    
+    // Initialize area alerts
+    await initAllAreaAlerts();
+});
 
 import './features/heartbeat';
 
