@@ -1,7 +1,6 @@
 /// <reference types="@workadventure/iframe-api-typings" />
 
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
-
 import { initAllDeskLights } from "./features/deskLight";
 import { setupAllWelcomeAreas } from "./features/area-messages";
 import { initAllAreaAlerts } from "./features/area-alert";
