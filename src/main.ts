@@ -3,7 +3,10 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 import { initAllDeskLights } from "./features/deskLight";
 import { setupAllWelcomeAreas } from "./features/area-messages";
-import { initAllAreaAlerts } from "./features/area-alert";
+import { initializeIndicator } from "./features/indicator";
+import { initPlayerJoinAlert } from "./features/player-join-alert";
+
+
 
 WA.onInit().then(async () => {
     await initAllDeskLights();
@@ -11,8 +14,14 @@ WA.onInit().then(async () => {
     // Setup welcome message areas for all desks
     setupAllWelcomeAreas();
     
-    // Initialize area alerts
-    await initAllAreaAlerts();
+    // Initialize indicator feature
+    await initializeIndicator();
+    
+       initPlayerJoinAlert();
+        // ✅ تشغيل ميزة تنبيه انضمام اللاعبين
+
+
+   
 });
 
 console.log('Script started successfully');
