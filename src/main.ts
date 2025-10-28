@@ -3,19 +3,18 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 import { initAllDeskLights } from "./features/deskLight";
 import { setupAllWelcomeAreas } from "./features/area-messages";
+import { initAreaIndicators } from "./features/areaIndicator";
 
+        WA.onInit().then(async () => {
 
-
-WA.onInit().then(async () => {
-    await initAllDeskLights();
-    
-    // Setup welcome message areas for all desks
-    setupAllWelcomeAreas();
-    
-});
-
-console.log('Script started successfully');
-
+        await initAllDeskLights();
+        
+     // Setup welcome message areas for all desks
+        setupAllWelcomeAreas();
+        
+      // Initialize area-based layer indicators
+          await initAreaIndicators();
+        });
 
 let currentPopup: any = undefined;
 
