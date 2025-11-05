@@ -2183,7 +2183,7 @@
         {
          "name":"mapName",
          "type":"string",
-         "value":"Office"
+         "value":"emle-office"
         }, 
         {
          "name":"script",

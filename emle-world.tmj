@@ -1886,17 +1886,12 @@
         {
          "name":"mapDescription",
          "type":"string",
-         "value":"A perfect virtual office to get started with WorkAdventure!"
-        }, 
-        {
-         "name":"mapImage",
-         "type":"string",
-         "value":"office.png"
+         "value":"A perfect virtual office to get started with WorkAdventure"
         }, 
         {
          "name":"mapName",
          "type":"string",
-         "value":"Office"
+         "value":"emle-world"
         }, 
         {
          "name":"script",
