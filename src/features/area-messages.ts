@@ -4,21 +4,23 @@
 
 // Array of desk configurations for easy expansion
 const deskConfigurations = [
-    { areaName: 'desk1', messageText: 'ا. هانم' },
+    { areaName: 'desk1', messageText: 'ا. اسماء حسن' },
 
     { areaName: 'desk3', messageText: 'م. علي' },
-    { areaName: 'desk10', messageText: 'ا. ايمان' },
+    { areaName: 'desk10', messageText: 'م. ندى عزت' },
     { areaName: 'desk11', messageText: 'د. مصطفى السيسي' },
-    { areaName: 'desk12', messageText: 'م. ندى عزت' },
+    { areaName: 'desk12', messageText: 'ا. ايمان' },
 
     { areaName: 'desk7', messageText: 'د. احمد امام' },
     { areaName: 'desk13', messageText: 'ا. هاجر ' },
     { areaName: 'desk6', messageText: 'د. احمد عادل' },
     { areaName: 'desk8', messageText: 'ا. احمد صقر' },
 
-    { areaName: 'desk2', messageText: 'ا. محمد مطراوي' },
-    { areaName: 'desk9', messageText: 'ا. محمد جمعان' },
+    { areaName: 'desk2', messageText: 'ا. هانم'},
+    { areaName: 'desk9', messageText: 'ا. محمد مطراوي'},
     { areaName: 'desk5', messageText: 'ا. مصطفى مجدي' },
+    { areaName: 'desk15', messageText: 'ا. محمود الصباغ' },
+    { areaName: 'desk14', messageText: 'ا. محمد جمعان'},
 ];
 
 /**
