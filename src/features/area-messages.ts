@@ -11,10 +11,11 @@ const deskConfigurations = [
     { areaName: 'desk11', messageText: 'د. مصطفى السيسي' },
     { areaName: 'desk12', messageText: 'ا. ايمان' },
 
-    { areaName: 'desk7', messageText: 'أسماء حسن ' },
+    { areaName: 'desk16', messageText: 'أسماء حسن ' },
     { areaName: 'desk13', messageText: 'ا. هاجر ' },
     { areaName: 'desk6', messageText: 'د. احمد عادل' },
-    { areaName: 'desk8', messageText: 'ا. احمد صقر' },
+    { areaName: 'desk7', messageText: 'ا. احمد صقر' },
+    { areaName: 'desk8', messageText: 'د. احمد امام' },
 
     { areaName: 'desk2', messageText: 'ا. هانم'},
     { areaName: 'desk9', messageText: 'ا. محمد مطراوي'},
