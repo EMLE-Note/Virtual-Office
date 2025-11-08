@@ -3,7 +3,7 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 import { initAllDeskLights } from "./features/deskLight";
 import { setupAllWelcomeAreas } from "./features/area-messages";
-import { initAreaIndicators } from "./features/areaIndicator";
+//import { initAreaIndicators } from "./features/areaIndicator";
 
         WA.onInit().then(async () => {
 
@@ -13,7 +13,7 @@ import { initAreaIndicators } from "./features/areaIndicator";
         setupAllWelcomeAreas();
         
       // Initialize area-based layer indicators
-          await initAreaIndicators();
+          //await initAreaIndicators();
         });
 
 let currentPopup: any = undefined;
