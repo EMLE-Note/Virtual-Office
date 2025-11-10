@@ -1747,7 +1747,34 @@
          "draworder":"topdown",
          "id":2,
          "name":"floorLayer",
-         "objects":[],
+         "objects":[
+                {
+                 "height":159,
+                 "id":166,
+                 "name":"Thyroidectomy",
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/www.youtube.com\/embed\/0h5jM7eN6j4?si=5Jffvs7SQjnx6Lf1"
+                        }, 
+                        {
+                         "name":"openWebsiteTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"openWebsiteTriggerMessage",
+                         "type":"string",
+                         "value":"learn about(Thyroidectomy)"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":190,
+                 "x":577,
+                 "y":836
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -1818,7 +1845,7 @@
          "y":0
         }],
  "nextlayerid":100,
- "nextobjectid":166,
+ "nextobjectid":167,
  "orientation":"orthogonal",
  "properties":[
         {
