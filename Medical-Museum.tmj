@@ -1774,6 +1774,23 @@
                  "width":190,
                  "x":577,
                  "y":836
+                }, 
+                {
+                 "height":64.6667,
+                 "id":167,
+                 "name":"to-emle-world",
+                 "properties":[
+                        {
+                         "name":"exitUrl",
+                         "type":"string",
+                         "value":"emle-world.tmj#from-Medical-Museum"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":691.833,
+                 "x":41.4168333333332,
+                 "y":1610.33331666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1845,7 +1862,7 @@
          "y":0
         }],
  "nextlayerid":100,
- "nextobjectid":167,
+ "nextobjectid":168,
  "orientation":"orthogonal",
  "properties":[
         {
