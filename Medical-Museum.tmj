@@ -1749,33 +1749,6 @@
          "name":"floorLayer",
          "objects":[
                 {
-                 "height":159,
-                 "id":166,
-                 "name":"Thyroidectomy",
-                 "properties":[
-                        {
-                         "name":"openWebsite",
-                         "type":"string",
-                         "value":"https:\/\/www.youtube.com\/embed\/snO6dFzS0oo\n"
-                        }, 
-                        {
-                         "name":"openWebsiteTrigger",
-                         "type":"string",
-                         "value":"onaction"
-                        }, 
-                        {
-                         "name":"openWebsiteTriggerMessage",
-                         "type":"string",
-                         "value":"learn about(Thyroidectomy)"
-                        }],
-                 "rotation":0,
-                 "type":"area",
-                 "visible":true,
-                 "width":190,
-                 "x":577,
-                 "y":836
-                }, 
-                {
                  "height":64.6667,
                  "id":167,
                  "name":"to-emle-world",
@@ -1791,6 +1764,23 @@
                  "width":691.833,
                  "x":41.4168333333332,
                  "y":1610.33331666667
+                }, 
+                {
+                 "height":168.6667,
+                 "id":168,
+                 "name":"to-emle-world",
+                 "properties":[
+                        {
+                         "name":"exitUrl",
+                         "type":"string",
+                         "value":"Gynecology.tmj#from-Medical-Museum"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":186.499666666667,
+                 "x":579.416833333333,
+                 "y":834.333316666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1862,7 +1852,7 @@
          "y":0
         }],
  "nextlayerid":100,
- "nextobjectid":168,
+ "nextobjectid":169,
  "orientation":"orthogonal",
  "properties":[
         {
