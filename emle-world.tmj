@@ -1567,6 +1567,23 @@
                  "width":16,
                  "x":3351,
                  "y":2231.66666666667
+                }, 
+                {
+                 "height":32,
+                 "id":72,
+                 "name":"from-Medical-Museum",
+                 "properties":[
+                        {
+                         "name":"start",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":32,
+                 "x":4169.33333333333,
+                 "y":2466
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1892,7 +1909,7 @@
          "y":0
         }],
  "nextlayerid":67,
- "nextobjectid":72,
+ "nextobjectid":73,
  "orientation":"orthogonal",
  "properties":[
         {
