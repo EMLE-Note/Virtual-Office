@@ -677,6 +677,11 @@
                          "name":"openWebsiteTriggerMessage",
                          "type":"string",
                          "value":"What Happens to the Placenta After Birth?"
+                        }, 
+                        {
+                         "name":"openWebsiteWidth",
+                         "type":"string",
+                         "value":"70"
                         }],
                  "rotation":0,
                  "type":"area",
