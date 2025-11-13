@@ -689,6 +689,326 @@
                  "width":94,
                  "x":353.5,
                  "y":1341
+                }, 
+                {
+                 "height":69,
+                 "id":170,
+                 "name":"Placenta: From Creation to Separation part one",
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/www.youtube.com\/embed\/7RjmWORoAoE"
+                        }, 
+                        {
+                         "name":"openWebsiteTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"openWebsiteTriggerMessage",
+                         "type":"string",
+                         "value":"Placenta: From Creation to Separation part one"
+                        }, 
+                        {
+                         "name":"openWebsiteWidth",
+                         "type":"string",
+                         "value":"70"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":94,
+                 "x":354,
+                 "y":1213
+                }, 
+                {
+                 "height":69,
+                 "id":171,
+                 "name":"From the First Cell to First Breath, Twins From Conception to Birth Educational Content",
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/www.youtube.com\/embed\/iUoYS47fGNs"
+                        }, 
+                        {
+                         "name":"openWebsiteTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"openWebsiteTriggerMessage",
+                         "type":"string",
+                         "value":"From the First Cell to First Breath, Twins From Conception to Birth Educational Content"
+                        }, 
+                        {
+                         "name":"openWebsiteWidth",
+                         "type":"string",
+                         "value":"70"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":94,
+                 "x":358,
+                 "y":1085.5
+                }, 
+                {
+                 "height":69,
+                 "id":172,
+                 "name":"One Labor, Two Arrivals . Multi-language Available",
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/www.youtube.com\/embed\/FeJEvB-UodM"
+                        }, 
+                        {
+                         "name":"openWebsiteTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"openWebsiteTriggerMessage",
+                         "type":"string",
+                         "value":"One Labor, Two Arrivals . Multi-language Available"
+                        }, 
+                        {
+                         "name":"openWebsiteWidth",
+                         "type":"string",
+                         "value":"70"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":94,
+                 "x":354.5,
+                 "y":957
+                }, 
+                {
+                 "height":69,
+                 "id":173,
+                 "name":"Typically, a woman releases a single egg during ovulation ,But sometimes...",
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/www.youtube.com\/embed\/ebIwO6cwQag"
+                        }, 
+                        {
+                         "name":"openWebsiteTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"openWebsiteTriggerMessage",
+                         "type":"string",
+                         "value":"Typically, a woman releases a single egg during ovulation ,But sometimes..."
+                        }, 
+                        {
+                         "name":"openWebsiteWidth",
+                         "type":"string",
+                         "value":"70"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":94,
+                 "x":361,
+                 "y":828.5
+                }, 
+                {
+                 "height":69,
+                 "id":174,
+                 "name":"last part of the vaginal birth video with naration",
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/www.youtube.com\/embed\/GO23m3SajNc"
+                        }, 
+                        {
+                         "name":"openWebsiteTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"openWebsiteTriggerMessage",
+                         "type":"string",
+                         "value":"last part of the vaginal birth video with naration"
+                        }, 
+                        {
+                         "name":"openWebsiteWidth",
+                         "type":"string",
+                         "value":"70"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":94,
+                 "x":358.5,
+                 "y":702.5
+                }, 
+                {
+                 "height":69,
+                 "id":175,
+                 "name":"Surrounding the vagina are pelvic floor muscles that play a crucial role in various bodily functions",
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/www.youtube.com\/embed\/ITAx5DaJmTA"
+                        }, 
+                        {
+                         "name":"openWebsiteTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"openWebsiteTriggerMessage",
+                         "type":"string",
+                         "value":"Surrounding the vagina are pelvic floor muscles that play a crucial role in various bodily functions"
+                        }, 
+                        {
+                         "name":"openWebsiteWidth",
+                         "type":"string",
+                         "value":"70"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":94,
+                 "x":356,
+                 "y":573
+                }, 
+                {
+                 "height":69,
+                 "id":176,
+                 "name":"How Is It Possible To Get Pregnant During The Period? ",
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/www.youtube.com\/embed\/UgR2aI1UDXM"
+                        }, 
+                        {
+                         "name":"openWebsiteTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"openWebsiteTriggerMessage",
+                         "type":"string",
+                         "value":"How Is It Possible To Get Pregnant During The Period? "
+                        }, 
+                        {
+                         "name":"openWebsiteWidth",
+                         "type":"string",
+                         "value":"70"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":94,
+                 "x":358.5,
+                 "y":442
+                }, 
+                {
+                 "height":69,
+                 "id":177,
+                 "name":"The Miracle of Twin Fertilizations: A Shared Beginning",
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/www.youtube.com\/embed\/fpL1y2SD1fU"
+                        }, 
+                        {
+                         "name":"openWebsiteTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"openWebsiteTriggerMessage",
+                         "type":"string",
+                         "value":"The Miracle of Twin Fertilizations: A Shared Beginning"
+                        }, 
+                        {
+                         "name":"openWebsiteWidth",
+                         "type":"string",
+                         "value":"70"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":94,
+                 "x":355,
+                 "y":316
+                }, 
+                {
+                 "height":69,
+                 "id":178,
+                 "name":"Intercourse on period-woman can get pregnant during her period",
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/www.youtube.com\/embed\/1gA7XzOcbG0"
+                        }, 
+                        {
+                         "name":"openWebsiteTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"openWebsiteTriggerMessage",
+                         "type":"string",
+                         "value":"Intercourse on period-woman can get pregnant during her period"
+                        }, 
+                        {
+                         "name":"openWebsiteWidth",
+                         "type":"string",
+                         "value":"70"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":94,
+                 "x":356,
+                 "y":188
+                }, 
+                {
+                 "height":69,
+                 "id":179,
+                 "name":"educational content: vaginal dryness and lubricants-moisturizers oils-Hormonal Therapy Vaginal",
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/www.youtube.com\/embed\/4EhqZmQDeHc"
+                        }, 
+                        {
+                         "name":"openWebsiteTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"openWebsiteTriggerMessage",
+                         "type":"string",
+                         "value":"educational content: vaginal dryness and lubricants-moisturizers oils-Hormonal Therapy Vaginal"
+                        }, 
+                        {
+                         "name":"openWebsiteWidth",
+                         "type":"string",
+                         "value":"70"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":94,
+                 "x":357,
+                 "y":59.5
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -760,7 +1080,7 @@
          "y":0
         }],
  "nextlayerid":100,
- "nextobjectid":170,
+ "nextobjectid":180,
  "orientation":"orthogonal",
  "properties":[
         {
