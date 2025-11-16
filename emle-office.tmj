@@ -1985,12 +1985,7 @@
                  "name":"native meeting rooms",
                  "properties":[
                         {
-                         "name":"meetingName",
-                         "type":"string",
-                         "value":"room1"
-                        }, 
-                        {
-                         "name":"meetingType",
+                         "name":"meetingRoom",
                          "type":"string",
                          "value":"native"
                         }, 
