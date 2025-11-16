@@ -1906,7 +1906,7 @@
                  "value":"welcomeZone"
                 }],
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -1976,8 +1976,35 @@
                  "type":"area",
                  "visible":true,
                  "width":251.787878787879,
-                 "x":933.848484848483,
-                 "y":982.696969696973
+                 "x":1252.84848484848,
+                 "y":906.696969696973
+                }, 
+                {
+                 "height":267.030303030303,
+                 "id":166,
+                 "name":"native meeting rooms",
+                 "properties":[
+                        {
+                         "name":"meetingName",
+                         "type":"string",
+                         "value":"room1"
+                        }, 
+                        {
+                         "name":"meetingType",
+                         "type":"string",
+                         "value":"native"
+                        }, 
+                        {
+                         "name":"meetingsEnabled",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":254.787878787879,
+                 "x":929.848484848483,
+                 "y":986.696969696973
                 }, 
                 {
                  "height":291.030333333333,
@@ -2383,7 +2410,7 @@
          "y":0
         }],
  "nextlayerid":100,
- "nextobjectid":166,
+ "nextobjectid":167,
  "orientation":"orthogonal",
  "properties":[
         {
