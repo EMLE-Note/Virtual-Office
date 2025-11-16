@@ -1976,28 +1976,6 @@
                  "type":"area",
                  "visible":true,
                  "width":251.787878787879,
-                 "x":1252.84848484848,
-                 "y":906.696969696973
-                }, 
-                {
-                 "height":267.030303030303,
-                 "id":166,
-                 "name":"native meeting rooms",
-                 "properties":[
-                        {
-                         "name":"meetingRoom",
-                         "type":"string",
-                         "value":"native"
-                        }, 
-                        {
-                         "name":"meetingsEnabled",
-                         "type":"bool",
-                         "value":true
-                        }],
-                 "rotation":0,
-                 "type":"area",
-                 "visible":true,
-                 "width":254.787878787879,
                  "x":929.848484848483,
                  "y":986.696969696973
                 }, 
