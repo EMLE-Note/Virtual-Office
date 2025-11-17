@@ -30,11 +30,11 @@ const deskLights: DeskLightConfig[] = [
 
 
     //PictorDo-Office
-  { deskArea: "jitsiMeetingRoom-P", lightOnLayer: "lights/meeting-P-on" },
-  { deskArea: "office", lightOnLayer: "lights/light-office-on" },
-  { deskArea: "desk1-P", lightOnLayer: "lights/light-desk1-P" },
-  { deskArea: "desk2-P", lightOnLayer: "lights/light-desk2-P" },
-  { deskArea: "desk3-P", lightOnLayer: "lights/light-desk3-P" },
+  { deskArea: "jitsiMeetingRoom-P", lightOnLayer: "lights-P/meeting-P-on" },
+  { deskArea: "office", lightOnLayer: "lights-P/light-office-on" },
+  { deskArea: "desk1-P", lightOnLayer: "lights-P/light-desk1-P" },
+  { deskArea: "desk2-P", lightOnLayer: "lights-P/light-desk2-P" },
+  { deskArea: "desk3-P", lightOnLayer: "lights-P/light-desk3-P" },
 ];
 
 function initDeskLight(config: DeskLightConfig) {

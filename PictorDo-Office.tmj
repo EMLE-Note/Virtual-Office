@@ -500,7 +500,7 @@
                  "name":"light-desk1-P",
                  "opacity":0.5,
                  "type":"tilelayer",
-                 "visible":false,
+                 "visible":true,
                  "width":18,
                  "x":0,
                  "y":0
@@ -547,7 +547,7 @@
                  "name":"light-desk2-P",
                  "opacity":0.5,
                  "type":"tilelayer",
-                 "visible":false,
+                 "visible":true,
                  "width":18,
                  "x":0,
                  "y":0
@@ -594,7 +594,7 @@
                  "name":"light-desk3-P",
                  "opacity":0.5,
                  "type":"tilelayer",
-                 "visible":false,
+                 "visible":true,
                  "width":18,
                  "x":0,
                  "y":0
@@ -641,7 +641,7 @@
                  "name":"light-office-on",
                  "opacity":0.5,
                  "type":"tilelayer",
-                 "visible":false,
+                 "visible":true,
                  "width":18,
                  "x":0,
                  "y":0
@@ -688,7 +688,7 @@
                  "name":"meeting-P-on",
                  "opacity":0.5,
                  "type":"tilelayer",
-                 "visible":false,
+                 "visible":true,
                  "width":18,
                  "x":0,
                  "y":0
@@ -735,13 +735,24 @@
                  "name":"light-off",
                  "opacity":0.5,
                  "type":"tilelayer",
-                 "visible":false,
+                 "visible":true,
                  "width":18,
                  "x":0,
                  "y":0
                 }],
          "name":"lights-P",
          "opacity":1,
+         "properties":[
+                {
+                 "name":"public",
+                 "type":"bool",
+                 "value":true
+                }, 
+                {
+                 "name":"scope",
+                 "type":"string",
+                 "value":"room"
+                }],
          "type":"group",
          "visible":false,
          "x":0,
@@ -811,6 +822,29 @@
                  "width":0,
                  "x":212.484848484848,
                  "y":1328.24242424243
+                }, 
+                {
+                 "height":0,
+                 "id":169,
+                 "name":"occ:map2",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"public",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"scope",
+                         "type":"string",
+                         "value":"room"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":564.484848484848,
+                 "y":1972.24242424243
                 }],
          "offsetx":84.848484848485,
          "offsety":-1357.57575757576,
@@ -902,7 +936,7 @@
                  "y":60.833333333333
                 }, 
                 {
-                 "height":87.3333333333334,
+                 "height":96.0000000000001,
                  "id":116,
                  "name":"desk2-P",
                  "rotation":0,
@@ -910,7 +944,7 @@
                  "visible":true,
                  "width":95.6666666666665,
                  "x":29.166666666667,
-                 "y":166.499999999997
+                 "y":157.83333333333
                 }, 
                 {
                  "height":95.1666333333333,
@@ -930,7 +964,7 @@
          "y":0
         }],
  "nextlayerid":101,
- "nextobjectid":169,
+ "nextobjectid":170,
  "orientation":"orthogonal",
  "properties":[
         {

@@ -23,6 +23,13 @@ const deskConfigurations = [
     { areaName: 'desk5', messageText: 'ا. مصطفى مجدي' },
     { areaName: 'desk15', messageText: 'ا. محمود الصباغ' },
     { areaName: 'desk14', messageText: 'ا. محمد جمعان'},
+
+
+     //PictorDo-Office
+    { areaName: 'desk3-P', messageText: 'Sara Sayed' },
+    { areaName: 'desk1-P', messageText: 'Mohamed Gama' },
+    { areaName: 'desk2-P', messageText: 'Momen Sherif' },
+
 ];
 
 /**

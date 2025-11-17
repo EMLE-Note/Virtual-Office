@@ -1715,7 +1715,7 @@
                  "value":"welcomeZone"
                 }],
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -2123,26 +2123,10 @@
                  "width":95.6667,
                  "x":190.833316666666,
                  "y":60.83335
-                }, 
-                {
-                 "height":19,
-                 "id":167,
-                 "name":"",
-                 "rotation":0,
-                 "text":
-                    {
-                     "text":"Hello World",
-                     "wrap":true
-                    },
-                 "type":"",
-                 "visible":true,
-                 "width":83,
-                 "x":-657.5,
-                 "y":287.833333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }],
