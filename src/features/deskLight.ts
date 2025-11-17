@@ -8,7 +8,8 @@ export type DeskLightConfig = {
 
 // Configuration for desk lighting
 const deskLights: DeskLightConfig[] = [
-  { deskArea: "jitsiMeetingRoom", lightOnLayer: "lights/light-desk1-on" },
+  { deskArea: "desk0", lightOnLayer: "lights/light-desk0-on" },
+  { deskArea: "desk1", lightOnLayer: "lights/light-desk1-on" },
   { deskArea: "desk2", lightOnLayer: "lights/light-desk2-on" },
   { deskArea: "desk3", lightOnLayer: "lights/light-desk3-on" },
   { deskArea: "desk5", lightOnLayer: "lights/light-desk5-on" },

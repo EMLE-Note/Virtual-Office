@@ -5,6 +5,7 @@
 // Array of desk configurations for easy expansion
 const deskConfigurations = [
     { areaName: 'desk1', messageText: 'ا.شيماء اسامة' },
+    
 
     { areaName: 'desk3', messageText: 'م. علي' },
     { areaName: 'desk10', messageText: 'م. ندى عزت' },
