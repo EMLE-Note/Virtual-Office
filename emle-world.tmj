@@ -1841,7 +1841,25 @@
          "draworder":"topdown",
          "id":65,
          "name":"variables",
-         "objects":[],
+         "objects":[
+                {
+                 "height":0,
+                 "id":74,
+                 "name":"iframe object",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"sandbox",
+                         "type":"string",
+                         "value":"allow-same-origin allow-scripts allow-popups allow-forms"
+                        }],
+                 "rotation":0,
+                 "type":"object",
+                 "visible":true,
+                 "width":0,
+                 "x":977.333333333333,
+                 "y":2196
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -1992,7 +2010,7 @@
          "y":0
         }],
  "nextlayerid":68,
- "nextobjectid":74,
+ "nextobjectid":75,
  "orientation":"orthogonal",
  "properties":[
         {
