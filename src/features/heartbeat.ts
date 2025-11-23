@@ -1,58 +1,73 @@
 // src/features/heartbeat.ts
 import type { WorkAdventureApi } from "@workadventure/iframe-api-typings";
 
-// Production URL
+// رابط الويب هوك الخاص بك
 const WEBHOOK = 'https://n8n.emlenotes.com/webhook/heartbeat';
 
-const HEARTBEAT_MS = 10 * 1000;       // 10 ثواني (يمكنك تعديلها لنص دقيقة 30000)
+const HEARTBEAT_MS = 10 * 1000;       // 10 ثواني
 const GAP_MS = 10 * 60 * 1000;        // 10 دقائق
 
 const nowIso = () => new Date().toISOString();
 
+// ========================================================
+// 🛠️ التعديل الأول: متغيرات الذاكرة (In-Memory Storage)
+// ========================================================
+// نستخدم هذه المتغيرات بدلاً من localStorage لتخزين البيانات
+// طالما اللاعب موجود في الخريطة، هذه المتغيرات ستحتفظ بقيمتها
+let _memAnonId: string | null = null;
+let _memSessionStart: string | null = null;
+let _memLastSent: string | null = null;
+
 function ensureAnonId(): string {
-  const k = 'anon_id';
-  let v = localStorage.getItem(k);
-  if (!v) {
-    v = (crypto && 'randomUUID' in crypto) ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`;
-    localStorage.setItem(k, v);
+  if (!_memAnonId) {
+    // نولد معرف عشوائي ونحفظه في المتغير بدلاً من التخزين المحلي
+    _memAnonId = (crypto && 'randomUUID' in crypto) 
+      ? crypto.randomUUID() 
+      : `${Date.now()}-${Math.random()}`;
   }
-  return v;
+  return _memAnonId;
 }
 
-// ❗️رجّع Promise<void> وتأكد كل المسارات بتنتهي بـ return
+// ========================================================
+// 🛠️ التعديل الثاني: حل مشكلة الشبكة (no-cors)
+// ========================================================
 async function postJSON(bodyText: string, beacon = false): Promise<void> {
+  // Beacon جيد عند إغلاق الصفحة
   if (beacon && 'sendBeacon' in navigator) {
-    const ok = navigator.sendBeacon(WEBHOOK, new Blob([bodyText], { type: 'text/plain;charset=UTF-8' }));
-    console.log('🔔 beacon sent?', ok);
+    navigator.sendBeacon(WEBHOOK, new Blob([bodyText], { type: 'text/plain;charset=UTF-8' }));
     return;
   }
 
   try {
-    const res = await fetch(WEBHOOK, {
+    await fetch(WEBHOOK, {
       method: 'POST',
-      // نستخدم text/plain لتفادي preflight CORS
+      // 👇 هذا السطر هو الحل السحري لتجاوز حظر الشبكة في الـ Iframe
+      mode: 'no-cors', 
       headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
       body: bodyText,
       keepalive: true,
     });
-    console.log('➡️ heartbeat POST →', res.status, res.statusText);
-    return;
+    // ملاحظة: في وضع no-cors لا يمكننا قراءة الـ status (تكون دائماً 0)
+    console.log('➡️ heartbeat sent (in-memory mode)');
   } catch (err) {
     console.error('🚫 fetch error:', err);
-    return;
   }
 }
 
 function makePayload(WA: WorkAdventureApi) {
   const player = WA.player;
   const room = WA.room;
-  const roomId = room.id;
+
+  // منطق بداية الجلسة باستخدام المتغيرات
+  if (!_memSessionStart) {
+    _memSessionStart = nowIso();
+  }
 
   return {
     action: 'ping',
     sentAt: nowIso(),
     session: {
-      startAt: localStorage.getItem(`sessionStart:${roomId}`) ?? nowIso(),
+      startAt: _memSessionStart,
       gapMs: GAP_MS,
     },
     player: {
@@ -72,49 +87,47 @@ function makePayload(WA: WorkAdventureApi) {
 export async function startHeartbeat(WA: WorkAdventureApi) {
   await WA.onInit();
 
-  const roomId = WA.room.id;
-  const lastSent = localStorage.getItem(`lastSent:${roomId}`);
-  const newSession = !lastSent || Date.now() - Date.parse(lastSent) > GAP_MS;
-  if (newSession) {
-    localStorage.setItem(`sessionStart:${roomId}`, nowIso());
+  // التحقق من حالة الجلسة عند التشغيل
+  const now = Date.now();
+  if (_memLastSent && (now - Date.parse(_memLastSent) > GAP_MS)) {
+    // إذا مر وقت طويل، نعتبرها جلسة جديدة
+    _memSessionStart = nowIso();
   }
 
-  // Ping أولي
+  // إرسال أول نبضة (Ping)
   const first = makePayload(WA);
   await postJSON(JSON.stringify(first));
-  localStorage.setItem(`lastSent:${roomId}`, first.sentAt);
+  _memLastSent = first.sentAt;
 
-  // Loop كل فترة
+  // تكرار الإرسال كل فترة زمنية
   setInterval(async () => {
-    const last = localStorage.getItem(`lastSent:${roomId}`);
-    if (!last || Date.now() - Date.parse(last) > GAP_MS) {
-      localStorage.setItem(`sessionStart:${roomId}`, nowIso());
+    const loopNow = Date.now();
+    // التحقق مرة أخرى في كل لفة
+    if (_memLastSent && (loopNow - Date.parse(_memLastSent) > GAP_MS)) {
+       _memSessionStart = nowIso();
     }
+    
     const payload = makePayload(WA);
     await postJSON(JSON.stringify(payload));
-    localStorage.setItem(`lastSent:${roomId}`, payload.sentAt);
+    
+    // تحديث وقت آخر إرسال في المتغير
+    _memLastSent = payload.sentAt;
   }, HEARTBEAT_MS);
 
-  // قبل الإغلاق
+  // عند إغلاق الصفحة
   window.addEventListener('beforeunload', () => {
     const payload = makePayload(WA);
-    // sendBeacon لا يعمل مع await، فمش محتاجين ننتظر
     postJSON(JSON.stringify(payload), true);
   });
 }
 
 // ========================================================
-// 🔥 الجزء المهم جداً لتشغيل الكود (Main Entry Point)
+// نقطة البداية (Entry Point)
 // ========================================================
-
-// نخبر TypeScript أن المتغير WA موجود عالمياً (Global)
 declare const WA: any;
 
-// نتأكد أن الكود يعمل فقط داخل WorkAdventure وليس في بيئة أخرى
 if (typeof WA !== 'undefined') {
     startHeartbeat(WA).catch((err) => {
-        console.error('❌ Heartbeat script failed to start:', err);
+        console.error('❌ Heartbeat script failed:', err);
     });
-} else {
-    console.warn('⚠️ WA object not found. Are you running inside WorkAdventure?');
 }
