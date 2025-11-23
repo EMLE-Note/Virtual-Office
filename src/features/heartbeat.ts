@@ -1,11 +1,11 @@
 // src/features/heartbeat.ts
 import type { WorkAdventureApi } from "@workadventure/iframe-api-typings";
 
-// Production URL (يفضّل تضيف مفتاح بسيط في الـ query)
+// Production URL
 const WEBHOOK = 'https://n8n.emlenotes.com/webhook/heartbeat';
 
-const HEARTBEAT_MS = 10 * 1000;       // نص دقيقة
-const GAP_MS = 10 * 60 * 1000;        // 10 دقايق
+const HEARTBEAT_MS = 10 * 1000;       // 10 ثواني (يمكنك تعديلها لنص دقيقة 30000)
+const GAP_MS = 10 * 60 * 1000;        // 10 دقائق
 
 const nowIso = () => new Date().toISOString();
 
@@ -84,7 +84,7 @@ export async function startHeartbeat(WA: WorkAdventureApi) {
   await postJSON(JSON.stringify(first));
   localStorage.setItem(`lastSent:${roomId}`, first.sentAt);
 
-  // Loop كل نص دقيقة
+  // Loop كل فترة
   setInterval(async () => {
     const last = localStorage.getItem(`lastSent:${roomId}`);
     if (!last || Date.now() - Date.parse(last) > GAP_MS) {
@@ -101,4 +101,20 @@ export async function startHeartbeat(WA: WorkAdventureApi) {
     // sendBeacon لا يعمل مع await، فمش محتاجين ننتظر
     postJSON(JSON.stringify(payload), true);
   });
+}
+
+// ========================================================
+// 🔥 الجزء المهم جداً لتشغيل الكود (Main Entry Point)
+// ========================================================
+
+// نخبر TypeScript أن المتغير WA موجود عالمياً (Global)
+declare const WA: any;
+
+// نتأكد أن الكود يعمل فقط داخل WorkAdventure وليس في بيئة أخرى
+if (typeof WA !== 'undefined') {
+    startHeartbeat(WA).catch((err) => {
+        console.error('❌ Heartbeat script failed to start:', err);
+    });
+} else {
+    console.warn('⚠️ WA object not found. Are you running inside WorkAdventure?');
 }
