@@ -2024,6 +2024,11 @@
          "value":"A perfect virtual office to get started with WorkAdventure"
         }, 
         {
+         "name":"mapImage",
+         "type":"string",
+         "value":"emle-world.png"
+        }, 
+        {
          "name":"mapName",
          "type":"string",
          "value":"emle-world"
