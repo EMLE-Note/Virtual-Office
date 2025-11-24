@@ -3,6 +3,7 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 import { initAllDeskLights } from "./features/deskLight";
 import { setupAllWelcomeAreas } from "./features/area-messages";
+import { startHeartbeat } from "./features/heartbeat";
 //import { initAreaIndicators } from "./features/areaIndicator";
 
         WA.onInit().then(async () => {
@@ -14,6 +15,9 @@ import { setupAllWelcomeAreas } from "./features/area-messages";
         
       // Initialize area-based layer indicators
           //await initAreaIndicators();
+
+      // Start heartbeat functionality
+          await startHeartbeat(WA);
         });
 
 let currentPopup: any = undefined;
