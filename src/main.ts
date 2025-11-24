@@ -13,9 +13,6 @@ import { startHeartbeat } from "./features/heartbeat";
      // Setup welcome message areas for all desks
         setupAllWelcomeAreas();
         
-      // Initialize area-based layer indicators
-          //await initAreaIndicators();
-
       // Start heartbeat functionality
           await startHeartbeat(WA);
         });
