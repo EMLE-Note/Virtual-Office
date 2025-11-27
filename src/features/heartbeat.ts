@@ -2,7 +2,7 @@
 import type { WorkAdventureApi } from "@workadventure/iframe-api-typings";
 
 // رابط الويب هوك الخاص بك
-const WEBHOOK = 'https://n8n.emlenotes.com/webhook-test/heartbeat';
+const WEBHOOK = 'https://n8n.emlenotes.com/webhook/heartbeat';
 
 const HEARTBEAT_MS = 10 * 1000;       // 10 ثواني
 const GAP_MS = 10 * 60 * 1000;        // 10 دقائق
