@@ -2036,7 +2036,7 @@
         {
          "name":"script",
          "type":"string",
-         "value":"src\/features\/heartbeat.ts"
+         "value":""
         }],
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
