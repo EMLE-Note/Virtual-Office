@@ -2,10 +2,10 @@
 import type { WorkAdventureApi } from "@workadventure/iframe-api-typings";
 
 // رابط الويب هوك الخاص بك
-const WEBHOOK = 'https://n8n.emlenotes.com/webhook/heartbeat';
+const WEBHOOK = 'https://n8n.emlenotes.com/webhook-test/heartbeat';
 
-const HEARTBEAT_MS = 9 * 60 * 1000; // 9 دقائق
-const GAP_MS = 9 * 60 * 1000;       // 9 دقائق
+const HEARTBEAT_MS = 10 * 1000;       // 10 ثواني
+const GAP_MS = 10 * 60 * 1000;        // 10 دقائق
 
 const nowIso = () => new Date().toISOString();
 
