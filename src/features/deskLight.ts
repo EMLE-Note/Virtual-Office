@@ -24,6 +24,7 @@ const deskLights: DeskLightConfig[] = [
   { deskArea: "desk14", lightOnLayer: "lights/light-desk14-on" },
   { deskArea: "desk15", lightOnLayer: "lights/light-desk15-on" },
   { deskArea: "desk16", lightOnLayer: "lights/light-desk16-on" },
+  { deskArea: "desk17", lightOnLayer: "lights/light-desk17-on" },
   { deskArea: "jitsiMeetingRoom-b", lightOnLayer: "lights/meeting-b-on" },
   { deskArea: "jitsiMeetingRoom-a", lightOnLayer: "lights/meeting-a-on" }, 
 

@@ -4,8 +4,8 @@
 
 // Array of desk configurations for easy expansion
 const deskConfigurations = [
+
     { areaName: 'desk1', messageText: 'ا.شيماء اسامة' },
-    
         //development
     { areaName: 'desk3', messageText: 'م. علي' },
     { areaName: 'desk10', messageText: 'م. ندى عزت' },
@@ -13,22 +13,23 @@ const deskConfigurations = [
         //medical
     { areaName: 'desk16', messageText: 'أسماء حسن ' },
     { areaName: 'desk13', messageText: 'ا. هاجر ' },
-    { areaName: 'desk6', messageText: 'د. احمد عادل' },
     { areaName: 'desk7', messageText: 'ا. احمد صقر' },
     { areaName: 'desk8', messageText: 'د. احمد امام' },
+    { areaName: 'desk17', messageText: 'د. عمر ايمن' },
         //management
     { areaName: 'desk2', messageText: 'ا. هانم'},
     { areaName: 'desk9', messageText: 'ا. محمد مطراوي'},
     { areaName: 'desk5', messageText: 'ا. مصطفى مجدي' },
     { areaName: 'desk15', messageText: 'ا. محمود الصباغ' },
-     
-    
+        //growth
     { areaName: 'desk14', messageText: 'ا. محمد جمعان'},
     { areaName: 'desk11', messageText: 'د. مصطفى السيسي' },
+    { areaName: 'desk6', messageText: 'د. احمد عادل' },
+
    
 
 
-     //PictorDo-Office
+     ////////PictorDo-Office
     { areaName: 'desk3-P', messageText: 'Sara Sayed' },
     { areaName: 'desk1-P', messageText: 'Mohamed Gama' },
     { areaName: 'desk2-P', messageText: 'Momen Sherif' },
