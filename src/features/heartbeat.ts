@@ -1,138 +1,100 @@
-// src/features/heartbeat.ts
 import type { WorkAdventureApi } from "@workadventure/iframe-api-typings";
 
-// رابط الويب هوك الخاص بك
 const WEBHOOK = 'https://n8n.emlenotes.com/webhook/heartbeat';
-
 const HEARTBEAT_MS = 1 * 60 * 1000;   // 1 دقيقة
-const GAP_MS = 10 * 60 * 1000;        // 10 دقائق
+const STORAGE_KEY = 'wa_last_heartbeat_sent'; // مفتاح التخزين المشترك
 
 const nowIso = () => new Date().toISOString();
 
-// ========================================================
-// 🛠️ متغيرات الذاكرة (In-Memory Storage)
-// ========================================================
-let _memAnonId: string | null = null;
-let _memSessionStart: string | null = null;
-let _memLastSent: string | null = null;
-
-function ensureAnonId(): string {
-  if (!_memAnonId) {
-    _memAnonId = (crypto && 'randomUUID' in crypto) 
-      ? crypto.randomUUID() 
-      : `${Date.now()}-${Math.random()}`;
-  }
-  return _memAnonId;
+async function postJSON(bodyText: string): Promise<void> {
+    try {
+        await fetch(WEBHOOK, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+            body: bodyText,
+            keepalive: true,
+        });
+        console.log('➡️ Heartbeat sent via Network');
+    } catch (err) {
+        console.error('🚫 Fetch error:', err);
+    }
 }
 
-// ========================================================
-// 🛠️ دالة الإرسال
-// ========================================================
-async function postJSON(bodyText: string, beacon = false): Promise<void> {
-  if (beacon && 'sendBeacon' in navigator) {
-    navigator.sendBeacon(WEBHOOK, new Blob([bodyText], { type: 'text/plain;charset=UTF-8' }));
-    return;
-  }
+// دالة ذكية للتحقق: هل يحق لنا الإرسال الآن؟
+function shouldSendHeartbeat(): boolean {
+    const lastSentStr = localStorage.getItem(STORAGE_KEY);
+    if (!lastSentStr) return true; // لم يرسل أبداً
 
-  try {
-    await fetch(WEBHOOK, {
-      method: 'POST',
-      mode: 'no-cors', 
-      headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
-      body: bodyText,
-      keepalive: true,
-    });
-    console.log('➡️ heartbeat sent');
-  } catch (err) {
-    console.error('🚫 fetch error:', err);
-  }
+    const lastSentTime = parseInt(lastSentStr, 10);
+    const now = Date.now();
+
+    // نتحقق: هل مرت 55 ثانية على الأقل منذ آخر إرسال (من أي تبويب)؟
+    // جعلناها 55 ثانية بدلاً من 60 لنتجنب مشاكل التزامن البسيطة
+    if (now - lastSentTime < 55000) {
+        console.log('⏳ Skipped: Heartbeat sent recently by another tab/script.');
+        return false;
+    }
+    return true;
+}
+
+function updateLastSent() {
+    localStorage.setItem(STORAGE_KEY, Date.now().toString());
 }
 
 function makePayload(WA: WorkAdventureApi) {
-  const player = WA.player;
-  const room = WA.room;
+    const player = WA.player;
+    const room = WA.room;
+    
+    // نستخدم وقت بداية الجلسة من التخزين أيضاً لتوحيده
+    let sessionStart = localStorage.getItem('wa_session_start');
+    if (!sessionStart) {
+        sessionStart = nowIso();
+        localStorage.setItem('wa_session_start', sessionStart);
+    }
 
-  if (!_memSessionStart) {
-    _memSessionStart = nowIso();
-  }
-
-  return {
-    action: 'ping',
-    sentAt: nowIso(),
-    session: {
-      startAt: _memSessionStart,
-      gapMs: GAP_MS,
-    },
-    player: {
-      id: player.id ?? ensureAnonId(),
-      name: player.name,
-      language: player.language,
-      tags: player.tags,
-    },
-    room: {
-      id: room.id,
-      mapUrl: room.mapURL,
-      pageUrl: window.location.href,
-    },
-  };
+    return {
+        action: 'ping',
+        sentAt: nowIso(),
+        session: { startAt: sessionStart, gapMs: 10 * 60 * 1000 },
+        player: {
+            id: player.id,
+            name: player.name,
+            language: player.language,
+            tags: player.tags,
+        },
+        room: {
+            id: room.id,
+            mapUrl: room.mapURL,
+            pageUrl: window.location.href,
+        },
+    };
 }
 
 export async function startHeartbeat(WA: WorkAdventureApi) {
-  await WA.onInit();
+    await WA.onInit();
 
-  const now = Date.now();
-  if (_memLastSent && (now - Date.parse(_memLastSent) > GAP_MS)) {
-    _memSessionStart = nowIso();
-  }
+    // 1. الدالة الرئيسية التي تنفذ الإرسال
+    const runHeartbeat = async () => {
+        if (!shouldSendHeartbeat()) return; // توقف إذا أرسل تبويب آخر مؤخراً
 
-  // إرسال أول نبضة (Ping)
-  const first = makePayload(WA);
-  await postJSON(JSON.stringify(first));
-  _memLastSent = first.sentAt;
+        const payload = makePayload(WA);
+        
+        // تحديث الوقت *قبل* الإرسال بقليل لمنع التبويبات الأخرى من السباق
+        updateLastSent(); 
+        
+        await postJSON(JSON.stringify(payload));
+    };
 
-  // تكرار الإرسال كل فترة زمنية
-  setInterval(async () => {
-    const loopNow = Date.now();
-    if (_memLastSent && (loopNow - Date.parse(_memLastSent) > GAP_MS)) {
-       _memSessionStart = nowIso();
-    }
-    
-    const payload = makePayload(WA);
-    await postJSON(JSON.stringify(payload));
-    
-    _memLastSent = payload.sentAt;
-  }, HEARTBEAT_MS);
+    // 2. تشغيل فوري (بشرط عدم وجود إرسال حديث)
+    await runHeartbeat();
 
-  window.addEventListener('beforeunload', () => {
-    const payload = makePayload(WA);
-    postJSON(JSON.stringify(payload), true);
-  });
+    // 3. التكرار
+    setInterval(runHeartbeat, HEARTBEAT_MS);
 }
 
-// ========================================================
-// 🛑 نقطة البداية (Entry Point) - تم التعديل هنا لمنع التكرار
-// ========================================================
+// نقطة البداية
 declare const WA: any;
-
-// تعريف خاصية جديدة في النافذة (Window) لتعمل كقفل عالمي
-declare global {
-    interface Window {
-        _heartbeatRunning: boolean;
-    }
-}
-
 if (typeof WA !== 'undefined') {
-    // 1. هل السكربت يعمل بالفعل في هذه الصفحة؟
-    if (window._heartbeatRunning === true) {
-        console.warn('⚠️ Heartbeat script is already running. Skipping duplicate execution.');
-    } else {
-        // 2. إذا لم يكن يعمل، ضع العلامة فوراً لمنع أي نسخة أخرى
-        window._heartbeatRunning = true;
-        console.log('✅ Starting Heartbeat Script...');
-
-        startHeartbeat(WA).catch((err) => {
-            console.error('❌ Heartbeat script failed:', err);
-            // ملاحظة: لا نزيل العلامة هنا لتجنب إعادة المحاولة التي قد تسبب تكراراً
-        });
-    }
+    startHeartbeat(WA).catch(console.error);
 }
