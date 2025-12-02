@@ -1,6 +1,6 @@
 import type { WorkAdventureApi } from "@workadventure/iframe-api-typings";
 
-const WEBHOOK = 'https://n8n.emlenotes.com/webhook/heartbeat';
+const WEBHOOK = 'https://n8n.emlenotes.com/webhook-test/heartbeat';
 const HEARTBEAT_MS = 1 * 60 * 1000;   // 1 دقيقة
 const STORAGE_KEY = 'wa_last_heartbeat_sent'; // مفتاح التخزين المشترك
 
