@@ -1859,6 +1859,17 @@
                  "width":0,
                  "x":977.333333333333,
                  "y":2196
+                }, 
+                {
+                 "height":277.333333333333,
+                 "id":75,
+                 "name":"ERP",
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":334.666666666667,
+                 "x":870.666666666667,
+                 "y":2629.33333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -2010,7 +2021,7 @@
          "y":0
         }],
  "nextlayerid":68,
- "nextobjectid":75,
+ "nextobjectid":76,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -2036,7 +2047,7 @@
         {
          "name":"script",
          "type":"string",
-         "value":"src/main.ts"
+         "value":"src\/main.ts"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

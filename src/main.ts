@@ -4,25 +4,29 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 import { initAllDeskLights } from "./features/deskLight";
 import { setupAllWelcomeAreas } from "./features/area-messages";
 import { startHeartbeat } from "./features/heartbeat";
+import { initErpZone } from "./features/erp";
 //import { initAreaIndicators } from "./features/areaIndicator";
 
-        WA.onInit().then(async () => {
+WA.onInit().then(async () => {
 
-        await initAllDeskLights();
-        
-     // Setup welcome message areas for all desks
-        setupAllWelcomeAreas();
-        
-      // Start heartbeat functionality
-          await startHeartbeat(WA);
-        });
+    await initAllDeskLights();
+
+    // Setup welcome message areas for all desks
+    setupAllWelcomeAreas();
+
+    // Start heartbeat functionality
+    await startHeartbeat(WA);
+
+    // Initialize ERP Zone
+    initErpZone(WA);
+});
 
 let currentPopup: any = undefined;
 
 // Waiting for the API to be ready
 WA.onInit().then(() => {
     console.log('Scripting API ready');
-    console.log('Player tags: ',WA.player.tags)
+    console.log('Player tags: ', WA.player.tags)
 
     WA.room.area.onEnter('clock').subscribe(() => {
         const today = new Date();
@@ -39,11 +43,11 @@ WA.onInit().then(() => {
 
 }).catch(e => console.error(e));
 
-function closePopup(){
+function closePopup() {
     if (currentPopup !== undefined) {
         currentPopup.close();
         currentPopup = undefined;
     }
 }
 
-export {};
+export { };
