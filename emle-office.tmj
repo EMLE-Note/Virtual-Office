@@ -2530,6 +2530,19 @@
          "tilecount":2,
          "tileheight":32,
          "tilewidth":32
+        }, 
+        {
+         "columns":12,
+         "firstgid":96338,
+         "image":"tilesets\/doors.png",
+         "imageheight":544,
+         "imagewidth":384,
+         "margin":0,
+         "name":"door",
+         "spacing":0,
+         "tilecount":204,
+         "tileheight":32,
+         "tilewidth":32
         }],
  "tilewidth":32,
  "type":"map",
