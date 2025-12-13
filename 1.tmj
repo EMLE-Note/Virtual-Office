@@ -882,9 +882,19 @@
                  "point":true,
                  "properties":[
                         {
+                         "name":"autoOpen",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
                          "name":"closeLayer",
                          "type":"string",
                          "value":"doors\/close"
+                        }, 
+                        {
+                         "name":"code",
+                         "type":"string",
+                         "value":"12345"
                         }, 
                         {
                          "name":"default",
@@ -907,11 +917,11 @@
                          "value":true
                         }],
                  "rotation":0,
-                 "type":"variable ",
+                 "type":"variable",
                  "visible":true,
                  "width":0,
-                 "x":286.151515151515,
-                 "y":1899.40909090909
+                 "x":275.818181818182,
+                 "y":1897.57575757576
                 }],
          "offsetx":84.848484848485,
          "offsety":-1357.57575757576,
@@ -946,8 +956,8 @@
                  "type":"area",
                  "visible":true,
                  "width":94.6666666666667,
-                 "x":225.166666666667,
-                 "y":463.5
+                 "x":228,
+                 "y":462.666666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
