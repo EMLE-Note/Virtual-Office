@@ -4,10 +4,7 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
+    "lib": ["ESNext", "DOM"],
     "allowJs": true,
     "moduleResolution": "Node",
     "strict": true,
@@ -27,9 +24,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["@workadventure/iframe-api-typings"]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
