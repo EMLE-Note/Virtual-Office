@@ -780,7 +780,7 @@
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 40732, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 41032, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 41332, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 41332, 627, 0, 0, 0, 0, 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 41627, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -882,24 +882,9 @@
                  "point":true,
                  "properties":[
                         {
-                         "name":"autoOpen",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
                          "name":"closeLayer",
                          "type":"string",
                          "value":"doors\/close"
-                        }, 
-                        {
-                         "name":"code",
-                         "type":"string",
-                         "value":"12345"
-                        }, 
-                        {
-                         "name":"default",
-                         "type":"bool",
-                         "value":false
                         }, 
                         {
                          "name":"door",
@@ -910,11 +895,6 @@
                          "name":"openLayer",
                          "type":"string",
                          "value":"doors\/open"
-                        }, 
-                        {
-                         "name":"persist",
-                         "type":"bool",
-                         "value":true
                         }],
                  "rotation":0,
                  "type":"variable",
@@ -945,8 +925,13 @@
                 {
                  "height":116.666666666667,
                  "id":175,
-                 "name":"door-area",
+                 "name":"close-zone",
                  "properties":[
+                        {
+                         "name":"autoClose",
+                         "type":"bool",
+                         "value":true
+                        }, 
                         {
                          "name":"doorVariable",
                          "type":"string",
@@ -955,9 +940,41 @@
                  "rotation":0,
                  "type":"area",
                  "visible":true,
-                 "width":94.6666666666667,
-                 "x":228,
-                 "y":462.666666666667
+                 "width":49.3333333333334,
+                 "x":206,
+                 "y":460.666666666667
+                }, 
+                {
+                 "height":116.667,
+                 "id":176,
+                 "name":"open-zone",
+                 "properties":[
+                        {
+                         "name":"autoClose",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"autoOpen",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"code",
+                         "type":"string",
+                         "value":"12345"
+                        }, 
+                        {
+                         "name":"doorVariable",
+                         "type":"string",
+                         "value":"door1"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":49.3333,
+                 "x":289.33335,
+                 "y":456.333166666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -965,8 +982,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":104,
- "nextobjectid":176,
+ "nextlayerid":106,
+ "nextobjectid":177,
  "orientation":"orthogonal",
  "properties":[
         {
