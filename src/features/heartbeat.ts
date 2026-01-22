@@ -1,7 +1,7 @@
 // src/features/heartbeat.ts
 import type { WorkAdventureApi } from "@workadventure/iframe-api-typings";
 
-const WEBHOOK = 'https://n8n.emlenotes.com/webhook-test/heartbeat';
+const WEBHOOK = 'https://n8n.emlenotes.com/webhook/heartbeat';
 const HEARTBEAT_MS = 5 * 60 * 1000;   // 5 دقائق
 const GAP_MS = 10 * 60 * 1000;        // 10 دقائق
 
