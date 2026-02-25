@@ -6,30 +6,32 @@
 const deskConfigurations = [
 
     { areaName: 'desk1', messageText: 'ا.شيماء اسامة' },
-        //development
+    //development
     { areaName: 'desk3', messageText: 'م. علي' },
     { areaName: 'desk10', messageText: 'م. ندى عزت' },
     { areaName: 'desk12', messageText: 'ا. ايمان' },
-        //medical
+    { areaName: 'desk18', messageText: 'ا. محمد جمعان' },
+    //medical
     { areaName: 'desk16', messageText: 'أسماء حسن ' },
     { areaName: 'desk13', messageText: 'ا. هاجر ' },
     { areaName: 'desk7', messageText: 'ا. احمد صقر' },
     { areaName: 'desk8', messageText: 'د. احمد امام' },
     { areaName: 'desk17', messageText: 'د. عمر ايمن' },
-        //management
-    { areaName: 'desk2', messageText: 'ا. هانم'},
-    { areaName: 'desk9', messageText: 'ا. محمد مطراوي'},
+    //management
+    { areaName: 'desk2', messageText: 'ا. هانم' },
+    { areaName: 'desk9', messageText: 'ا. محمد مطراوي' },
     { areaName: 'desk5', messageText: 'ا. مصطفى مجدي' },
     { areaName: 'desk15', messageText: 'ا. محمود الصباغ' },
-        //growth
-    { areaName: 'desk14', messageText: 'ا. محمد جمعان'},
+    //growth
+    { areaName: 'desk14', messageText: 'ا.عمر خطاب' },
+    { areaName: 'desk19', messageText: 'ا. يوسف فريد' },
     { areaName: 'desk11', messageText: 'د. مصطفى السيسي' },
     { areaName: 'desk6', messageText: 'د. احمد عادل' },
 
-   
 
 
-     ////////PictorDo-Office
+
+    ////////PictorDo-Office
     { areaName: 'desk3-P', messageText: 'Sara Sayed' },
     { areaName: 'desk1-P', messageText: 'Mohamed Gama' },
     { areaName: 'desk2-P', messageText: 'Momen Sherif' },
@@ -42,19 +44,19 @@ const deskConfigurations = [
  * @param messageText - نص الرسالة الذي سيظهر.
  */
 export function setupWelcomeArea(areaName: string, messageText: string): void {
-    
+
     // تعريف نوع المتغير ليكون من نوع الرسالة الإجرائية أو غير مُعرف (undefined)
-    let actionMessage: any | undefined; 
+    let actionMessage: any | undefined;
     // ملاحظة: إذا قمت باستيراد ActionMessage، يجب استخدامها: let actionMessage: ActionMessage | undefined;
 
     // عند دخول اللاعب إلى المنطقة المحددة
     WA.room.area.onEnter(areaName).subscribe(() => {
-        
+
         // عرض الرسالة الإجرائية
         actionMessage = WA.ui.displayActionMessage({
             type: "message",
             message: messageText,
-            
+
             callback: () => {
                 console.log(`تم تفعيل رسالة الترحيب في منطقة "${areaName}".`);
             }
@@ -65,7 +67,7 @@ export function setupWelcomeArea(areaName: string, messageText: string): void {
     WA.room.area.onLeave(areaName).subscribe(() => {
         // نتحقق من وجود الرسالة قبل محاولة إزالتها
         if (actionMessage) {
-            actionMessage.remove(); 
+            actionMessage.remove();
             actionMessage = undefined;
         }
     });

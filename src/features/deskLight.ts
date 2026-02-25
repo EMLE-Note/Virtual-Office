@@ -25,12 +25,14 @@ const deskLights: DeskLightConfig[] = [
   { deskArea: "desk15", lightOnLayer: "lights/light-desk15-on" },
   { deskArea: "desk16", lightOnLayer: "lights/light-desk16-on" },
   { deskArea: "desk17", lightOnLayer: "lights/light-desk17-on" },
+  { deskArea: "desk18", lightOnLayer: "lights/light-desk18-on" },
+  { deskArea: "desk19", lightOnLayer: "lights/light-desk19-on" },
   { deskArea: "jitsiMeetingRoom-b", lightOnLayer: "lights/meeting-b-on" },
-  { deskArea: "jitsiMeetingRoom-a", lightOnLayer: "lights/meeting-a-on" }, 
+  { deskArea: "jitsiMeetingRoom-a", lightOnLayer: "lights/meeting-a-on" },
 
 
 
-    //PictorDo-Office
+  //PictorDo-Office
   { deskArea: "jitsiMeetingRoom-P", lightOnLayer: "lights-P/meeting-P-on" },
   { deskArea: "office", lightOnLayer: "lights-P/light-office-on" },
   { deskArea: "desk1-P", lightOnLayer: "lights-P/light-desk1-P" },
@@ -85,10 +87,10 @@ function initDeskLight(config: DeskLightConfig) {
 export async function initAllDeskLights() {
   console.log("[deskLight] Initializing all desk lights");
   await bootstrapExtra();
-  
+
   for (const desk of deskLights) {
     initDeskLight(desk);
   }
-  
+
   console.log("[deskLight] All desk lights initialized");
 }
