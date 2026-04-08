@@ -24,8 +24,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
-    "skipLibCheck": true,
-    "types": ["@workadventure/iframe-api-typings"]
+    "skipLibCheck": true
   },
   "include": ["src"]
 }
