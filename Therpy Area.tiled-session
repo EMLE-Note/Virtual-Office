@@ -1,0 +1,163 @@
+{
+    "activeFile": "emle-world.tmj",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "Therapy Area.tmj": {
+            "expandedGroupLayers": [
+                55,
+                51
+            ],
+            "scale": 0.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 788,
+                "y": 386
+            }
+        },
+        "Therapy Area.tmj#GRASS": {
+            "scaleInDock": 0.25
+        },
+        "Therapy Area.tmj#PictorDo-Office": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#WA_Exterior": {
+            "scaleInDock": 1.5
+        },
+        "Therapy Area.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#WA_Room_Builder": {
+            "scaleInDock": 0.5
+        },
+        "Therapy Area.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#decor": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#door": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#emle-world": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#floor wood": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#floor-test": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#floor3": {
+            "scaleInDock": 0.125
+        },
+        "Therapy Area.tmj#furniture1": {
+            "scaleInDock": 0.5
+        },
+        "Therapy Area.tmj#text": {
+            "scaleInDock": 1
+        },
+        "Therapy Area.tmj#walls": {
+            "scaleInDock": 0.5
+        },
+        "emle-world.tmj": {
+            "expandedGroupLayers": [
+                55
+            ],
+            "scale": 0.75,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 661.3333333333333,
+                "y": 2818.6666666666665
+            }
+        },
+        "emle-world.tmj#GRASS": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#Hospital Wall": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#Island": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#MU": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#decor": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#floor wood": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#floor-test": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#floor3": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#furniture1": {
+            "scaleInDock": 1
+        },
+        "emle-world.tmj#walls": {
+            "scaleInDock": 1
+        }
+    },
+    "openFiles": [
+        "Therapy Area.tmj",
+        "emle-world.tmj"
+    ],
+    "project": "Therpy Area.tiled-project",
+    "recentFiles": [
+        "Therapy Area.tmj",
+        "emle-world.tmj"
+    ]
+}

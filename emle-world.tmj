@@ -283,7 +283,7 @@
          "name":"collisions",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":65,
          "x":0,
          "y":0
@@ -1466,75 +1466,7 @@
          "draworder":"topdown",
          "id":2,
          "name":"floorLayer",
-         "objects":[
-                {
-                 "height":64.6666666666665,
-                 "id":69,
-                 "name":"to-emle-world",
-                 "properties":[
-                        {
-                         "name":"exitUrl",
-                         "type":"string",
-                         "value":"emle-office.tmj#from-emle-world"
-                        }],
-                 "rotation":0,
-                 "type":"area",
-                 "visible":true,
-                 "width":19.3333333333335,
-                 "x":705.60606060606,
-                 "y":2054.57575757576
-                }, 
-                {
-                 "height":64.6666666666665,
-                 "id":71,
-                 "name":"to-emle-world",
-                 "properties":[
-                        {
-                         "name":"exitUrl",
-                         "type":"string",
-                         "value":"Medical-Museum.tmj#from-emle-world"
-                        }],
-                 "rotation":0,
-                 "type":"area",
-                 "visible":true,
-                 "width":119.833333333334,
-                 "x":1501.10606060606,
-                 "y":2242.07575757576
-                }, 
-                {
-                 "height":37.333333333333,
-                 "id":70,
-                 "name":"from-emle-office",
-                 "properties":[
-                        {
-                         "name":"start",
-                         "type":"bool",
-                         "value":true
-                        }],
-                 "rotation":0,
-                 "type":"area",
-                 "visible":true,
-                 "width":16,
-                 "x":727,
-                 "y":2071.66666666667
-                }, 
-                {
-                 "height":32,
-                 "id":72,
-                 "name":"from-Medical-Museum",
-                 "properties":[
-                        {
-                         "name":"start",
-                         "type":"bool",
-                         "value":true
-                        }],
-                 "rotation":0,
-                 "type":"area",
-                 "visible":true,
-                 "width":32,
-                 "x":1545.33333333333,
-                 "y":2306
-                }],
+         "objects":[],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -1841,36 +1773,7 @@
          "draworder":"topdown",
          "id":65,
          "name":"variables",
-         "objects":[
-                {
-                 "height":0,
-                 "id":74,
-                 "name":"iframe object",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"sandbox",
-                         "type":"string",
-                         "value":"allow-same-origin allow-scripts allow-popups allow-forms"
-                        }],
-                 "rotation":0,
-                 "type":"object",
-                 "visible":true,
-                 "width":0,
-                 "x":977.333333333333,
-                 "y":2196
-                }, 
-                {
-                 "height":277.333333333333,
-                 "id":75,
-                 "name":"ERP",
-                 "rotation":0,
-                 "type":"area",
-                 "visible":true,
-                 "width":334.666666666667,
-                 "x":870.666666666667,
-                 "y":2629.33333333333
-                }],
+         "objects":[],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -2050,7 +1953,7 @@
          "value":"src\/main.ts"
         }],
  "renderorder":"right-down",
- "tiledversion":"1.11.2",
+ "tiledversion":"1.12.1",
  "tileheight":32,
  "tilesets":[
         {
