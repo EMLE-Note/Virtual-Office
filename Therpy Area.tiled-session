@@ -1,19 +1,16 @@
 {
-    "activeFile": "emle-world.tmj",
-    "expandedProjectPaths": [
-        "."
-    ],
+    "activeFile": "Therapy Area.tmj",
     "fileStates": {
         "Therapy Area.tmj": {
             "expandedGroupLayers": [
                 55,
                 51
             ],
-            "scale": 0.5,
+            "scale": 0.25,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 788,
-                "y": 386
+                "x": 1412,
+                "y": 1220
             }
         },
         "Therapy Area.tmj#GRASS": {
@@ -83,11 +80,11 @@
             "expandedGroupLayers": [
                 55
             ],
-            "scale": 0.75,
+            "scale": 0.125,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 661.3333333333333,
-                "y": 2818.6666666666665
+                "x": -1696,
+                "y": 3224
             }
         },
         "emle-world.tmj#GRASS": {
@@ -151,13 +148,8 @@
             "scaleInDock": 1
         }
     },
-    "openFiles": [
-        "Therapy Area.tmj",
-        "emle-world.tmj"
-    ],
-    "project": "Therpy Area.tiled-project",
     "recentFiles": [
-        "Therapy Area.tmj",
-        "emle-world.tmj"
+        "emle-world.tmj",
+        "Therapy Area.tmj"
     ]
 }
