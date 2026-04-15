@@ -1,5 +1,7 @@
 {
     "activeFile": "Therapy Area.tmj",
+    "expandedProjectPaths": [
+    ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "Therapy Area.tmj": {
@@ -77,6 +79,145 @@
         "Therapy Area.tmj#walls": {
             "scaleInDock": 0.5
         },
+        "customer service.tmj": {
+            "expandedGroupLayers": [
+                52
+            ],
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 2,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 234,
+                "y": 204.5
+            }
+        },
+        "customer service.tmj#EMLE": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#GRASS": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#decor": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#floor wood": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#floor-test": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#floor3": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#furniture1": {
+            "scaleInDock": 0.75
+        },
+        "customer service.tmj#text": {
+            "scaleInDock": 1
+        },
+        "customer service.tmj#walls": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj": {
+            "expandedGroupLayers": [
+                52
+            ],
+            "scale": 1,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 373,
+                "y": 357
+            }
+        },
+        "customer-service.tmj#EMLE": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#GRASS": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#WA_Decoration": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#WA_Exterior": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#WA_Logo_Long": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#WA_Miscellaneous": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#WA_Other_Furniture": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#WA_Room_Builder": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#WA_Seats": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#WA_Special_Zones": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#WA_Tables": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#WA_User_Interface": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#decor": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#floor wood": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#floor-test": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#floor3": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#furniture1": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#text": {
+            "scaleInDock": 1
+        },
+        "customer-service.tmj#walls": {
+            "scaleInDock": 1
+        },
         "emle-world.tmj": {
             "expandedGroupLayers": [
                 55
@@ -149,6 +290,9 @@
             "scaleInDock": 1
         }
     },
+    "openFiles": [
+    ],
+    "project": "",
     "recentFiles": [
         "emle-world.tmj",
         "Therapy Area.tmj"
