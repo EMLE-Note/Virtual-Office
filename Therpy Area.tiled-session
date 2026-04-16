@@ -1,7 +1,8 @@
 {
-    "activeFile": "Therapy Area.tmj",
+    "activeFile": "customer-service.tmj",
     "expandedProjectPaths": [
     ],
+    "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "Therapy Area.tmj": {
             "expandedGroupLayers": [
@@ -225,13 +226,14 @@
         },
         "customer-service.tmj": {
             "expandedGroupLayers": [
+                55,
                 52
             ],
             "scale": 1,
-            "selectedLayer": 11,
+            "selectedLayer": 7,
             "viewCenter": {
-                "x": 373,
-                "y": 357
+                "x": 569,
+                "y": 86
             }
         },
         "customer-service.tmj#EMLE": {
@@ -283,7 +285,7 @@
             "scaleInDock": 1
         },
         "customer-service.tmj#furniture1": {
-            "scaleInDock": 1
+            "scaleInDock": 0.75
         },
         "customer-service.tmj#text": {
             "scaleInDock": 1
@@ -364,9 +366,11 @@
         }
     },
     "openFiles": [
+        "customer-service.tmj"
     ],
     "project": "",
     "recentFiles": [
+        "customer-service.tmj",
         "customer service.tmj",
         "emle-world.tmj",
         "Therapy Area.tmj"
