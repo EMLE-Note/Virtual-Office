@@ -226,14 +226,14 @@
         },
         "customer-service.tmj": {
             "expandedGroupLayers": [
-                55,
-                52
+                52,
+                55
             ],
             "scale": 1,
             "selectedLayer": 7,
             "viewCenter": {
                 "x": 569,
-                "y": 446
+                "y": 448
             }
         },
         "customer-service.tmj#EMLE": {
