@@ -230,11 +230,11 @@
         "customer-service.tmj": {
             "expandedGroupLayers": [
                 55,
-                54,
-                52
+                52,
+                54
             ],
             "scale": 0.0625,
-            "selectedLayer": -1,
+            "selectedLayer": 0,
             "viewCenter": {
                 "x": 3168,
                 "y": 3264
