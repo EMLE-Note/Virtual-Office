@@ -230,14 +230,14 @@
         "customer-service.tmj": {
             "expandedGroupLayers": [
                 55,
-                52,
-                54
+                54,
+                52
             ],
-            "scale": 1,
-            "selectedLayer": 8,
+            "scale": 0.0625,
+            "selectedLayer": -1,
             "viewCenter": {
-                "x": 407,
-                "y": 114
+                "x": 3168,
+                "y": 3264
             }
         },
         "customer-service.tmj#EMLE": {
@@ -378,5 +378,6 @@
         "customer service.tmj",
         "emle-world.tmj",
         "Therapy Area.tmj"
-    ]
+    ],
+    "resizeMap.removeObjects": true
 }
