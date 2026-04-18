@@ -230,14 +230,14 @@
         "customer-service.tmj": {
             "expandedGroupLayers": [
                 55,
-                54,
-                52
+                52,
+                54
             ],
             "scale": 1,
-            "selectedLayer": 1,
+            "selectedLayer": 8,
             "viewCenter": {
                 "x": 407,
-                "y": 234
+                "y": 114
             }
         },
         "customer-service.tmj#EMLE": {
