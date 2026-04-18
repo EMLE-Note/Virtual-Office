@@ -2,6 +2,7 @@
     "activeFile": "customer-service.tmj",
     "expandedProjectPaths": [
     ],
+    "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "/home/dr-ahmed-elsissy/Desktop/PCe3cDgk.tsx": {
             "scaleInDock": 1
@@ -228,15 +229,15 @@
         },
         "customer-service.tmj": {
             "expandedGroupLayers": [
+                55,
                 54,
-                52,
-                55
+                52
             ],
             "scale": 1,
-            "selectedLayer": 4,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 569,
-                "y": 448
+                "x": 667,
+                "y": 474
             }
         },
         "customer-service.tmj#EMLE": {
